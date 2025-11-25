@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Luís Otoni | Entre em Contato</title>
+    <meta name="description" content="Entre em contato com Luís Otoni para consultoria em Microsoft Azure, Microsoft 365 e Power Platform. Vamos discutir seu próximo projeto.">
+    <meta name="keywords" content="Contato, Consultoria Microsoft, Azure, Microsoft 365, Power Platform">
+    <link rel="canonical" href="https://luisotonix.github.io/contact.html">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Luís Otoni</div>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="/" data-i18n="nav_home">Início</a></li>
+                    <li><a href="/about.html" data-i18n="nav_about">Sobre</a></li>
+                    <li><a href="/portfolio.html" data-i18n="nav_portfolio">Portfólio</a></li>
+                    <li><a href="/services.html" data-i18n="nav_services">Serviços</a></li>
+                    <li><a href="/blog.html" data-i18n="nav_blog">Blog</a></li>
+                    <li><a href="/contact.html" class="active" data-i18n="nav_contact">Contato</a></li>
+                </ul>
+                <div class="nav-controls">
+                    <button id="theme-toggle" aria-label="Toggle theme"><span id="theme-icon">🌙</span></button>
+                    <select id="language-selector" aria-label="Select language">
+                        <option value="pt">🇧🇷 PT</option>
+                        <option value="en">🇺🇸 EN</option>
+                        <option value="es">🇪🇸 ES</option>
+                    </select>
+                </div>
+            </div>
+            <button id="mobile-menu-btn" aria-label="Toggle mobile menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" style="min-height: 40vh;">
+            <div class="container">
+                <div class="hero-content animate-on-scroll text-center">
+                    <h1 data-i18n="contact_title">Entre em Contato</h1>
+                    <p class="hero-description" data-i18n="contact_subtitle">
+                        Vamos conversar sobre como posso ajudar seu negócio
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Info & Form -->
+        <section>
+            <div class="container">
+                <div class="grid grid-2" style="align-items: start;">
+                    <!-- Contact Information -->
+                    <div class="animate-on-scroll">
+                        <h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--text-primary);">
+                            Informações de Contato
+                        </h2>
+                        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 2rem;">
+                            Estou sempre disponível para discutir novos projetos, oportunidades de consultoria
+                            ou simplesmente trocar experiências sobre Microsoft technologies.
+                        </p>
+
+                        <div class="card mb-3">
+                            <div class="card-icon">✉️</div>
+                            <h3 class="card-title">Email</h3>
+                            <p class="card-text">
+                                <a href="mailto:contato@luisotoni.com">contato@luisotoni.com</a>
+                            </p>
+                        </div>
+
+                        <div class="card mb-3">
+                            <div class="card-icon">💼</div>
+                            <h3 class="card-title">LinkedIn</h3>
+                            <p class="card-text">
+                                <a href="https://linkedin.com/in/luisotoni" target="_blank" rel="noopener">
+                                    linkedin.com/in/luisotoni
+                                </a>
+                            </p>
+                        </div>
+
+                        <div class="card mb-3">
+                            <div class="card-icon">🐙</div>
+                            <h3 class="card-title">GitHub</h3>
+                            <p class="card-text">
+                                <a href="https://github.com/luisotonix" target="_blank" rel="noopener">
+                                    github.com/luisotonix
+                                </a>
+                            </p>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-icon">🕒</div>
+                            <h3 class="card-title">Horário de Atendimento</h3>
+                            <p class="card-text">
+                                Segunda a Sexta: 9h às 18h (BRT)<br>
+                                Respondo emails dentro de 24 horas úteis
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="animate-on-scroll">
+                        <div class="card">
+                            <h2 style="font-size: 1.75rem; margin-bottom: 1.5rem; color: var(--text-primary);">
+                                Envie uma Mensagem
+                            </h2>
+                            <form class="contact-form" id="contact-form">
+                                <div class="form-group">
+                                    <label for="name" class="form-label" data-i18n="contact_name">Nome</label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        class="form-input"
+                                        placeholder="Seu nome completo"
+                                        required
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email" class="form-label" data-i18n="contact_email">Email</label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        class="form-input"
+                                        placeholder="seu.email@exemplo.com"
+                                        required
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="subject" class="form-label">Assunto</label>
+                                    <select id="subject" name="subject" class="form-input" required>
+                                        <option value="">Selecione um assunto</option>
+                                        <option value="consultoria-azure">Consultoria Azure</option>
+                                        <option value="consultoria-m365">Consultoria Microsoft 365</option>
+                                        <option value="power-platform">Power Platform</option>
+                                        <option value="migracao-cloud">Migração Cloud</option>
+                                        <option value="treinamento">Treinamento</option>
+                                        <option value="outro">Outro</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="message" class="form-label" data-i18n="contact_message">Mensagem</label>
+                                    <textarea
+                                        id="message"
+                                        name="message"
+                                        class="form-textarea"
+                                        placeholder="Descreva seu projeto ou dúvida..."
+                                        required
+                                    ></textarea>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="contact_send">
+                                    Enviar Mensagem
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Contact Me -->
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Por Que Entrar em Contato?</h2>
+                </div>
+
+                <div class="grid grid-3">
+                    <div class="card animate-on-scroll text-center">
+                        <div class="card-icon">💡</div>
+                        <h3 class="card-title">Consultoria Especializada</h3>
+                        <p class="card-text">
+                            Experiência prática em projetos Microsoft de diversos tamanhos e complexidades.
+                        </p>
+                    </div>
+
+                    <div class="card animate-on-scroll text-center">
+                        <div class="card-icon">🚀</div>
+                        <h3 class="card-title">Resultados Comprovados</h3>
+                        <p class="card-text">
+                            Histórico de projetos bem-sucedidos com ROI mensurável e clientes satisfeitos.
+                        </p>
+                    </div>
+
+                    <div class="card animate-on-scroll text-center">
+                        <div class="card-icon">🤝</div>
+                        <h3 class="card-title">Parceria de Longo Prazo</h3>
+                        <p class="card-text">
+                            Não apenas um projeto, mas uma parceria contínua para evoluir sua infraestrutura.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section>
+            <div class="container-narrow">
+                <div class="section-header">
+                    <h2 class="section-title">Perguntas Frequentes</h2>
+                </div>
+
+                <div class="card animate-on-scroll mb-3">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">
+                        Quanto tempo leva para receber uma resposta?
+                    </h3>
+                    <p style="color: var(--text-secondary);">
+                        Procuro responder todos os emails dentro de 24 horas úteis. Para projetos urgentes,
+                        indique isso no assunto da mensagem.
+                    </p>
+                </div>
+
+                <div class="card animate-on-scroll mb-3">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">
+                        Você trabalha remotamente?
+                    </h3>
+                    <p style="color: var(--text-secondary);">
+                        Sim, trabalho remotamente com clientes em todo o Brasil e exterior. Para projetos que
+                        requerem presença física, podemos discutiropções.
+                    </p>
+                </div>
+
+                <div class="card animate-on-scroll mb-3">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">
+                        Como funciona o processo de consultoria?
+                    </h3>
+                    <p style="color: var(--text-secondary);">
+                        Começamos com uma reunião inicial para entender suas necessidades. Depois, elaboro uma
+                        proposta detalhada com escopo, timeline e investimento. Após aprovação, iniciamos o projeto.
+                    </p>
+                </div>
+
+                <div class="card animate-on-scroll">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">
+                        Oferece suporte pós-implementação?
+                    </h3>
+                    <p style="color: var(--text-secondary);">
+                        Sim, todos os meus projetos incluem período de suporte pós-implementação. Também ofereço
+                        contratos de suporte contínuo para clientes que desejam parceria de longo prazo.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Luís Otoni</h3>
+                    <p>System Administrator & Microsoft Specialist</p>
+                    <div class="footer-social mt-3">
+                        <a href="https://linkedin.com/in/luisotoni" class="social-icon" target="_blank" rel="noopener">💼</a>
+                        <a href="https://github.com/luisotonix" class="social-icon" target="_blank" rel="noopener">🐙</a>
+                        <a href="mailto:contato@luisotoni.com" class="social-icon">✉️</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Portfólio</h3>
+                    <ul class="footer-links">
+                        <li><a href="/portfolio.html">Projetos</a></li>
+                        <li><a href="/services.html">Serviços</a></li>
+                        <li><a href="/about.html">Sobre</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Blog</h3>
+                    <ul class="footer-links">
+                        <li><a href="/blog.html">Todos os Artigos</a></li>
+                        <li><a href="/blog.html#azure">Azure</a></li>
+                        <li><a href="/blog.html#m365">Microsoft 365</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <ul class="footer-links">
+                        <li><a href="/contact.html">Formulário</a></li>
+                        <li><a href="mailto:contato@luisotoni.com">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Luís Otoni. <span data-i18n="footer_rights">Todos os direitos reservados</span>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
