@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Luís Otoni | Artigos sobre Azure, Microsoft 365 e Power Platform</title>
+    <meta name="description" content="Blog com artigos, tutoriais e insights sobre Microsoft Azure, Microsoft 365, Power Platform e administração de sistemas.">
+    <meta name="keywords" content="Blog Microsoft, Azure Tutorials, Microsoft 365 Tips, Power Platform, Technical Articles">
+    <link rel="canonical" href="https://luisotonix.github.io/blog.html">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Luís Otoni</div>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="/" data-i18n="nav_home">Início</a></li>
+                    <li><a href="/about.html" data-i18n="nav_about">Sobre</a></li>
+                    <li><a href="/portfolio.html" data-i18n="nav_portfolio">Portfólio</a></li>
+                    <li><a href="/services.html" data-i18n="nav_services">Serviços</a></li>
+                    <li><a href="/blog.html" class="active" data-i18n="nav_blog">Blog</a></li>
+                    <li><a href="/contact.html" data-i18n="nav_contact">Contato</a></li>
+                </ul>
+                <div class="nav-controls">
+                    <button id="theme-toggle" aria-label="Toggle theme"><span id="theme-icon">🌙</span></button>
+                    <select id="language-selector" aria-label="Select language">
+                        <option value="pt">🇧🇷 PT</option>
+                        <option value="en">🇺🇸 EN</option>
+                        <option value="es">🇪🇸 ES</option>
+                    </select>
+                </div>
+            </div>
+            <button id="mobile-menu-btn" aria-label="Toggle mobile menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" style="min-height: 40vh;">
+            <div class="container">
+                <div class="hero-content animate-on-scroll text-center">
+                    <h1 data-i18n="blog_title">Blog</h1>
+                    <p class="hero-description" data-i18n="blog_subtitle">
+                        Artigos, tutoriais e insights sobre Microsoft technologies
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Filters -->
+        <section>
+            <div class="container">
+                <div class="blog-filters">
+                    <button class="category-filter active" data-category="all">Todos</button>
+                    <button class="category-filter" data-category="azure">Azure</button>
+                    <button class="category-filter" data-category="m365">Microsoft 365</button>
+                    <button class="category-filter" data-category="power-platform">Power Platform</button>
+                    <button class="category-filter" data-category="security">Segurança</button>
+                    <button class="category-filter" data-category="tutorial">Tutoriais</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Posts -->
+        <section>
+            <div class="container">
+                <div class="grid grid-3">
+                    <!-- Post 1 -->
+                    <article class="blog-card animate-on-scroll" data-category="azure">
+                        <div class="blog-image">☁️</div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span>📅 25 Nov 2025</span>
+                                <span>📁 Azure</span>
+                                <span>👤 Luís Otoni</span>
+                            </div>
+                            <h3 class="blog-title">Melhores Práticas para Segurança no Azure</h3>
+                            <p class="blog-excerpt">
+                                Descubra as principais práticas recomendadas pela Microsoft para manter seu ambiente
+                                Azure seguro e em conformidade com regulações.
+                            </p>
+                            <div class="portfolio-tags">
+                                <span class="tag">Azure Security</span>
+                                <span class="tag">Best Practices</span>
+                                <span class="tag">Compliance</span>
+                            </div>
+                            <div class="blog-footer">
+                                <a href="/blog/azure-security-best-practices.html" class="btn btn-outline" data-i18n="blog_read_more">Ler Mais</a>
+                                <span>⏱️ 8 min</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Post 2 -->
+                    <article class="blog-card animate-on-scroll" data-category="m365">
+                        <div class="blog-image">📊</div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span>📅 20 Nov 2025</span>
+                                <span>📁 Microsoft 365</span>
+                                <span>👤 Luís Otoni</span>
+                            </div>
+                            <h3 class="blog-title">Otimizando o Microsoft Teams para Produtividade</h3>
+                            <p class="blog-excerpt">
+                                Dicas e configurações essenciais para maximizar a produtividade com Microsoft Teams.
+                                Aprenda a usar recursos avançados.
+                            </p>
+                            <div class="portfolio-tags">
+                                <span class="tag">Teams</span>
+                                <span class="tag">Productivity</span>
+                                <span class="tag">Tips</span>
+                            </div>
+                            <div class="blog-footer">
+                                <a href="/blog/teams-productivity-tips.html" class="btn btn-outline" data-i18n="blog_read_more">Ler Mais</a>
+                                <span>⏱️ 6 min</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Post 3 -->
+                    <article class="blog-card animate-on-scroll" data-category="power-platform">
+                        <div class="blog-image">⚡</div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span>📅 15 Nov 2025</span>
+                                <span>📁 Power Platform</span>
+                                <span>👤 Luís Otoni</span>
+                            </div>
+                            <h3 class="blog-title">Automatizando Processos com Power Automate</h3>
+                            <p class="blog-excerpt">
+                                Aprenda a criar fluxos de automação eficientes com Power Automate para economizar
+                                tempo e reduzir erros manuais.
+                            </p>
+                            <div class="portfolio-tags">
+                                <span class="tag">Power Automate</span>
+                                <span class="tag">Automation</span>
+                                <span class="tag">Tutorial</span>
+                            </div>
+                            <div class="blog-footer">
+                                <a href="/blog/power-automate-automation.html" class="btn btn-outline" data-i18n="blog_read_more">Ler Mais</a>
+                                <span>⏱️ 10 min</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Post 4 -->
+                    <article class="blog-card animate-on-scroll" data-category="azure">
+                        <div class="blog-image">💰</div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span>📅 10 Nov 2025</span>
+                                <span>📁 Azure</span>
+                                <span>👤 Luís Otoni</span>
+                            </div>
+                            <h3 class="blog-title">Como Reduzir Custos no Azure: Guia Completo</h3>
+                            <p class="blog-excerpt">
+                                Estratégias práticas para otimizar custos no Azure sem comprometer performance.
+                                Reserved Instances, sizing e mais.
+                            </p>
+                            <div class="portfolio-tags">
+                                <span class="tag">Azure Cost</span>
+                                <span class="tag">Optimization</span>
+                                <span class="tag">FinOps</span>
+                            </div>
+                            <div class="blog-footer">
+                                <a href="/blog/azure-cost-optimization.html" class="btn btn-outline" data-i18n="blog_read_more">Ler Mais</a>
+                                <span>⏱️ 12 min</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Post 5 -->
+                    <article class="blog-card animate-on-scroll" data-category="security">
+                        <div class="blog-image">🔒</div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span>📅 05 Nov 2025</span>
+                                <span>📁 Segurança</span>
+                                <span>👤 Luís Otoni</span>
+                            </div>
+                            <h3 class="blog-title">Implementando Zero Trust com Microsoft 365</h3>
+                            <p class="blog-excerpt">
+                                Guia completo para implementar o modelo Zero Trust usando ferramentas Microsoft 365.
+                                Conditional Access, MFA e mais.
+                            </p>
+                            <div class="portfolio-tags">
+                                <span class="tag">Zero Trust</span>
+                                <span class="tag">Security</span>
+                                <span class="tag">M365</span>
+                            </div>
+                            <div class="blog-footer">
+                                <a href="/blog/zero-trust-m365.html" class="btn btn-outline" data-i18n="blog_read_more">Ler Mais</a>
+                                <span>⏱️ 15 min</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Post 6 -->
+                    <article class="blog-card animate-on-scroll" data-category="tutorial">
+                        <div class="blog-image">📝</div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span>📅 01 Nov 2025</span>
+                                <span>📁 Tutorial</span>
+                                <span>👤 Luís Otoni</span>
+                            </div>
+                            <h3 class="blog-title">PowerShell para Administradores: Do Básico ao Avançado</h3>
+                            <p class="blog-excerpt">
+                                Tutorial completo de PowerShell focado em administração de sistemas Microsoft.
+                                Scripts práticos e exemplos reais.
+                            </p>
+                            <div class="portfolio-tags">
+                                <span class="tag">PowerShell</span>
+                                <span class="tag">Scripting</span>
+                                <span class="tag">Tutorial</span>
+                            </div>
+                            <div class="blog-footer">
+                                <a href="/blog/powershell-tutorial.html" class="btn btn-outline" data-i18n="blog_read_more">Ler Mais</a>
+                                <span>⏱️ 20 min</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section id="cta">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">📧 Assine a Newsletter</h2>
+                    <p class="section-subtitle">
+                        Receba artigos sobre Microsoft technologies diretamente no seu email.
+                    </p>
+                    <a href="/contact.html" class="btn btn-primary">Inscrever-se</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Luís Otoni</h3>
+                    <p>System Administrator & Microsoft Specialist</p>
+                    <div class="footer-social mt-3">
+                        <a href="https://linkedin.com/in/luisotoni" class="social-icon" target="_blank" rel="noopener">💼</a>
+                        <a href="https://github.com/luisotonix" class="social-icon" target="_blank" rel="noopener">🐙</a>
+                        <a href="mailto:contato@luisotoni.com" class="social-icon">✉️</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Portfólio</h3>
+                    <ul class="footer-links">
+                        <li><a href="/portfolio.html">Projetos</a></li>
+                        <li><a href="/services.html">Serviços</a></li>
+                        <li><a href="/about.html">Sobre</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Blog</h3>
+                    <ul class="footer-links">
+                        <li><a href="/blog.html">Todos os Artigos</a></li>
+                        <li><a href="/blog.html#azure">Azure</a></li>
+                        <li><a href="/blog.html#m365">Microsoft 365</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <ul class="footer-links">
+                        <li><a href="/contact.html">Formulário</a></li>
+                        <li><a href="mailto:contato@luisotoni.com">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Luís Otoni. <span data-i18n="footer_rights">Todos os direitos reservados</span>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
