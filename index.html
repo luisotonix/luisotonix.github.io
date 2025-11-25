@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luís - System Administrator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0a192f;
+            --secondary: #172a45;
+            --accent: #64ffda;
+            --text: #8892b0;
+            --text-light: #ccd6f6;
+            --white: #e6f1ff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--primary);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--secondary);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .hero .subtitle {
+            color: var(--accent);
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 36px;
+            color: var(--white);
+            margin-bottom: 50px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .section-title::after {
+            content: '';
+            height: 1px;
+            background-color: var(--secondary);
+            flex-grow: 1;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .skills-list li {
+            list-style: none;
+            padding-left: 20px;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .skills-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .profile-box {
+            background-color: var(--secondary);
+            padding: 30px;
+            border-radius: 8px;
+            border: 2px solid var(--accent);
+        }
+
+        .profile-box h3 {
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .profile-box p {
+            margin-bottom: 10px;
+        }
+
+        /* Experience Section */
+        .experience-item {
+            background-color: var(--secondary);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .experience-item h3 {
+            color: var(--white);
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .experience-item .company {
+            color: var(--accent);
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .experience-item .period {
+            color: var(--text);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .experience-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-item ul li {
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+
+        .experience-item ul li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background-color: var(--secondary);
+            padding: 25px;
+            border-radius: 8px;
+            border-top: 3px solid var(--accent);
+        }
+
+        .skill-category h3 {
+            color: var(--white);
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category ul li {
+            padding: 8px 0;
+            color: var(--text-light);
+        }
+
+        /* Contact Section */
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-content p {
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            padding: 30px 0;
+            text-align: center;
+            color: var(--text);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero h2 {
+                font-size: 32px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-list {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Luís</div>
+            <ul class="nav-links">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#experiencia">Experiência</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <p class="subtitle">Olá, meu nome é</p>
+                <h1>Luís</h1>
+                <h2>System Administrator</h2>
+                <p>
+                    Profissional de TI com mais de 8 anos de experiência em administração de sistemas, 
+                    especializado em infraestrutura, suporte técnico e gestão de ambientes corporativos. 
+                    Atualmente trabalhando na UOL, garantindo a estabilidade e segurança de sistemas críticos.
+                </p>
+                <a href="#contato" class="btn">Entre em contato</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="sobre">
+            <div class="container">
+                <h2 class="section-title">Sobre mim</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>
+                            Sou um profissional de TI apaixonado por tecnologia e solução de problemas. 
+                            Com mais de 8 anos de experiência como System Administrator, desenvolvi expertise 
+                            em manter sistemas funcionando de forma eficiente e segura.
+                        </p>
+                        <p>
+                            Atualmente trabalho na UOL, onde sou responsável pela administração de sistemas, 
+                            gerenciamento de servidores, implementação de soluções de segurança e suporte a 
+                            infraestrutura crítica. Meu foco está em garantir alta disponibilidade e 
+                            desempenho otimizado dos sistemas.
+                        </p>
+                        <p>
+                            Além da minha atuação profissional, estou cursando Ciência da Computação na 
+                            Anhembi Morumbi, buscando constantemente aprimorar meus conhecimentos técnicos 
+                            e me manter atualizado com as tendências do mercado.
+                        </p>
+
+                        <h3 style="color: var(--white); margin-top: 30px; margin-bottom: 15px;">Principais competências:</h3>
+                        <ul class="skills-list">
+                            <li>Administração Linux/Unix</li>
+                            <li>Gerenciamento de Servidores</li>
+                            <li>Virtualização (VMware, Hyper-V)</li>
+                            <li>Redes e Segurança</li>
+                            <li>Scripts (Bash, Python)</li>
+                            <li>Backup e Recuperação</li>
+                            <li>Monitoramento de Sistemas</li>
+                            <li>Active Directory</li>
+                        </ul>
+                    </div>
+
+                    <div class="profile-box">
+                        <h3>Perfil Profissional</h3>
+                        <p><strong>Cargo:</strong> System Administrator</p>
+                        <p><strong>Empresa:</strong> UOL</p>
+                        <p><strong>Experiência:</strong> 8+ anos</p>
+                        <p><strong>Localização:</strong> Rio de Janeiro, RJ</p>
+                        <p><strong>Formação:</strong> Ciência da Computação (em andamento)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experiencia" style="background-color: var(--secondary);">
+            <div class="container">
+                <h2 class="section-title">Experiência Profissional</h2>
+                
+                <div class="experience-item">
+                    <h3>System Administrator</h3>
+                    <div class="company">UOL</div>
+                    <div class="period">8+ anos de experiência</div>
+                    <ul>
+                        <li>Administração e manutenção de servidores Linux e Windows em ambientes de produção</li>
+                        <li>Gerenciamento de infraestrutura de TI, incluindo virtualização e storage</li>
+                        <li>Implementação e manutenção de políticas de segurança e backup</li>
+                        <li>Monitoramento proativo de sistemas para garantir alta disponibilidade</li>
+                        <li>Suporte técnico avançado e troubleshooting de incidentes complexos</li>
+                        <li>Automação de tarefas administrativas através de scripts</li>
+                        <li>Documentação técnica de processos e procedimentos</li>
+                        <li>Colaboração com equipes de desenvolvimento e infraestrutura</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Projetos Acadêmicos</h3>
+                    <div class="company">Anhembi Morumbi - Ciência da Computação</div>
+                    <div class="period">Em andamento</div>
+                    <ul>
+                        <li>Desenvolvimento do projeto "Reciprok" - sistema de troca de serviços com time banking</li>
+                        <li>Modelagem UML e design de banco de dados para aplicações corporativas</li>
+                        <li>Análise de requisitos e conformidade legal para sistemas web</li>
+                        <li>Desenvolvimento em Java e outras linguagens de programação</li>
+                        <li>Participação em simpósios e eventos de engenharia de software</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="habilidades">
+            <div class="container">
+                <h2 class="section-title">Habilidades Técnicas</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Sistemas Operacionais</h3>
+                        <ul>
+                            <li>Linux (Ubuntu, CentOS, RHEL)</li>
+                            <li>Windows Server</li>
+                            <li>Unix</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Virtualização & Cloud</h3>
+                        <ul>
+                            <li>VMware vSphere</li>
+                            <li>Hyper-V</li>
+                            <li>Docker</li>
+                            <li>Kubernetes (básico)</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Redes & Segurança</h3>
+                        <ul>
+                            <li>TCP/IP, DNS, DHCP</li>
+                            <li>Firewalls e VPNs</li>
+                            <li>SSL/TLS</li>
+                            <li>Segurança de Redes</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Ferramentas & Serviços</h3>
+                        <ul>
+                            <li>Active Directory</li>
+                            <li>Apache/Nginx</li>
+                            <li>MySQL/PostgreSQL</li>
+                            <li>Git/GitHub</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Automação & Scripts</h3>
+                        <ul>
+                            <li>Bash Scripting</li>
+                            <li>Python</li>
+                            <li>PowerShell</li>
+                            <li>Ansible (básico)</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Monitoramento</h3>
+                        <ul>
+                            <li>Nagios</li>
+                            <li>Zabbix</li>
+                            <li>Grafana</li>
+                            <li>Log Analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contato" style="background-color: var(--secondary);">
+            <div class="container">
+                <h2 class="section-title">Entre em Contato</h2>
+                <div class="contact-content">
+                    <p>
+                        Estou sempre aberto a discutir novos projetos, oportunidades ou 
+                        simplesmente trocar experiências sobre tecnologia e infraestrutura. 
+                        Sinta-se à vontade para entrar em contato!
+                    </p>
+                    <div class="contact-links">
+                        <a href="mailto:seu.email@exemplo.com" class="btn">Enviar E-mail</a>
+                        <a href="https://linkedin.com/in/seu-perfil" class="btn" target="_blank">LinkedIn</a>
+                        <a href="https://github.com/seu-usuario" class="btn" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Luís - System Administrator. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
