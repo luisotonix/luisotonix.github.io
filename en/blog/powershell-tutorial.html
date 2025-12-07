@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerShell for Administrators: From Basics to Advanced - Luís Otoni</title>
+    <meta name="description" content="Complete PowerShell tutorial for system administrators. From basics to advanced, with practical examples for Microsoft 365 and Azure.">
+    <meta name="keywords" content="PowerShell, Tutorial, System Administration, Microsoft 365, Azure, Automation">
+    <meta name="author" content="Luís Otoni">
+    <link rel="canonical" href="https://luisotonix.github.io/en/blog/powershell-tutorial.html">
+    
+    <link rel="alternate" hreflang="pt-BR" href="https://luisotonix.github.io/blog/powershell-tutorial.html" />
+    <link rel="alternate" hreflang="en" href="https://luisotonix.github.io/en/blog/powershell-tutorial.html" />
+    <link rel="alternate" hreflang="es" href="https://luisotonix.github.io/es/blog/powershell-tutorial.html" />
+    <link rel="alternate" hreflang="x-default" href="https://luisotonix.github.io/blog/powershell-tutorial.html" />
+    
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../index.html" class="logo">⚡ Luís Otoni</a>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../portfolio.html">Portfolio</a></li>
+                    <li><a href="../services.html">Services</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-controls">
+                    <button id="theme-toggle" aria-label="Toggle theme"><span id="theme-icon">🌙</span></button>
+                    <select id="language-selector" aria-label="Select language" onchange="window.location.href=this.value">
+                        <option value="../../blog/powershell-tutorial.html">Português</option>
+                        <option value="powershell-tutorial.html" selected>English</option>
+                        <option value="../../es/blog/powershell-tutorial.html">Español</option>
+                    </select>
+                </div>
+            </div>
+            <button id="mobile-menu-btn" aria-label="Toggle mobile menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="article-header">
+            <div class="container-narrow">
+                <div class="portfolio-tags mb-3" style="justify-content: center;">
+                    <span class="tag primary">PowerShell</span>
+                    <span class="tag">Automation</span>
+                    <span class="tag">Tutorial</span>
+                </div>
+                <h1 class="article-title">PowerShell for Administrators: From Basics to Advanced</h1>
+                <div class="article-meta">
+                    <span>👤 Luís Otoni</span>
+                    <span>📅 October 28, 2025</span>
+                    <span>⏱️ 20 min read</span>
+                    <span>📁 Automation</span>
+                </div>
+            </div>
+        </section>
+
+        <article class="article-content">
+            <p>
+                PowerShell is the most powerful tool in a Microsoft administrator's arsenal. 
+                Whether managing Active Directory, Microsoft 365, Azure or Windows Server, mastering PowerShell 
+                is the difference between executing tasks manually and automating your infrastructure.
+            </p>
+
+            <h2>1. PowerShell Fundamentals</h2>
+
+            <h3>Why PowerShell?</h3>
+            <ul>
+                <li><strong>Automation:</strong> Execute repetitive tasks automatically</li>
+                <li><strong>Consistency:</strong> Scripts produce predictable results</li>
+                <li><strong>Scale:</strong> Manage thousands of objects with one command</li>
+                <li><strong>Integration:</strong> Works with Azure, M365, AD, Exchange, and more</li>
+            </ul>
+
+            <h3>Cmdlets: The Foundation</h3>
+            <p>Cmdlets follow the <strong>Verb-Noun</strong> pattern:</p>
+            <pre><code>Get-Process      # Gets processes
+Set-Location     # Sets location
+New-Item         # Creates new item
+Remove-Item      # Removes item</code></pre>
+
+            <h2>2. Working with Objects</h2>
+            <p>PowerShell works with objects, not text. This changes everything.</p>
+
+            <h3>Pipeline: The Power of |</h3>
+            <pre><code># List stopped services
+Get-Service | Where-Object {$_.Status -eq 'Stopped'}
+
+# Get top 5 memory-consuming processes
+Get-Process | Sort-Object WorkingSet64 -Descending | Select-Object -First 5</code></pre>
+
+            <h2>3. Variables and Data Types</h2>
+            <pre><code># String
+$name = "Luís Otoni"
+
+# Array
+$servers = @("Server01", "Server02", "Server03")
+
+# Hashtable
+$user = @{
+    Name = "John"
+    Email = "john@company.com"
+}</code></pre>
+
+            <h2>4. Scripts and Functions</h2>
+            <pre><code>function Get-DiskSpace {
+    [CmdletBinding()]
+    param(
+        [string[]]$ComputerName = $env:COMPUTERNAME
+    )
+    
+    foreach ($computer in $ComputerName) {
+        Get-WmiObject Win32_LogicalDisk -ComputerName $computer -Filter "DriveType=3" |
+        Select-Object @{N='Computer';E={$computer}},
+                      DeviceID,
+                      @{N='SizeGB';E={[math]::Round($_.Size/1GB,2)}},
+                      @{N='FreeGB';E={[math]::Round($_.FreeSpace/1GB,2)}}
+    }
+}</code></pre>
+
+            <h2>5. PowerShell for Microsoft 365</h2>
+            <pre><code># Install required modules
+Install-Module Microsoft.Graph -Scope CurrentUser
+
+# Connect to Microsoft Graph
+Connect-MgGraph -Scopes "User.Read.All", "Group.ReadWrite.All"
+
+# List all users
+Get-MgUser -All | Select-Object DisplayName, UserPrincipalName, AccountEnabled</code></pre>
+
+            <h2>6. PowerShell for Azure</h2>
+            <pre><code># Connect
+Connect-AzAccount
+
+# List VMs
+Get-AzVM | Select-Object Name, ResourceGroupName, Location
+
+# Start VM
+Start-AzVM -ResourceGroupName "RG-Production" -Name "VM-Web01"</code></pre>
+
+            <h2>7. Active Directory with PowerShell</h2>
+            <pre><code># Users who haven't logged in for 90 days
+$90DaysAgo = (Get-Date).AddDays(-90)
+Get-ADUser -Filter {LastLogonDate -lt $90DaysAgo} -Properties LastLogonDate |
+Select-Object Name, SamAccountName, LastLogonDate</code></pre>
+
+            <h2>Conclusion</h2>
+            <p>
+                PowerShell is an essential skill for any Microsoft system administrator. 
+                Start automating simple tasks and gradually evolve to more complex scripts.
+            </p>
+        </article>
+
+        <section>
+            <div class="container-narrow">
+                <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--text-primary);">Share this article</h3>
+                <div class="share-buttons">
+                    <button class="share-btn" data-platform="twitter">🐦 Twitter</button>
+                    <button class="share-btn" data-platform="linkedin">💼 LinkedIn</button>
+                    <button class="share-btn" data-platform="facebook">👍 Facebook</button>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container text-center">
+                <a href="../blog.html" class="btn btn-outline">← Back to Blog</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Luís Otoni. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>

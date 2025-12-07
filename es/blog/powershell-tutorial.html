@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerShell para Administradores: De Básico a Avanzado - Luís Otoni</title>
+    <meta name="description" content="Tutorial completo de PowerShell para administradores de sistemas. De básico a avanzado, con ejemplos prácticos para Microsoft 365 y Azure.">
+    <meta name="keywords" content="PowerShell, Tutorial, Administración de Sistemas, Microsoft 365, Azure, Automatización">
+    <meta name="author" content="Luís Otoni">
+    <link rel="canonical" href="https://luisotonix.github.io/es/blog/powershell-tutorial.html">
+    
+    <link rel="alternate" hreflang="pt-BR" href="https://luisotonix.github.io/blog/powershell-tutorial.html" />
+    <link rel="alternate" hreflang="en" href="https://luisotonix.github.io/en/blog/powershell-tutorial.html" />
+    <link rel="alternate" hreflang="es" href="https://luisotonix.github.io/es/blog/powershell-tutorial.html" />
+    <link rel="alternate" hreflang="x-default" href="https://luisotonix.github.io/blog/powershell-tutorial.html" />
+    
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../index.html" class="logo">⚡ Luís Otoni</a>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../about.html">Acerca</a></li>
+                    <li><a href="../portfolio.html">Portafolio</a></li>
+                    <li><a href="../services.html">Servicios</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../contact.html">Contacto</a></li>
+                </ul>
+                <div class="nav-controls">
+                    <button id="theme-toggle" aria-label="Cambiar tema"><span id="theme-icon">🌙</span></button>
+                    <select id="language-selector" aria-label="Seleccionar idioma" onchange="window.location.href=this.value">
+                        <option value="../../blog/powershell-tutorial.html">Português</option>
+                        <option value="../../en/blog/powershell-tutorial.html">English</option>
+                        <option value="powershell-tutorial.html" selected>Español</option>
+                    </select>
+                </div>
+            </div>
+            <button id="mobile-menu-btn" aria-label="Abrir menú móvil">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="article-header">
+            <div class="container-narrow">
+                <div class="portfolio-tags mb-3" style="justify-content: center;">
+                    <span class="tag primary">PowerShell</span>
+                    <span class="tag">Automatización</span>
+                    <span class="tag">Tutorial</span>
+                </div>
+                <h1 class="article-title">PowerShell para Administradores: De Básico a Avanzado</h1>
+                <div class="article-meta">
+                    <span>👤 Luís Otoni</span>
+                    <span>📅 28 de Octubre de 2025</span>
+                    <span>⏱️ 20 min de lectura</span>
+                    <span>📁 Automatización</span>
+                </div>
+            </div>
+        </section>
+
+        <article class="article-content">
+            <p>
+                PowerShell es la herramienta más poderosa en el arsenal de un administrador Microsoft. 
+                Sea gestionando Active Directory, Microsoft 365, Azure o Windows Server, dominar PowerShell 
+                es la diferencia entre ejecutar tareas manualmente y automatizar su infraestructura.
+            </p>
+
+            <h2>1. Fundamentos de PowerShell</h2>
+
+            <h3>¿Por qué PowerShell?</h3>
+            <ul>
+                <li><strong>Automatización:</strong> Ejecute tareas repetitivas automáticamente</li>
+                <li><strong>Consistencia:</strong> Los scripts producen resultados predecibles</li>
+                <li><strong>Escala:</strong> Gestione miles de objetos con un comando</li>
+                <li><strong>Integración:</strong> Funciona con Azure, M365, AD, Exchange, y más</li>
+            </ul>
+
+            <h3>Cmdlets: La Base de Todo</h3>
+            <p>Los cmdlets siguen el patrón <strong>Verbo-Sustantivo</strong>:</p>
+            <pre><code>Get-Process      # Obtiene procesos
+Set-Location     # Define ubicación
+New-Item         # Crea nuevo item
+Remove-Item      # Elimina item</code></pre>
+
+            <h2>2. Trabajando con Objetos</h2>
+            <p>PowerShell trabaja con objetos, no texto. Esto cambia todo.</p>
+
+            <h3>Pipeline: El Poder del |</h3>
+            <pre><code># Listar servicios detenidos
+Get-Service | Where-Object {$_.Status -eq 'Stopped'}
+
+# Obtener los 5 procesos que más consumen memoria
+Get-Process | Sort-Object WorkingSet64 -Descending | Select-Object -First 5</code></pre>
+
+            <h2>3. Variables y Tipos de Datos</h2>
+            <pre><code># String
+$nombre = "Luís Otoni"
+
+# Array
+$servidores = @("Server01", "Server02", "Server03")
+
+# Hashtable
+$usuario = @{
+    Nombre = "Juan"
+    Email = "juan@empresa.com"
+}</code></pre>
+
+            <h2>4. Scripts y Funciones</h2>
+            <pre><code>function Get-DiskSpace {
+    [CmdletBinding()]
+    param(
+        [string[]]$ComputerName = $env:COMPUTERNAME
+    )
+    
+    foreach ($computer in $ComputerName) {
+        Get-WmiObject Win32_LogicalDisk -ComputerName $computer -Filter "DriveType=3" |
+        Select-Object @{N='Computer';E={$computer}},
+                      DeviceID,
+                      @{N='SizeGB';E={[math]::Round($_.Size/1GB,2)}},
+                      @{N='FreeGB';E={[math]::Round($_.FreeSpace/1GB,2)}}
+    }
+}</code></pre>
+
+            <h2>5. PowerShell para Microsoft 365</h2>
+            <pre><code># Instalar módulos necesarios
+Install-Module Microsoft.Graph -Scope CurrentUser
+
+# Conectar a Microsoft Graph
+Connect-MgGraph -Scopes "User.Read.All", "Group.ReadWrite.All"
+
+# Listar todos los usuarios
+Get-MgUser -All | Select-Object DisplayName, UserPrincipalName, AccountEnabled</code></pre>
+
+            <h2>6. PowerShell para Azure</h2>
+            <pre><code># Conectar
+Connect-AzAccount
+
+# Listar VMs
+Get-AzVM | Select-Object Name, ResourceGroupName, Location
+
+# Iniciar VM
+Start-AzVM -ResourceGroupName "RG-Produccion" -Name "VM-Web01"</code></pre>
+
+            <h2>Conclusión</h2>
+            <p>
+                PowerShell es una habilidad esencial para cualquier administrador de sistemas Microsoft. 
+                Comience automatizando tareas simples y evolucione gradualmente hacia scripts más complejos.
+            </p>
+        </article>
+
+        <section>
+            <div class="container-narrow">
+                <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--text-primary);">Comparta este artículo</h3>
+                <div class="share-buttons">
+                    <button class="share-btn" data-platform="twitter">🐦 Twitter</button>
+                    <button class="share-btn" data-platform="linkedin">💼 LinkedIn</button>
+                    <button class="share-btn" data-platform="facebook">👍 Facebook</button>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container text-center">
+                <a href="../blog.html" class="btn btn-outline">← Volver al Blog</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Luís Otoni. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>

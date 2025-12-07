@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hybrid Identity Solution - Luís Otoni</title>
+    <meta name="description" content="Hybrid identity implementation with Azure AD Connect, SSO, MFA and Conditional Access for complex enterprise environment.">
+    <meta name="keywords" content="Azure AD, Hybrid Identity, SSO, MFA, Conditional Access, Azure AD Connect, Entra ID">
+    <link rel="canonical" href="https://luisotonix.github.io/en/portfolio/hybrid-identity-solution.html">
+    
+    <!-- Hreflang Tags -->
+    <link rel="alternate" hreflang="pt-BR" href="https://luisotonix.github.io/portfolio/hybrid-identity-solution.html" />
+    <link rel="alternate" hreflang="en" href="https://luisotonix.github.io/en/portfolio/hybrid-identity-solution.html" />
+    <link rel="alternate" hreflang="es" href="https://luisotonix.github.io/es/portfolio/hybrid-identity-solution.html" />
+    <link rel="alternate" hreflang="x-default" href="https://luisotonix.github.io/portfolio/hybrid-identity-solution.html" />
+    
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../index.html" class="logo">⚡ Luís Otoni</a>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../portfolio.html" class="active">Portfolio</a></li>
+                    <li><a href="../services.html">Services</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-controls">
+                    <button id="theme-toggle" aria-label="Toggle theme"><span id="theme-icon">🌙</span></button>
+                    <select id="language-selector" aria-label="Select language" onchange="window.location.href=this.value">
+                        <option value="../../portfolio/hybrid-identity-solution.html">Português</option>
+                        <option value="hybrid-identity-solution.html" selected>English</option>
+                        <option value="../../es/portfolio/hybrid-identity-solution.html">Español</option>
+                    </select>
+                </div>
+            </div>
+            <button id="mobile-menu-btn" aria-label="Toggle mobile menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Project Hero -->
+        <section class="project-hero">
+            <div class="container">
+                <div class="portfolio-tags mb-3" style="justify-content: center;">
+                    <span class="tag" style="background: rgba(255,255,255,0.2); color: white;">Azure AD</span>
+                    <span class="tag" style="background: rgba(255,255,255,0.2); color: white;">Identity</span>
+                    <span class="tag" style="background: rgba(255,255,255,0.2); color: white;">Hybrid</span>
+                </div>
+                <h1>Hybrid Identity Solution</h1>
+                <p>Hybrid identity implementation with Azure AD Connect, SSO, MFA and Conditional Access for multinational corporate environment.</p>
+            </div>
+        </section>
+
+        <!-- Project Details -->
+        <section>
+            <div class="container">
+                <div class="project-details">
+                    <div class="detail-box">
+                        <h3>🏢 Client</h3>
+                        <p>Manufacturing Multinational</p>
+                        <p>2,000+ employees</p>
+                        <p>5 countries</p>
+                    </div>
+                    <div class="detail-box">
+                        <h3>📅 Duration</h3>
+                        <p>6 months</p>
+                        <p>2024</p>
+                    </div>
+                    <div class="detail-box">
+                        <h3>🛠️ Technologies</h3>
+                        <ul>
+                            <li>Azure AD / Entra ID</li>
+                            <li>Azure AD Connect</li>
+                            <li>Conditional Access</li>
+                            <li>MFA / Passwordless</li>
+                        </ul>
+                    </div>
+                    <div class="detail-box">
+                        <h3>📊 Results</h3>
+                        <ul>
+                            <li>SSO for 150+ apps</li>
+                            <li>100% MFA adoption</li>
+                            <li>-80% password tickets</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Content -->
+        <section>
+            <div class="container-narrow">
+                <div class="project-section">
+                    <h2>The Challenge</h2>
+                    <p>
+                        The company operated with multiple Active Directory forests in different countries, 
+                        resulting in identity silos, fragmented user experience and security risks.
+                        Employees needed to remember multiple passwords and there was no centralized visibility 
+                        over access and suspicious activities.
+                    </p>
+                    <p>
+                        Additionally, SaaS application adoption was growing rapidly, but without an SSO system, 
+                        each new application meant one more credential to manage. The help desk 
+                        was overwhelmed with password reset tickets.
+                    </p>
+                </div>
+
+                <div class="project-section">
+                    <h2>The Solution</h2>
+                    <p>
+                        I designed and implemented a unified hybrid identity solution using Microsoft Entra ID 
+                        (Azure AD) as the central identity hub, maintaining integration with on-premises Active Directory.
+                    </p>
+                    
+                    <h3>Phase 1: Assessment and Design</h3>
+                    <ul>
+                        <li>Mapping of all AD forests and domains</li>
+                        <li>Application inventory and authentication methods</li>
+                        <li>Synchronization architecture design</li>
+                        <li>UPN suffix strategy definition</li>
+                    </ul>
+
+                    <h3>Phase 2: Azure AD Connect</h3>
+                    <ul>
+                        <li>High availability Azure AD Connect implementation</li>
+                        <li>Password Hash Sync + Seamless SSO configuration</li>
+                        <li>Synchronization filters by OU and group</li>
+                        <li>Azure AD Connect Health for monitoring</li>
+                    </ul>
+
+                    <h3>Phase 3: Identity Security</h3>
+                    <ul>
+                        <li>MFA rollout for all users</li>
+                        <li>Risk-based Conditional Access policies</li>
+                        <li>Identity Protection for threat detection</li>
+                        <li>Privileged Identity Management for admins</li>
+                    </ul>
+
+                    <h3>Phase 4: Single Sign-On</h3>
+                    <ul>
+                        <li>Integration of 150+ SaaS applications with SAML/OIDC</li>
+                        <li>Enterprise Applications configuration</li>
+                        <li>My Apps portal for users</li>
+                        <li>Automatic provisioning (SCIM) for critical apps</li>
+                    </ul>
+
+                    <h3>Phase 5: Passwordless</h3>
+                    <ul>
+                        <li>Windows Hello for Business</li>
+                        <li>Microsoft Authenticator app</li>
+                        <li>FIDO2 security keys for admins</li>
+                        <li>Self-Service Password Reset (SSPR)</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2>Results Achieved</h2>
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <div class="card-icon">🔑</div>
+                            <h3 class="card-title">Single Sign-On</h3>
+                            <p class="card-text">150+ applications integrated with SSO, eliminating password fatigue and improving productivity.</p>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon">🛡️</div>
+                            <h3 class="card-title">100% MFA</h3>
+                            <p class="card-text">All 2,000+ users protected with MFA, blocking 99.9% of credential stuffing attacks.</p>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon">📞</div>
+                            <h3 class="card-title">-80% Tickets</h3>
+                            <p class="card-text">80% reduction in password reset tickets with SSPR, freeing up the help desk.</p>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon">😊</div>
+                            <h3 class="card-title">User Experience</h3>
+                            <p class="card-text">User satisfaction NPS rose from 45 to 78 after implementation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2>Technologies Used</h2>
+                    <div class="portfolio-tags">
+                        <span class="tag primary">Microsoft Entra ID</span>
+                        <span class="tag primary">Azure AD Connect</span>
+                        <span class="tag">Conditional Access</span>
+                        <span class="tag">MFA</span>
+                        <span class="tag">SAML/OIDC</span>
+                        <span class="tag">Windows Hello</span>
+                        <span class="tag">FIDO2</span>
+                        <span class="tag">Identity Protection</span>
+                        <span class="tag">PIM</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="cta">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">Need to Unify Your Identity?</h2>
+                    <p class="section-subtitle">
+                        Let's discuss how to implement a modern hybrid identity solution for your organization.
+                    </p>
+                    <a href="../contact.html" class="btn btn-primary">Get in Touch</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Back to Portfolio -->
+        <section>
+            <div class="container text-center">
+                <a href="../portfolio.html" class="btn btn-outline">← Back to Portfolio</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Luís Otoni. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>

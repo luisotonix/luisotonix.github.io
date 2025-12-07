@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Reduce Azure Costs: Complete Guide - Luís Otoni</title>
+    <meta name="description" content="Practical strategies to optimize Azure costs without compromising performance. Reserved Instances, sizing, automation and more.">
+    <meta name="keywords" content="Azure Cost, FinOps, Cloud Optimization, Reserved Instances, Azure Advisor, Cost Management">
+    <meta name="author" content="Luís Otoni">
+    <link rel="canonical" href="https://luisotonix.github.io/en/blog/azure-cost-optimization.html">
+    
+    <!-- Hreflang Tags -->
+    <link rel="alternate" hreflang="pt-BR" href="https://luisotonix.github.io/blog/azure-cost-optimization.html" />
+    <link rel="alternate" hreflang="en" href="https://luisotonix.github.io/en/blog/azure-cost-optimization.html" />
+    <link rel="alternate" hreflang="es" href="https://luisotonix.github.io/es/blog/azure-cost-optimization.html" />
+    <link rel="alternate" hreflang="x-default" href="https://luisotonix.github.io/blog/azure-cost-optimization.html" />
+    
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../index.html" class="logo">⚡ Luís Otoni</a>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../portfolio.html">Portfolio</a></li>
+                    <li><a href="../services.html">Services</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-controls">
+                    <button id="theme-toggle" aria-label="Toggle theme"><span id="theme-icon">🌙</span></button>
+                    <select id="language-selector" aria-label="Select language" onchange="window.location.href=this.value">
+                        <option value="../../blog/azure-cost-optimization.html">Português</option>
+                        <option value="azure-cost-optimization.html" selected>English</option>
+                        <option value="../../es/blog/azure-cost-optimization.html">Español</option>
+                    </select>
+                </div>
+            </div>
+            <button id="mobile-menu-btn" aria-label="Toggle mobile menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Article Header -->
+        <section class="article-header">
+            <div class="container-narrow">
+                <div class="portfolio-tags mb-3" style="justify-content: center;">
+                    <span class="tag primary">Azure</span>
+                    <span class="tag">FinOps</span>
+                    <span class="tag">Optimization</span>
+                </div>
+                <h1 class="article-title">How to Reduce Azure Costs: Complete Guide</h1>
+                <div class="article-meta">
+                    <span>👤 Luís Otoni</span>
+                    <span>📅 November 10, 2025</span>
+                    <span>⏱️ 12 min read</span>
+                    <span>📁 Azure</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Article Content -->
+        <article class="article-content">
+            <p>
+                One of the biggest challenges for organizations adopting cloud is cost control. 
+                The ease of provisioning resources can quickly lead to uncontrolled spending if there's no 
+                proper governance. In this guide, I share practical strategies I've applied 
+                to reduce Azure costs by up to 40% without impacting performance.
+            </p>
+
+            <h2>1. Understand Your Current Spending</h2>
+            <p>
+                Before optimizing, you need to understand where you're spending. Azure offers excellent 
+                native tools for this.
+            </p>
+
+            <h3>Azure Cost Management + Billing</h3>
+            <ul>
+                <li><strong>Cost Analysis:</strong> Visualize costs by service, resource group, tag or period</li>
+                <li><strong>Budgets:</strong> Configure alerts when spending reaches defined thresholds</li>
+                <li><strong>Cost Alerts:</strong> Automatic notifications about cost anomalies</li>
+                <li><strong>Exports:</strong> Export data for custom analysis in Power BI</li>
+            </ul>
+
+            <h3>Tags Are Essential</h3>
+            <p>
+                Implement a consistent tagging strategy. I recommend at minimum:
+            </p>
+            <ul>
+                <li><code>Environment</code>: prod, dev, test, staging</li>
+                <li><code>CostCenter</code>: responsible cost center</li>
+                <li><code>Owner</code>: resource owner</li>
+                <li><code>Project</code>: project or application</li>
+                <li><code>AutoShutdown</code>: if the resource can be turned off after hours</li>
+            </ul>
+
+            <h2>2. VM Right-Sizing</h2>
+            <p>
+                Studies show that 30-40% of VMs in cloud are oversized. 
+                Identifying and correcting this can generate significant savings.
+            </p>
+
+            <h3>Azure Advisor Recommendations</h3>
+            <p>
+                Azure Advisor analyzes your environment and suggests VMs that can be resized. 
+                Regularly check the "Cost" section of Advisor.
+            </p>
+
+            <h3>Metrics to Analyze</h3>
+            <ul>
+                <li><strong>CPU:</strong> Average below 20%? Consider downsizing</li>
+                <li><strong>Memory:</strong> Consistently low utilization?</li>
+                <li><strong>Disk:</strong> IOPS much lower than provisioned?</li>
+                <li><strong>Network:</strong> Underutilized bandwidth?</li>
+            </ul>
+
+            <h2>3. Reserved Instances and Savings Plans</h2>
+            <p>
+                This is often the biggest savings opportunity - up to 72% discount 
+                compared to pay-as-you-go.
+            </p>
+
+            <h3>Reserved Instances (RI)</h3>
+            <ul>
+                <li>1 or 3-year commitment for specific VMs</li>
+                <li>40-72% discount depending on term</li>
+                <li>Ideal for predictable, stable workloads</li>
+                <li>Instance size flexibility within the same family</li>
+            </ul>
+
+            <h3>Azure Savings Plans</h3>
+            <ul>
+                <li>More flexible than RIs - hourly spending commitment</li>
+                <li>Automatically applies to eligible compute</li>
+                <li>Similar discount to RIs</li>
+                <li>Ideal when there's variation in SKUs used</li>
+            </ul>
+
+            <h2>4. Cost Automation</h2>
+            <p>
+                Automate resource management to avoid waste.
+            </p>
+
+            <h3>VM Auto-Shutdown</h3>
+            <p>
+                Configure automatic shutdown for dev/test VMs outside business hours.
+                Potential savings: 65% (if off 16h/day + weekends).
+            </p>
+
+            <h3>Azure Automation Runbooks</h3>
+            <p>
+                Create runbooks for tasks like:
+            </p>
+            <ul>
+                <li>Start/stop VMs at specific times</li>
+                <li>Scale down App Services outside peak hours</li>
+                <li>Delete orphan resources (unattached disks, public IPs)</li>
+                <li>Notify about underutilized resources</li>
+            </ul>
+
+            <h2>5. Storage Optimization</h2>
+            <p>
+                Storage is often underestimated but can represent a significant portion of the bill.
+            </p>
+
+            <h3>Storage Tiers</h3>
+            <ul>
+                <li><strong>Hot:</strong> Frequently accessed data</li>
+                <li><strong>Cool:</strong> Occasionally accessed data (minimum 30 days) - 50% cheaper</li>
+                <li><strong>Archive:</strong> Rarely accessed data (minimum 180 days) - 90% cheaper</li>
+            </ul>
+
+            <h2>6. Quick Wins Today</h2>
+            <p>
+                Actions you can take today:
+            </p>
+            <ul>
+                <li>✅ Enable Azure Advisor and review cost recommendations</li>
+                <li>✅ Configure budgets and alerts in Cost Management</li>
+                <li>✅ Identify and delete orphan resources</li>
+                <li>✅ Configure auto-shutdown on dev/test VMs</li>
+                <li>✅ Review VMs with low CPU utilization</li>
+                <li>✅ Check Reserved Instances opportunities</li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>
+                Azure cost optimization is a combination of visibility (knowing where you spend), 
+                technical optimization (right-sizing, storage tiers) and financial commitments (RIs, Savings Plans).
+            </p>
+            <p>
+                Remember: the goal is not just to reduce costs, but to optimize the value obtained from every 
+                dollar invested in cloud.
+            </p>
+        </article>
+
+        <!-- Share Buttons -->
+        <section>
+            <div class="container-narrow">
+                <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--text-primary);">
+                    Share this article
+                </h3>
+                <div class="share-buttons">
+                    <button class="share-btn" data-platform="twitter">🐦 Twitter</button>
+                    <button class="share-btn" data-platform="linkedin">💼 LinkedIn</button>
+                    <button class="share-btn" data-platform="facebook">👍 Facebook</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Back to Blog -->
+        <section>
+            <div class="container text-center">
+                <a href="../blog.html" class="btn btn-outline">← Back to Blog</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Luís Otoni. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>

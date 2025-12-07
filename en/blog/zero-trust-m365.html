@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementing Zero Trust with Microsoft 365 - Luís Otoni</title>
+    <meta name="description" content="Complete guide to implementing the Zero Trust model using Microsoft 365 tools. Conditional Access, MFA, Identity Protection and more.">
+    <meta name="keywords" content="Zero Trust, Microsoft 365, Conditional Access, MFA, Identity Protection, Security">
+    <meta name="author" content="Luís Otoni">
+    <link rel="canonical" href="https://luisotonix.github.io/en/blog/zero-trust-m365.html">
+    
+    <link rel="alternate" hreflang="pt-BR" href="https://luisotonix.github.io/blog/zero-trust-m365.html" />
+    <link rel="alternate" hreflang="en" href="https://luisotonix.github.io/en/blog/zero-trust-m365.html" />
+    <link rel="alternate" hreflang="es" href="https://luisotonix.github.io/es/blog/zero-trust-m365.html" />
+    <link rel="alternate" hreflang="x-default" href="https://luisotonix.github.io/blog/zero-trust-m365.html" />
+    
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../index.html" class="logo">⚡ Luís Otoni</a>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../portfolio.html">Portfolio</a></li>
+                    <li><a href="../services.html">Services</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-controls">
+                    <button id="theme-toggle" aria-label="Toggle theme"><span id="theme-icon">🌙</span></button>
+                    <select id="language-selector" aria-label="Select language" onchange="window.location.href=this.value">
+                        <option value="../../blog/zero-trust-m365.html">Português</option>
+                        <option value="zero-trust-m365.html" selected>English</option>
+                        <option value="../../es/blog/zero-trust-m365.html">Español</option>
+                    </select>
+                </div>
+            </div>
+            <button id="mobile-menu-btn" aria-label="Toggle mobile menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="article-header">
+            <div class="container-narrow">
+                <div class="portfolio-tags mb-3" style="justify-content: center;">
+                    <span class="tag primary">Microsoft 365</span>
+                    <span class="tag">Zero Trust</span>
+                    <span class="tag">Security</span>
+                </div>
+                <h1 class="article-title">Implementing Zero Trust with Microsoft 365</h1>
+                <div class="article-meta">
+                    <span>👤 Luís Otoni</span>
+                    <span>📅 November 5, 2025</span>
+                    <span>⏱️ 15 min read</span>
+                    <span>📁 Security</span>
+                </div>
+            </div>
+        </section>
+
+        <article class="article-content">
+            <p>
+                The Zero Trust model is a security approach based on the principle "never trust, always verify". 
+                In a world where the traditional security perimeter no longer exists - with remote work, 
+                personal devices and cloud applications - Zero Trust has become essential.
+            </p>
+
+            <h2>The 3 Principles of Zero Trust</h2>
+            <ul>
+                <li><strong>Verify explicitly:</strong> Always authenticate and authorize based on all available data</li>
+                <li><strong>Use least privilege access:</strong> Limit user access with Just-In-Time and Just-Enough-Access</li>
+                <li><strong>Assume breach:</strong> Minimize blast radius and segment access. Verify end-to-end encryption</li>
+            </ul>
+
+            <h2>1. Identity: The Zero Trust Foundation</h2>
+            <p>
+                In the Zero Trust model, identity is the new perimeter. Start by strengthening authentication.
+            </p>
+
+            <h3>Multi-Factor Authentication (MFA)</h3>
+            <p>MFA is mandatory. Microsoft Entra ID offers several options:</p>
+            <ul>
+                <li><strong>Microsoft Authenticator:</strong> Push notifications, OTP, passwordless</li>
+                <li><strong>FIDO2 Security Keys:</strong> Physical keys for maximum security</li>
+                <li><strong>Windows Hello:</strong> Windows-integrated biometrics</li>
+            </ul>
+
+            <h2>2. Conditional Access: The Zero Trust Brain</h2>
+            <p>
+                Conditional Access is where access decisions happen in real-time, based on multiple signals.
+            </p>
+
+            <h3>Essential Policies</h3>
+            <ul>
+                <li><strong>Require MFA for All Users</strong></li>
+                <li><strong>Block Legacy Authentication</strong></li>
+                <li><strong>Require Compliant Device for Sensitive Apps</strong></li>
+                <li><strong>Risk-Based Conditional Access</strong></li>
+            </ul>
+
+            <h2>3. Identity Protection</h2>
+            <p>
+                Microsoft Entra ID Protection uses machine learning to detect anomalous behaviors.
+            </p>
+
+            <h2>4. Devices: Intune and Compliance</h2>
+            <p>
+                Zero Trust requires you to know and control devices accessing your resources.
+            </p>
+
+            <h2>Implementation Roadmap</h2>
+            
+            <h3>Phase 1: Quick Wins (Weeks 1-2)</h3>
+            <ul>
+                <li>✅ Enable Security Defaults (if no CA configured)</li>
+                <li>✅ Force MFA for all administrators</li>
+                <li>✅ Block legacy authentication</li>
+                <li>✅ Create break-glass accounts</li>
+            </ul>
+
+            <h3>Phase 2: Identity (Weeks 3-6)</h3>
+            <ul>
+                <li>✅ Implement complete Conditional Access</li>
+                <li>✅ Configure Identity Protection</li>
+                <li>✅ Start passwordless rollout</li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>
+                Implementing Zero Trust is a journey, not a one-time project. Microsoft 365 provides all 
+                the necessary tools - Conditional Access, Identity Protection, Intune, Information Protection 
+                and Defender for Cloud Apps work together to create a robust security architecture.
+            </p>
+        </article>
+
+        <section>
+            <div class="container-narrow">
+                <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--text-primary);">Share this article</h3>
+                <div class="share-buttons">
+                    <button class="share-btn" data-platform="twitter">🐦 Twitter</button>
+                    <button class="share-btn" data-platform="linkedin">💼 LinkedIn</button>
+                    <button class="share-btn" data-platform="facebook">👍 Facebook</button>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container text-center">
+                <a href="../blog.html" class="btn btn-outline">← Back to Blog</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Luís Otoni. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>
