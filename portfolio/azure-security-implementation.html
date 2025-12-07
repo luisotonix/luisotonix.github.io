@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementação de Segurança Azure - Luís Otoni</title>
+    <meta name="description" content="Projeto de implementação completa de Azure Security Center, Sentinel, políticas de compliance e governance framework.">
+    <link rel="canonical" href="https://luisotonix.github.io/portfolio/azure-security-implementation.html">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Luís Otoni</div>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="../index.html" data-i18n="nav_home">Início</a></li>
+                    <li><a href="../about.html" data-i18n="nav_about">Sobre</a></li>
+                    <li><a href="../portfolio.html" data-i18n="nav_portfolio">Portfólio</a></li>
+                    <li><a href="../services.html" data-i18n="nav_services">Serviços</a></li>
+                    <li><a href="../blog.html" data-i18n="nav_blog">Blog</a></li>
+                    <li><a href="../contact.html" data-i18n="nav_contact">Contato</a></li>
+                </ul>
+                <div class="nav-controls">
+                    <button id="theme-toggle" aria-label="Toggle theme"><span id="theme-icon">🌙</span></button>
+                    <select id="language-selector" aria-label="Select language">
+                        <option value="pt">🇧🇷 PT</option>
+                        <option value="en">🇺🇸 EN</option>
+                        <option value="es">🇪🇸 ES</option>
+                    </select>
+                </div>
+            </div>
+            <button id="mobile-menu-btn" aria-label="Toggle mobile menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Project Hero -->
+        <section class="project-hero">
+            <div class="container">
+                <h1>🔒 Implementação de Segurança Azure</h1>
+                <p>Framework completo de segurança e compliance para ambientes Microsoft Azure</p>
+            </div>
+        </section>
+
+        <!-- Project Overview -->
+        <section>
+            <div class="container">
+                <div class="project-details">
+                    <div class="detail-box">
+                        <h3>🏢 Cliente</h3>
+                        <p>Empresa do setor de saúde com requisitos LGPD</p>
+                    </div>
+                    <div class="detail-box">
+                        <h3>📅 Duração</h3>
+                        <p>4 meses (Assessment + Implementação)</p>
+                    </div>
+                    <div class="detail-box">
+                        <h3>🔒 Secure Score</h3>
+                        <p>De 35% para 92% após implementação</p>
+                    </div>
+                    <div class="detail-box">
+                        <h3>📊 Compliance</h3>
+                        <p>100% conformidade com LGPD e ISO 27001</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technologies -->
+        <section>
+            <div class="container-narrow">
+                <h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--text-primary);">
+                    Tecnologias Utilizadas
+                </h2>
+                <div class="portfolio-tags">
+                    <span class="tag primary">Microsoft Defender for Cloud</span>
+                    <span class="tag primary">Microsoft Sentinel</span>
+                    <span class="tag primary">Azure Policy</span>
+                    <span class="tag primary">Azure Key Vault</span>
+                    <span class="tag primary">Azure Firewall</span>
+                    <span class="tag primary">Azure DDoS Protection</span>
+                    <span class="tag">Log Analytics</span>
+                    <span class="tag">Network Security Groups</span>
+                    <span class="tag">Private Endpoints</span>
+                    <span class="tag">Azure Blueprints</span>
+                    <span class="tag">Compliance Manager</span>
+                    <span class="tag">RBAC</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem -->
+        <section class="project-section">
+            <div class="container-narrow">
+                <h2>🎯 O Desafio</h2>
+                <p>
+                    A empresa operava no setor de saúde e enfrentava desafios críticos de segurança e compliance:
+                </p>
+                <ul class="service-features">
+                    <li>Ambiente Azure sem governance adequada</li>
+                    <li>Recursos expostos à internet sem proteção</li>
+                    <li>Falta de visibilidade sobre postura de segurança</li>
+                    <li>Necessidade de compliance com LGPD para dados de pacientes</li>
+                    <li>Requisitos de certificação ISO 27001</li>
+                    <li>Ausência de monitoramento de segurança</li>
+                    <li>Credenciais hardcoded em aplicações</li>
+                    <li>Sem processo de resposta a incidentes</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Solution -->
+        <section class="project-section">
+            <div class="container-narrow">
+                <h2>💡 A Solução</h2>
+
+                <div class="card mt-3">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Fase 1: Assessment e Gap Analysis</h3>
+                    <ul class="service-features">
+                        <li>Análise completa do ambiente Azure existente</li>
+                        <li>Avaliação de compliance com frameworks (LGPD, ISO 27001, CIS)</li>
+                        <li>Identificação de vulnerabilidades e riscos</li>
+                        <li>Mapeamento de dados sensíveis</li>
+                        <li>Definição de prioridades e roadmap de remediação</li>
+                        <li>Baseline de Secure Score inicial (35%)</li>
+                    </ul>
+                </div>
+
+                <div class="card mt-3">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Fase 2: Governance e Policies</h3>
+                    <ul class="service-features">
+                        <li>Implementação de Management Groups hierárquicos</li>
+                        <li>Criação de Azure Policies customizadas para compliance</li>
+                        <li>Deploy de Azure Blueprints para padronização</li>
+                        <li>Configuração de RBAC com princípio de menor privilégio</li>
+                        <li>Implementação de resource locks para proteção</li>
+                        <li>Setup de tagging obrigatório para classificação</li>
+                    </ul>
+                </div>
+
+                <div class="card mt-3">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Fase 3: Segurança de Rede</h3>
+                    <ul class="service-features">
+                        <li>Redesign de arquitetura de rede com hub-spoke</li>
+                        <li>Implementação de Azure Firewall centralizado</li>
+                        <li>Configuração de Network Security Groups restritivos</li>
+                        <li>Deploy de Private Endpoints para serviços PaaS</li>
+                        <li>Ativação de Azure DDoS Protection Standard</li>
+                        <li>Implementação de WAF no Application Gateway</li>
+                    </ul>
+                </div>
+
+                <div class="card mt-3">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Fase 4: Proteção de Dados</h3>
+                    <ul class="service-features">
+                        <li>Migração de segredos para Azure Key Vault</li>
+                        <li>Implementação de criptografia em repouso e trânsito</li>
+                        <li>Configuração de customer-managed keys (CMK)</li>
+                        <li>Setup de Azure Purview para data governance</li>
+                        <li>Classificação automática de dados sensíveis</li>
+                        <li>Políticas de retenção e lifecycle management</li>
+                    </ul>
+                </div>
+
+                <div class="card mt-3">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Fase 5: Detecção e Resposta</h3>
+                    <ul class="service-features">
+                        <li>Ativação de Microsoft Defender for Cloud (all workloads)</li>
+                        <li>Deploy de Microsoft Sentinel como SIEM</li>
+                        <li>Criação de analytics rules para detecção</li>
+                        <li>Configuração de playbooks para automação</li>
+                        <li>Integração de logs de todas as fontes</li>
+                        <li>Setup de hunting queries e workbooks</li>
+                    </ul>
+                </div>
+
+                <div class="card mt-3">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Fase 6: Compliance e Documentação</h3>
+                    <ul class="service-features">
+                        <li>Mapeamento de controles LGPD no Compliance Manager</li>
+                        <li>Evidências de compliance para auditoria ISO 27001</li>
+                        <li>Criação de runbooks de resposta a incidentes</li>
+                        <li>Documentação completa de arquitetura</li>
+                        <li>Treinamento da equipe de segurança</li>
+                        <li>Processos de revisão periódica</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results -->
+        <section class="project-section">
+            <div class="container-narrow">
+                <h2>📊 Resultados Alcançados</h2>
+                <div class="grid grid-2 mt-3">
+                    <div class="card text-center">
+                        <div class="card-icon">🔒</div>
+                        <h3 class="card-title">92%</h3>
+                        <p class="card-text">Secure Score (de 35%)</p>
+                    </div>
+                    <div class="card text-center">
+                        <div class="card-icon">✅</div>
+                        <h3 class="card-title">100%</h3>
+                        <p class="card-text">Compliance LGPD</p>
+                    </div>
+                    <div class="card text-center">
+                        <div class="card-icon">⚡</div>
+                        <h3 class="card-title">15 min</h3>
+                        <p class="card-text">Mean Time to Detect (MTTD)</p>
+                    </div>
+                    <div class="card text-center">
+                        <div class="card-icon">🛡️</div>
+                        <h3 class="card-title">0</h3>
+                        <p class="card-text">Incidentes de segurança após go-live</p>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Benefícios Entregues</h3>
+                    <ul class="service-features">
+                        <li>Certificação ISO 27001 obtida com sucesso</li>
+                        <li>Visibilidade completa da postura de segurança</li>
+                        <li>Resposta automatizada a ameaças comuns</li>
+                        <li>Eliminação de exposição pública de recursos</li>
+                        <li>Segregação de dados de pacientes (LGPD)</li>
+                        <li>Auditoria contínua e automática de compliance</li>
+                        <li>Redução de 80% no tempo de investigação de incidentes</li>
+                        <li>Equipe capacitada para operar ferramentas de segurança</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Client Testimonial -->
+        <section>
+            <div class="container-narrow">
+                <div class="card" style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: var(--text-inverse); border: none;">
+                    <h3 style="color: var(--text-inverse); margin-bottom: 1rem;">💬 Depoimento do Cliente</h3>
+                    <p style="font-size: 1.1rem; font-style: italic; margin-bottom: 1rem;">
+                        "A implementação de segurança foi fundamental para obtermos a certificação ISO 27001 e 
+                        garantirmos compliance com LGPD. O Luís trouxe não apenas expertise técnica, mas também 
+                        uma abordagem pragmática que priorizou os riscos mais críticos. Hoje temos confiança 
+                        na segurança do nosso ambiente Azure."
+                    </p>
+                    <p style="font-weight: bold;">
+                        — CISO, Empresa do Setor de Saúde
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Back to Portfolio -->
+        <section>
+            <div class="container text-center">
+                <a href="../portfolio.html" class="btn btn-outline" data-i18n="back_portfolio">← Voltar ao Portfólio</a>
+                <a href="../contact.html" class="btn btn-primary" data-i18n="hero_contact">Entre em Contato</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Luís Otoni. <span data-i18n="footer_rights">Todos os direitos reservados</span>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

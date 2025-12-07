@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Security Best Practices - Luís Otoni</title>
+    <meta name="description" content="Discover Microsoft's recommended best practices for keeping your Azure environment secure and compliant with regulations.">
+    <meta name="keywords" content="Azure Security, Best Practices, Cloud Security, Azure Security Center, Compliance">
+    <meta name="author" content="Luís Otoni">
+    
+    <link rel="canonical" href="https://luisotonix.github.io/en/blog/azure-security-best-practices.html">
+    
+    <!-- Hreflang Tags -->
+    <link rel="alternate" hreflang="pt-BR" href="https://luisotonix.github.io/blog/azure-security-best-practices.html" />
+    <link rel="alternate" hreflang="en" href="https://luisotonix.github.io/en/blog/azure-security-best-practices.html" />
+    <link rel="alternate" hreflang="es" href="https://luisotonix.github.io/es/blog/azure-security-best-practices.html" />
+    <link rel="alternate" hreflang="x-default" href="https://luisotonix.github.io/blog/azure-security-best-practices.html" />
+    
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Luís Otoni</div>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../portfolio.html">Portfolio</a></li>
+                    <li><a href="../services.html">Services</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-controls">
+                    <button id="theme-toggle" aria-label="Toggle theme"><span id="theme-icon">🌙</span></button>
+                    <select id="language-selector" aria-label="Select language" onchange="window.location.href=this.value">
+                        <option value="../../blog/azure-security-best-practices.html">🇧🇷 PT</option>
+                        <option value="azure-security-best-practices.html" selected>🇺🇸 EN</option>
+                        <option value="../../es/blog/azure-security-best-practices.html">🇪🇸 ES</option>
+                    </select>
+                </div>
+            </div>
+            <button id="mobile-menu-btn" aria-label="Toggle mobile menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Article Header -->
+        <section class="article-header">
+            <div class="container-narrow">
+                <div class="portfolio-tags mb-3" style="justify-content: center;">
+                    <span class="tag primary">Azure</span>
+                    <span class="tag">Security</span>
+                    <span class="tag">Best Practices</span>
+                </div>
+                <h1 class="article-title">Azure Security Best Practices</h1>
+                <div class="article-meta">
+                    <span>👤 Luís Otoni</span>
+                    <span>📅 November 25, 2025</span>
+                    <span>⏱️ 8 min read</span>
+                    <span>📁 Azure</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Article Content -->
+        <article class="article-content">
+            <p>
+                Security in Azure is a shared responsibility between Microsoft and customers.
+                While Microsoft ensures the security of the cloud infrastructure, customers are responsible
+                for protecting their data, applications, and resources. In this article, I'll share the best
+                practices I've learned over years of implementing secure solutions in Azure.
+            </p>
+
+            <h2>1. Implement the Zero Trust Model</h2>
+            <p>
+                The Zero Trust model is based on the principle "never trust, always verify". This means that
+                no user or device should have automatic access to resources, regardless of whether they are
+                inside or outside the corporate network.
+            </p>
+            <ul>
+                <li><strong>Multi-Factor Authentication (MFA):</strong> Enable MFA for all users, especially administrators</li>
+                <li><strong>Conditional Access:</strong> Implement policies based on risk, location, and device</li>
+                <li><strong>Privileged Identity Management (PIM):</strong> Use just-in-time access for elevated privileges</li>
+            </ul>
+
+            <h2>2. Use Azure Security Center</h2>
+            <p>
+                Azure Security Center (now part of Microsoft Defender for Cloud) is essential for maintaining
+                visibility into your environment's security posture.
+            </p>
+            <ul>
+                <li>Enable the Standard tier for advanced threat protection</li>
+                <li>Regularly review the Secure Score and implement recommendations</li>
+                <li>Configure security alerts for real-time notifications</li>
+                <li>Use workload protections for VMs, SQL, Storage, etc.</li>
+            </ul>
+
+            <h2>3. Identity and Access Management</h2>
+            <p>
+                Azure Active Directory is the heart of security in Azure. Configuring it correctly is crucial.
+            </p>
+
+            <h3>Principle of Least Privilege</h3>
+            <p>
+                Grant only the minimum permissions needed for each user or application to perform their tasks.
+            </p>
+            <ul>
+                <li>Use RBAC (Role-Based Access Control) instead of subscription-level permissions</li>
+                <li>Create custom roles when built-in roles are too permissive</li>
+                <li>Regularly review assigned permissions</li>
+            </ul>
+
+            <h3>Credential Management</h3>
+            <ul>
+                <li>Use Managed Identities for applications whenever possible</li>
+                <li>Store secrets, certificates, and keys in Azure Key Vault</li>
+                <li>Implement automatic secret rotation</li>
+                <li>Never store credentials in code or configurations</li>
+            </ul>
+
+            <h2>4. Network Security</h2>
+            <p>
+                Protect your Azure network with multiple layers of defense.
+            </p>
+
+            <h3>Network Security Groups (NSGs)</h3>
+            <ul>
+                <li>Implement NSGs on all subnets</li>
+                <li>Use specific rules instead of allowing all traffic</li>
+                <li>Document the purpose of each rule</li>
+                <li>Review and audit NSGs regularly</li>
+            </ul>
+
+            <h3>Azure Firewall and DDoS Protection</h3>
+            <ul>
+                <li>Use Azure Firewall for north-south traffic</li>
+                <li>Enable Azure DDoS Protection Standard for critical resources</li>
+                <li>Implement Application Gateway with WAF for web applications</li>
+            </ul>
+
+            <h3>Private Endpoints</h3>
+            <p>
+                Use Private Endpoints to access PaaS services through private IPs, eliminating
+                exposure to the public internet.
+            </p>
+
+            <h2>5. Data Protection</h2>
+            <p>
+                Your data is your most valuable asset. Protect it appropriately.
+            </p>
+
+            <h3>Encryption</h3>
+            <ul>
+                <li><strong>At rest:</strong> Enable encryption on Storage Accounts, SQL Databases, VMs</li>
+                <li><strong>In transit:</strong> Force HTTPS/TLS for all communications</li>
+                <li><strong>Customer-managed keys:</strong> Use for additional control</li>
+            </ul>
+
+            <h3>Backup and Disaster Recovery</h3>
+            <ul>
+                <li>Configure Azure Backup for critical VMs and databases</li>
+                <li>Implement Azure Site Recovery for DR</li>
+                <li>Test your recovery plans regularly</li>
+                <li>Store backups in different regions</li>
+            </ul>
+
+            <h2>6. Monitoring and Auditing</h2>
+            <p>
+                You can't protect what you can't see. Proper monitoring is essential.
+            </p>
+
+            <h3>Azure Monitor and Log Analytics</h3>
+            <ul>
+                <li>Centralize logs from all resources in Log Analytics Workspace</li>
+                <li>Configure diagnostic settings for critical resources</li>
+                <li>Create alerts for suspicious activities</li>
+                <li>Use Azure Sentinel for advanced SIEM</li>
+            </ul>
+
+            <h3>Activity Logs and Audit Logs</h3>
+            <ul>
+                <li>Monitor Activity Logs for configuration changes</li>
+                <li>Enable audit logs in Azure AD</li>
+                <li>Configure adequate retention (minimum 90 days)</li>
+                <li>Review logs regularly looking for anomalies</li>
+            </ul>
+
+            <h2>7. Compliance and Governance</h2>
+            <p>
+                Ensure your environment is compliant with regulations and internal policies.
+            </p>
+
+            <h3>Azure Policy</h3>
+            <ul>
+                <li>Implement policies to enforce organizational standards</li>
+                <li>Use built-in policies for common scenarios</li>
+                <li>Create custom policies when necessary</li>
+                <li>Use deny effects to prevent insecure configurations</li>
+            </ul>
+
+            <h3>Azure Blueprints</h3>
+            <ul>
+                <li>Define blueprints for standardized environments</li>
+                <li>Include policies, RBAC, and resource templates</li>
+                <li>Use to ensure consistency across environments</li>
+            </ul>
+
+            <h2>8. Application Security</h2>
+            <p>
+                Protect your applications from development to production.
+            </p>
+            <ul>
+                <li>Integrate security into the CI/CD pipeline</li>
+                <li>Use Azure DevOps security scanning</li>
+                <li>Implement Azure Application Gateway with WAF</li>
+                <li>Configure Azure Front Door for global protection</li>
+                <li>Use container security with Azure Defender for Containers</li>
+            </ul>
+
+            <h2>9. Updates and Patch Management</h2>
+            <p>
+                Keep your resources updated to protect against known vulnerabilities.
+            </p>
+            <ul>
+                <li>Use Azure Update Management for VMs</li>
+                <li>Enable automatic updates when possible</li>
+                <li>Test patches in dev/test environment first</li>
+                <li>Maintain an updated inventory of resources</li>
+            </ul>
+
+            <h2>10. Training and Awareness</h2>
+            <p>
+                Security is everyone's responsibility. Invest in team training.
+            </p>
+            <ul>
+                <li>Train developers in secure coding practices</li>
+                <li>Educate administrators on Azure security features</li>
+                <li>Conduct security incident simulations</li>
+                <li>Keep the team updated with security news</li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>
+                Security in Azure is a continuous process, not a one-time project. The practices mentioned
+                in this article form a solid foundation, but should be adapted to your organization's specific
+                needs. Review and update your security practices regularly, staying informed about new threats
+                and Azure security features.
+            </p>
+            <p>
+                Remember: security is a journey, not a destination. Start by implementing the most
+                critical practices and gradually expand your security posture.
+            </p>
+        </article>
+
+        <!-- Share Buttons -->
+        <section>
+            <div class="container-narrow">
+                <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--text-primary);">
+                    Share this article
+                </h3>
+                <div class="share-buttons">
+                    <button class="share-btn" data-platform="twitter">🐦 Twitter</button>
+                    <button class="share-btn" data-platform="linkedin">💼 LinkedIn</button>
+                    <button class="share-btn" data-platform="facebook">👍 Facebook</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Back to Blog -->
+        <section>
+            <div class="container text-center">
+                <a href="../blog.html" class="btn btn-outline">← Back to Blog</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Luís Otoni. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>

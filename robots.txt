@@ -1,0 +1,14 @@
+# robots.txt for luisotonix.github.io
+# Luís Otoni - System Administrator & Microsoft Specialist
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://luisotonix.github.io/sitemap.xml
+
+# Crawl-delay (optional, for politeness)
+Crawl-delay: 1
+
+# Disallow common non-content paths
+Disallow: /404.html

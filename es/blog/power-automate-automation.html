@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatizando Procesos con Power Automate - Luís Otoni</title>
+    <meta name="description" content="Aprenda a crear flujos de automatización eficientes con Power Automate para ahorrar tiempo y reducir errores manuales.">
+    <meta name="keywords" content="Power Automate, Automatización, Microsoft Flow, Workflows, Power Platform">
+    <meta name="author" content="Luís Otoni">
+    
+    <link rel="canonical" href="https://luisotonix.github.io/es/blog/power-automate-automation.html">
+    
+    <!-- Hreflang Tags -->
+    <link rel="alternate" hreflang="pt-BR" href="https://luisotonix.github.io/blog/power-automate-automation.html" />
+    <link rel="alternate" hreflang="en" href="https://luisotonix.github.io/en/blog/power-automate-automation.html" />
+    <link rel="alternate" hreflang="es" href="https://luisotonix.github.io/es/blog/power-automate-automation.html" />
+    <link rel="alternate" hreflang="x-default" href="https://luisotonix.github.io/blog/power-automate-automation.html" />
+    
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Luís Otoni</div>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../about.html">Acerca</a></li>
+                    <li><a href="../portfolio.html">Portafolio</a></li>
+                    <li><a href="../services.html">Servicios</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../contact.html">Contacto</a></li>
+                </ul>
+                <div class="nav-controls">
+                    <button id="theme-toggle" aria-label="Cambiar tema"><span id="theme-icon">🌙</span></button>
+                    <select id="language-selector" aria-label="Seleccionar idioma" onchange="window.location.href=this.value">
+                        <option value="../../blog/power-automate-automation.html">🇧🇷 PT</option>
+                        <option value="../../en/blog/power-automate-automation.html">🇺🇸 EN</option>
+                        <option value="power-automate-automation.html" selected>🇪🇸 ES</option>
+                    </select>
+                </div>
+            </div>
+            <button id="mobile-menu-btn" aria-label="Abrir menú móvil">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="article-header">
+            <div class="container-narrow">
+                <div class="portfolio-tags mb-3" style="justify-content: center;">
+                    <span class="tag primary">Power Platform</span>
+                    <span class="tag">Power Automate</span>
+                    <span class="tag">Automatización</span>
+                </div>
+                <h1 class="article-title">Automatizando Procesos con Power Automate</h1>
+                <div class="article-meta">
+                    <span>👤 Luís Otoni</span>
+                    <span>📅 15 de Noviembre de 2025</span>
+                    <span>⏱️ 10 min de lectura</span>
+                    <span>📁 Power Platform</span>
+                </div>
+            </div>
+        </section>
+
+        <article class="article-content">
+            <p>
+                Power Automate es la herramienta de automatización de Microsoft que permite crear workflows
+                sin código (o con código mínimo) para automatizar procesos repetitivos. En esta guía
+                práctica, mostraré cómo comenzar con automatizaciones y compartiré ejemplos reales de uso.
+            </p>
+
+            <h2>¿Qué es Power Automate?</h2>
+            <p>
+                Power Automate (anteriormente Microsoft Flow) es una plataforma de automatización que permite
+                conectar aplicaciones y servicios para crear workflows automatizados. Piense en él como un
+                "si esto, entonces aquello" a escala empresarial.
+            </p>
+
+            <h3>Tipos de Flows</h3>
+            <ul>
+                <li><strong>Cloud Flows:</strong> Automatizaciones en la nube basadas en eventos</li>
+                <li><strong>Desktop Flows (RPA):</strong> Automatización de tareas en desktop con UI automation</li>
+                <li><strong>Business Process Flows:</strong> Guías visuales para procesos de negocio</li>
+            </ul>
+
+            <h2>Casos de Uso Comunes</h2>
+            <p>
+                Antes de sumergirnos en el "cómo", veamos algunos ejemplos prácticos donde Power Automate brilla:
+            </p>
+
+            <h3>1. Aprobaciones</h3>
+            <ul>
+                <li>Requisiciones de compra</li>
+                <li>Solicitudes de vacaciones</li>
+                <li>Aprobación de documentos</li>
+                <li>Liberación de presupuestos</li>
+            </ul>
+
+            <h3>2. Notificaciones</h3>
+            <ul>
+                <li>Alertas cuando se crea un nuevo elemento</li>
+                <li>Notificaciones de plazos próximos</li>
+                <li>Resúmenes diarios por email</li>
+                <li>Avisos de cambios en documentos importantes</li>
+            </ul>
+
+            <h3>3. Sincronización de Datos</h3>
+            <ul>
+                <li>SharePoint ↔ SQL Database</li>
+                <li>Excel ↔ Dataverse</li>
+                <li>Forms ↔ SharePoint Lists</li>
+                <li>Dynamics 365 ↔ Sistemas legados</li>
+            </ul>
+
+            <h2>Creando Su Primer Flow</h2>
+            <p>
+                Vamos a crear un flow simple pero útil: notificar al equipo en Teams cuando se agrega un nuevo archivo
+                a una carpeta específica de SharePoint.
+            </p>
+
+            <h3>Paso 1: Acceda a Power Automate</h3>
+            <p>
+                Navegue a <code>make.powerautomate.com</code> e inicie sesión con su cuenta Microsoft 365.
+            </p>
+
+            <h3>Paso 2: Crear un Nuevo Flow</h3>
+            <ol>
+                <li>Haga clic en "Create" en el menú lateral</li>
+                <li>Seleccione "Automated cloud flow"</li>
+                <li>Dé un nombre descriptivo: "Notificar equipo - nuevo archivo SharePoint"</li>
+                <li>Busque y seleccione el trigger: "When a file is created (properties only)" de SharePoint</li>
+            </ol>
+
+            <h3>Paso 3: Configurar el Trigger</h3>
+            <ul>
+                <li><strong>Site Address:</strong> Seleccione su sitio SharePoint</li>
+                <li><strong>Library Name:</strong> Elija la biblioteca de documentos</li>
+                <li><strong>Folder:</strong> Especifique la carpeta (o deje vacío para toda la biblioteca)</li>
+            </ul>
+
+            <h3>Paso 4: Agregar Acción</h3>
+            <ol>
+                <li>Haga clic en "New step"</li>
+                <li>Busque "Teams" y seleccione "Post message in a chat or channel"</li>
+                <li>Configure:
+                    <ul>
+                        <li><strong>Post as:</strong> Flow bot</li>
+                        <li><strong>Post in:</strong> Channel</li>
+                        <li><strong>Team:</strong> Seleccione su equipo</li>
+                        <li><strong>Channel:</strong> Elija el canal</li>
+                        <li><strong>Message:</strong> Use contenido dinámico</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <p>Ejemplo de mensaje:</p>
+            <pre><code>📄 ¡Nuevo archivo en SharePoint!
+
+Nombre: {Name}
+Creado por: {Created By DisplayName}
+Link: {Link to item}
+
+Haga clic en el enlace para ver el archivo.</code></pre>
+
+            <h3>Paso 5: Probar y Guardar</h3>
+            <ol>
+                <li>Haga clic en "Test" en la esquina superior derecha</li>
+                <li>Seleccione "Manually"</li>
+                <li>Suba un archivo de prueba a SharePoint</li>
+                <li>Verifique si la notificación llegó a Teams</li>
+                <li>Guarde el flow</li>
+            </ol>
+
+            <h2>Flows Avanzados: Aprobaciones</h2>
+            <p>
+                Ahora vamos a crear algo más robusto: un sistema de aprobación de gastos.
+            </p>
+
+            <h3>Escenario</h3>
+            <p>
+                Empleado completa Form → Gerente recibe solicitud de aprobación → Si se aprueba,
+                datos van a SharePoint y email se envía a finanzas → Si se rechaza,
+                solicitante recibe feedback.
+            </p>
+
+            <h3>Trigger</h3>
+            <ul>
+                <li><strong>Connector:</strong> Microsoft Forms</li>
+                <li><strong>Trigger:</strong> "When a new response is submitted"</li>
+            </ul>
+
+            <h3>Acciones</h3>
+            <ol>
+                <li><strong>Get response details</strong> (Forms)
+                    <ul>
+                        <li>Captura todas las respuestas del formulario</li>
+                    </ul>
+                </li>
+                <li><strong>Start and wait for an approval</strong> (Approvals)
+                    <ul>
+                        <li>Approval type: Approve/Reject - First to respond</li>
+                        <li>Title: "Aprobación de Gasto - {Responder's Email}"</li>
+                        <li>Assigned to: email del gerente</li>
+                        <li>Details: Incluir valores del form</li>
+                    </ul>
+                </li>
+                <li><strong>Condition</strong>
+                    <ul>
+                        <li>If Outcome = Approve</li>
+                    </ul>
+                </li>
+                <li><strong>Yes branch:</strong>
+                    <ul>
+                        <li>Create item (SharePoint)</li>
+                        <li>Send email (Office 365 Outlook) a finanzas</li>
+                        <li>Send email al solicitante confirmando aprobación</li>
+                    </ul>
+                </li>
+                <li><strong>No branch:</strong>
+                    <ul>
+                        <li>Send email al solicitante con feedback del rechazo</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h2>Best Practices</h2>
+
+            <h3>1. Nomenclatura Clara</h3>
+            <ul>
+                <li>Use nombres descriptivos para flows</li>
+                <li>Renombre acciones para indicar propósito</li>
+                <li>Use prefijos para organización (ej: "FIN - Aprobación de Gasto")</li>
+            </ul>
+
+            <h3>2. Tratamiento de Errores</h3>
+            <ul>
+                <li>Configure "Configure run after" para capturar fallos</li>
+                <li>Agregue notificaciones de error</li>
+                <li>Use scope para agrupar acciones y facilitar error handling</li>
+            </ul>
+
+            <h3>3. Performance</h3>
+            <ul>
+                <li>Use polling triggers con cuidado (consumen ejecuciones)</li>
+                <li>Implemente "Do until" con timeout</li>
+                <li>Evite loops anidados cuando sea posible</li>
+                <li>Use "Apply to each" con parsimonia</li>
+            </ul>
+
+            <h3>4. Seguridad</h3>
+            <ul>
+                <li>Use connections compartidas con cuidado</li>
+                <li>Implemente DLP policies</li>
+                <li>No almacene credenciales en flows</li>
+                <li>Use service accounts para conexiones compartidas</li>
+            </ul>
+
+            <h3>5. Mantenibilidad</h3>
+            <ul>
+                <li>Documente flows complejos</li>
+                <li>Use variables para valores reutilizados</li>
+                <li>Modularice con child flows cuando sea apropiado</li>
+                <li>Mantenga flows simples - divida la complejidad</li>
+            </ul>
+
+            <h2>Desktop Flows (RPA)</h2>
+            <p>
+                Para automatizaciones que involucran aplicaciones desktop o sistemas legados sin APIs,
+                use Desktop Flows.
+            </p>
+
+            <h3>Casos de Uso</h3>
+            <ul>
+                <li>Entrada de datos en sistemas legados</li>
+                <li>Extracción de datos de PDFs o pantallas</li>
+                <li>Automatización de tareas repetitivas en Windows</li>
+                <li>Integración con aplicaciones sin API</li>
+            </ul>
+
+            <h3>Cómo Comenzar</h3>
+            <ol>
+                <li>Instale Power Automate Desktop (gratis con Windows 11)</li>
+                <li>Grabe sus acciones usando el recorder</li>
+                <li>Refine el script generado</li>
+                <li>Pruebe en diferentes escenarios</li>
+                <li>Publique y programe la ejecución</li>
+            </ol>
+
+            <h2>Conectores Populares</h2>
+            <p>
+                Power Automate tiene 400+ conectores. Aquí están los más usados:
+            </p>
+
+            <h3>Microsoft</h3>
+            <ul>
+                <li>SharePoint - Gestión de documentos y listas</li>
+                <li>Outlook - Email automation</li>
+                <li>Teams - Comunicación y colaboración</li>
+                <li>Planner - Gestión de tareas</li>
+                <li>Dataverse - Base de datos estructurada</li>
+            </ul>
+
+            <h3>Terceros</h3>
+            <ul>
+                <li>SQL Server - Database operations</li>
+                <li>Salesforce - CRM integration</li>
+                <li>Mailchimp - Email marketing</li>
+                <li>Twitter - Social media automation</li>
+                <li>Twilio - SMS automation</li>
+            </ul>
+
+            <h2>Gobernanza y CoE</h2>
+            <p>
+                En implementaciones enterprise, la gobernanza es crucial:
+            </p>
+
+            <h3>Center of Excellence (CoE) Kit</h3>
+            <ul>
+                <li>Instale el CoE Starter Kit gratuito de Microsoft</li>
+                <li>Monitoree uso y adopción</li>
+                <li>Identifique flows huérfanos o rotos</li>
+                <li>Establezca estándares y templates</li>
+                <li>Capacite makers</li>
+            </ul>
+
+            <h3>DLP Policies</h3>
+            <ul>
+                <li>Agrupe conectores por sensibilidad</li>
+                <li>Bloquee conexiones inapropiadas</li>
+                <li>Implemente aprobaciones para conectores premium</li>
+            </ul>
+
+            <h2>Conclusión</h2>
+            <p>
+                Power Automate es una herramienta poderosa que democratiza la automatización. Con ella,
+                cualquier persona puede eliminar tareas repetitivas y enfocarse en lo que realmente importa.
+            </p>
+            <p>
+                Comience pequeño: automatice algo que hace todos los días. Aprenda de la experiencia
+                y expanda gradualmente. Antes de darse cuenta, habrá ahorrado horas de trabajo
+                manual cada semana.
+            </p>
+            <p>
+                <strong>Próximos pasos:</strong> Visite make.powerautomate.com y cree su primer
+                flow hoy. Use los templates disponibles como punto de partida.
+            </p>
+        </article>
+
+        <section>
+            <div class="container-narrow">
+                <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--text-primary);">
+                    Comparte este artículo
+                </h3>
+                <div class="share-buttons">
+                    <button class="share-btn" data-platform="twitter">🐦 Twitter</button>
+                    <button class="share-btn" data-platform="linkedin">💼 LinkedIn</button>
+                    <button class="share-btn" data-platform="facebook">👍 Facebook</button>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container text-center">
+                <a href="../blog.html" class="btn btn-outline">← Volver al Blog</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Luís Otoni. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>

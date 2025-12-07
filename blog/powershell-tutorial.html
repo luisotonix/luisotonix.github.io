@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerShell para Administradores: Do Básico ao Avançado - Luís Otoni</title>
+    <meta name="description" content="Tutorial completo de PowerShell focado em administração de sistemas Microsoft. Scripts práticos, exemplos reais e melhores práticas.">
+    <meta name="keywords" content="PowerShell, Scripting, Windows Administration, Azure PowerShell, Microsoft 365 PowerShell, Automation">
+    <meta name="author" content="Luís Otoni">
+    <link rel="canonical" href="https://luisotonix.github.io/blog/powershell-tutorial.html">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Luís Otoni</div>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="../index.html" data-i18n="nav_home">Início</a></li>
+                    <li><a href="../about.html" data-i18n="nav_about">Sobre</a></li>
+                    <li><a href="../portfolio.html" data-i18n="nav_portfolio">Portfólio</a></li>
+                    <li><a href="../services.html" data-i18n="nav_services">Serviços</a></li>
+                    <li><a href="../blog.html" class="active" data-i18n="nav_blog">Blog</a></li>
+                    <li><a href="../contact.html" data-i18n="nav_contact">Contato</a></li>
+                </ul>
+                <div class="nav-controls">
+                    <button id="theme-toggle" aria-label="Toggle theme"><span id="theme-icon">🌙</span></button>
+                    <select id="language-selector" aria-label="Select language">
+                        <option value="pt">🇧🇷 PT</option>
+                        <option value="en">🇺🇸 EN</option>
+                        <option value="es">🇪🇸 ES</option>
+                    </select>
+                </div>
+            </div>
+            <button id="mobile-menu-btn" aria-label="Toggle mobile menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Article Header -->
+        <section class="article-header">
+            <div class="container-narrow">
+                <div class="portfolio-tags mb-3" style="justify-content: center;">
+                    <span class="tag primary">PowerShell</span>
+                    <span class="tag">Scripting</span>
+                    <span class="tag">Tutorial</span>
+                </div>
+                <h1 class="article-title">PowerShell para Administradores: Do Básico ao Avançado</h1>
+                <div class="article-meta">
+                    <span>👤 Luís Otoni</span>
+                    <span>📅 01 de Novembro de 2025</span>
+                    <span>⏱️ 20 min de leitura</span>
+                    <span>📁 Tutorial</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Article Content -->
+        <article class="article-content">
+            <p>
+                PowerShell é a ferramenta mais poderosa no arsenal de um administrador Microsoft. 
+                Desde automação de tarefas simples até gerenciamento complexo de Azure e Microsoft 365, 
+                dominar PowerShell multiplica sua produtividade. Neste tutorial completo, vou guiá-lo 
+                do básico ao avançado com exemplos práticos.
+            </p>
+
+            <h2>1. Fundamentos do PowerShell</h2>
+
+            <h3>O Que é PowerShell?</h3>
+            <p>
+                PowerShell é uma linguagem de scripting e shell de linha de comando desenvolvida pela 
+                Microsoft. Diferente de shells tradicionais que trabalham com texto, PowerShell trabalha 
+                com <strong>objetos</strong>, o que a torna muito mais poderosa.
+            </p>
+
+            <h3>Versões do PowerShell</h3>
+            <ul>
+                <li><strong>Windows PowerShell 5.1:</strong> Incluído no Windows, usa .NET Framework</li>
+                <li><strong>PowerShell 7+:</strong> Cross-platform (Windows, Linux, macOS), usa .NET Core</li>
+            </ul>
+            <p>
+                <strong>Recomendação:</strong> Use PowerShell 7 para novos scripts. Instale via 
+                <code>winget install Microsoft.PowerShell</code>
+            </p>
+
+            <h3>Primeiros Comandos</h3>
+            <p>
+                PowerShell usa o padrão <strong>Verb-Noun</strong> para comandos (chamados cmdlets):
+            </p>
+            <pre><code># Listar processos
+Get-Process
+
+# Listar serviços
+Get-Service
+
+# Obter ajuda sobre um comando
+Get-Help Get-Process -Full
+
+# Descobrir comandos disponíveis
+Get-Command -Verb Get -Noun *Service*</code></pre>
+
+            <h3>Pipeline - O Poder do PowerShell</h3>
+            <p>
+                O pipeline (<code>|</code>) passa objetos de um comando para outro:
+            </p>
+            <pre><code># Listar processos consumindo mais de 100MB de memória
+Get-Process | Where-Object {$_.WorkingSet64 -gt 100MB}
+
+# Parar serviços que começam com "Print"
+Get-Service -Name Print* | Stop-Service
+
+# Exportar usuários do AD para CSV
+Get-ADUser -Filter * | Select-Object Name, Email | Export-Csv users.csv</code></pre>
+
+            <h2>2. Variáveis e Tipos de Dados</h2>
+
+            <h3>Declarando Variáveis</h3>
+            <pre><code># Variáveis simples
+$nome = "Luís Otoni"
+$idade = 35
+$ativo = $true
+
+# Arrays
+$servidores = @("Server01", "Server02", "Server03")
+
+# Hashtables (dicionários)
+$usuario = @{
+    Nome = "João Silva"
+    Email = "joao@empresa.com"
+    Departamento = "TI"
+}
+
+# Acessando valores
+$usuario.Nome
+$servidores[0]</code></pre>
+
+            <h3>Tipos Especiais</h3>
+            <pre><code># Strings multilinha (here-string)
+$script = @"
+Este é um texto
+com múltiplas linhas
+e preserva a formatação
+"@
+
+# Datas
+$hoje = Get-Date
+$amanha = $hoje.AddDays(1)
+$formatado = $hoje.ToString("dd/MM/yyyy")</code></pre>
+
+            <h2>3. Estruturas de Controle</h2>
+
+            <h3>Condicionais</h3>
+            <pre><code># If/ElseIf/Else
+$disco = Get-Volume -DriveLetter C
+if ($disco.SizeRemaining -lt 10GB) {
+    Write-Warning "Disco C com pouco espaço!"
+} elseif ($disco.SizeRemaining -lt 50GB) {
+    Write-Host "Disco C precisa de atenção"
+} else {
+    Write-Host "Disco C OK"
+}
+
+# Switch
+$diaSemana = (Get-Date).DayOfWeek
+switch ($diaSemana) {
+    "Monday"    { Write-Host "Início da semana!" }
+    "Friday"    { Write-Host "Sextou!" }
+    default     { Write-Host "Dia normal" }
+}</code></pre>
+
+            <h3>Loops</h3>
+            <pre><code># ForEach
+$servidores = @("Server01", "Server02", "Server03")
+foreach ($servidor in $servidores) {
+    Test-Connection -ComputerName $servidor -Count 1
+}
+
+# ForEach-Object (no pipeline)
+Get-Service | ForEach-Object {
+    Write-Host "Serviço: $($_.Name) - Status: $($_.Status)"
+}
+
+# For
+for ($i = 1; $i -le 10; $i++) {
+    Write-Host "Iteração $i"
+}
+
+# While
+$contador = 0
+while ($contador -lt 5) {
+    Write-Host "Contador: $contador"
+    $contador++
+}</code></pre>
+
+            <h2>4. Funções e Scripts</h2>
+
+            <h3>Criando Funções</h3>
+            <pre><code># Função básica
+function Get-DiskSpace {
+    Get-Volume | Select-Object DriveLetter, 
+        @{N='SizeGB';E={[math]::Round($_.Size/1GB,2)}},
+        @{N='FreeGB';E={[math]::Round($_.SizeRemaining/1GB,2)}}
+}
+
+# Função com parâmetros
+function Test-ServerConnection {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$ServerName,
+        
+        [int]$Port = 3389,
+        
+        [int]$Timeout = 3000
+    )
+    
+    $tcpClient = New-Object System.Net.Sockets.TcpClient
+    try {
+        $result = $tcpClient.BeginConnect($ServerName, $Port, $null, $null)
+        $wait = $result.AsyncWaitHandle.WaitOne($Timeout, $false)
+        
+        if ($wait) {
+            $tcpClient.EndConnect($result)
+            return $true
+        } else {
+            return $false
+        }
+    } catch {
+        return $false
+    } finally {
+        $tcpClient.Close()
+    }
+}
+
+# Usando a função
+Test-ServerConnection -ServerName "server01.empresa.com" -Port 443</code></pre>
+
+            <h3>Scripts com Parâmetros</h3>
+            <pre><code># No início do arquivo .ps1
+param(
+    [Parameter(Mandatory=$true)]
+    [string]$InputFile,
+    
+    [string]$OutputFolder = "C:\Output",
+    
+    [switch]$Verbose
+)
+
+# Validação de parâmetros avançada
+param(
+    [Parameter(Mandatory=$true)]
+    [ValidateScript({Test-Path $_})]
+    [string]$FilePath,
+    
+    [ValidateSet("CSV", "JSON", "XML")]
+    [string]$Format = "CSV",
+    
+    [ValidateRange(1, 100)]
+    [int]$MaxItems = 50
+)</code></pre>
+
+            <h2>5. Tratamento de Erros</h2>
+
+            <h3>Try/Catch/Finally</h3>
+            <pre><code>try {
+    # Código que pode falhar
+    $content = Get-Content -Path "C:\arquivo.txt" -ErrorAction Stop
+    Write-Host "Arquivo lido com sucesso"
+} catch [System.IO.FileNotFoundException] {
+    Write-Warning "Arquivo não encontrado!"
+} catch {
+    Write-Error "Erro inesperado: $($_.Exception.Message)"
+} finally {
+    # Sempre executa, mesmo com erro
+    Write-Host "Operação finalizada"
+}</code></pre>
+
+            <h3>ErrorAction e ErrorVariable</h3>
+            <pre><code># Continuar mesmo com erros
+Get-ChildItem -Path "C:\Pasta" -ErrorAction SilentlyContinue
+
+# Capturar erros em variável
+Get-Service -Name "ServicoInexistente" -ErrorAction SilentlyContinue -ErrorVariable erros
+if ($erros) {
+    Write-Warning "Houve erros: $erros"
+}</code></pre>
+
+            <h2>6. Trabalhando com Active Directory</h2>
+
+            <h3>Módulo AD</h3>
+            <pre><code># Importar módulo (necessário RSAT instalado)
+Import-Module ActiveDirectory
+
+# Buscar usuários
+Get-ADUser -Filter {Enabled -eq $true} -Properties Email, Department |
+    Select-Object Name, SamAccountName, Email, Department
+
+# Criar novo usuário
+New-ADUser -Name "Maria Santos" `
+    -SamAccountName "msantos" `
+    -UserPrincipalName "msantos@empresa.com" `
+    -GivenName "Maria" `
+    -Surname "Santos" `
+    -Department "RH" `
+    -Enabled $true `
+    -AccountPassword (ConvertTo-SecureString "SenhaTemp123!" -AsPlainText -Force)
+
+# Adicionar usuário a grupo
+Add-ADGroupMember -Identity "GrupoTI" -Members "msantos"
+
+# Buscar computadores inativos (90+ dias)
+$dataLimite = (Get-Date).AddDays(-90)
+Get-ADComputer -Filter {LastLogonDate -lt $dataLimite} -Properties LastLogonDate |
+    Select-Object Name, LastLogonDate</code></pre>
+
+            <h2>7. PowerShell para Azure</h2>
+
+            <h3>Conectando ao Azure</h3>
+            <pre><code># Instalar módulo Azure
+Install-Module -Name Az -Scope CurrentUser
+
+# Conectar (abre browser para autenticação)
+Connect-AzAccount
+
+# Listar subscriptions
+Get-AzSubscription
+
+# Selecionar subscription
+Set-AzContext -SubscriptionId "xxxx-xxxx-xxxx"</code></pre>
+
+            <h3>Gerenciando Recursos Azure</h3>
+            <pre><code># Listar VMs
+Get-AzVM | Select-Object Name, ResourceGroupName, Location
+
+# Iniciar/Parar VMs
+Start-AzVM -ResourceGroupName "RG-Producao" -Name "VM-WebServer01"
+Stop-AzVM -ResourceGroupName "RG-Producao" -Name "VM-WebServer01" -Force
+
+# Criar Resource Group
+New-AzResourceGroup -Name "RG-Teste" -Location "brazilsouth"
+
+# Obter métricas de VM
+Get-AzMetric -ResourceId "/subscriptions/.../Microsoft.Compute/virtualMachines/VM01" `
+    -MetricName "Percentage CPU" -TimeGrain 00:05:00</code></pre>
+
+            <h2>8. PowerShell para Microsoft 365</h2>
+
+            <h3>Conectando aos Serviços</h3>
+            <pre><code># Instalar módulos necessários
+Install-Module Microsoft.Graph -Scope CurrentUser
+Install-Module ExchangeOnlineManagement -Scope CurrentUser
+
+# Conectar ao Microsoft Graph
+Connect-MgGraph -Scopes "User.Read.All", "Group.ReadWrite.All"
+
+# Conectar ao Exchange Online
+Connect-ExchangeOnline -UserPrincipalName admin@empresa.com</code></pre>
+
+            <h3>Gerenciando Usuários M365</h3>
+            <pre><code># Listar todos os usuários
+Get-MgUser -All | Select-Object DisplayName, UserPrincipalName, AccountEnabled
+
+# Criar novo usuário
+$passwordProfile = @{
+    Password = "SenhaTemp123!"
+    ForceChangePasswordNextSignIn = $true
+}
+
+New-MgUser -DisplayName "João Silva" `
+    -UserPrincipalName "jsilva@empresa.onmicrosoft.com" `
+    -MailNickname "jsilva" `
+    -AccountEnabled `
+    -PasswordProfile $passwordProfile
+
+# Atribuir licença
+$userId = (Get-MgUser -UserId "jsilva@empresa.onmicrosoft.com").Id
+$skuId = (Get-MgSubscribedSku | Where-Object SkuPartNumber -eq "ENTERPRISEPACK").SkuId
+
+Set-MgUserLicense -UserId $userId -AddLicenses @{SkuId = $skuId} -RemoveLicenses @()</code></pre>
+
+            <h3>Gerenciando Exchange Online</h3>
+            <pre><code># Listar mailboxes
+Get-EXOMailbox | Select-Object DisplayName, PrimarySmtpAddress, RecipientTypeDetails
+
+# Criar shared mailbox
+New-Mailbox -Shared -Name "Suporte TI" -PrimarySmtpAddress "suporte@empresa.com"
+
+# Dar permissão Full Access
+Add-MailboxPermission -Identity "suporte@empresa.com" `
+    -User "jsilva@empresa.com" -AccessRights FullAccess
+
+# Relatório de mailbox sizes
+Get-EXOMailbox -ResultSize Unlimited | 
+    Get-EXOMailboxStatistics | 
+    Select-Object DisplayName, TotalItemSize, ItemCount |
+    Sort-Object TotalItemSize -Descending |
+    Export-Csv "MailboxSizes.csv"</code></pre>
+
+            <h2>9. Scripts Práticos do Dia a Dia</h2>
+
+            <h3>Relatório de Espaço em Disco</h3>
+            <pre><code>function Get-DiskReport {
+    param(
+        [string[]]$ComputerName = $env:COMPUTERNAME
+    )
+    
+    foreach ($computer in $ComputerName) {
+        try {
+            Get-CimInstance -ClassName Win32_LogicalDisk -ComputerName $computer |
+                Where-Object DriveType -eq 3 |
+                Select-Object @{N='Computer';E={$computer}},
+                    DeviceID,
+                    @{N='SizeGB';E={[math]::Round($_.Size/1GB,2)}},
+                    @{N='FreeGB';E={[math]::Round($_.FreeSpace/1GB,2)}},
+                    @{N='PercentFree';E={[math]::Round(($_.FreeSpace/$_.Size)*100,1)}}
+        } catch {
+            Write-Warning "Não foi possível conectar a $computer"
+        }
+    }
+}
+
+# Uso
+Get-DiskReport -ComputerName "Server01", "Server02" | 
+    Where-Object PercentFree -lt 20 |
+    Format-Table</code></pre>
+
+            <h3>Backup de Group Policy Objects</h3>
+            <pre><code>function Backup-AllGPOs {
+    param(
+        [string]$BackupPath = "C:\GPOBackups"
+    )
+    
+    $date = Get-Date -Format "yyyy-MM-dd"
+    $backupFolder = Join-Path $BackupPath $date
+    
+    if (-not (Test-Path $backupFolder)) {
+        New-Item -ItemType Directory -Path $backupFolder | Out-Null
+    }
+    
+    Get-GPO -All | ForEach-Object {
+        $gpoName = $_.DisplayName -replace '[\\/:*?"<>|]', '_'
+        Backup-GPO -Guid $_.Id -Path $backupFolder -Comment "Backup $date"
+        Write-Host "Backup concluído: $($_.DisplayName)"
+    }
+    
+    Write-Host "`nBackups salvos em: $backupFolder"
+}
+
+Backup-AllGPOs</code></pre>
+
+            <h3>Monitoramento de Serviços Críticos</h3>
+            <pre><code>$servicosCriticos = @(
+    "W3SVC",      # IIS
+    "MSSQLSERVER", # SQL Server
+    "Spooler"      # Print Spooler
+)
+
+$resultado = foreach ($servico in $servicosCriticos) {
+    $svc = Get-Service -Name $servico -ErrorAction SilentlyContinue
+    
+    [PSCustomObject]@{
+        Servico = $servico
+        Status = if ($svc) { $svc.Status } else { "Não encontrado" }
+        StartType = if ($svc) { $svc.StartType } else { "N/A" }
+    }
+}
+
+$servicosParados = $resultado | Where-Object Status -ne "Running"
+
+if ($servicosParados) {
+    Write-Warning "Serviços com problemas detectados:"
+    $servicosParados | Format-Table
+    
+    # Enviar email de alerta
+    # Send-MailMessage ...
+}</code></pre>
+
+            <h2>10. Melhores Práticas</h2>
+
+            <h3>Estilo de Código</h3>
+            <ul>
+                <li>Use nomes descritivos para variáveis e funções</li>
+                <li>Comente código complexo</li>
+                <li>Use <code>-WhatIf</code> para testar antes de executar mudanças</li>
+                <li>Prefira cmdlets nativos a comandos externos</li>
+                <li>Use <code>-ErrorAction Stop</code> com try/catch</li>
+            </ul>
+
+            <h3>Segurança</h3>
+            <ul>
+                <li>Nunca hardcode senhas em scripts</li>
+                <li>Use <code>Get-Credential</code> ou Azure Key Vault</li>
+                <li>Assine scripts com certificado de código</li>
+                <li>Configure Execution Policy adequadamente</li>
+            </ul>
+
+            <h3>Performance</h3>
+            <ul>
+                <li>Use <code>-Filter</code> ao invés de <code>Where-Object</code> quando possível</li>
+                <li>Evite loops quando pipeline resolve</li>
+                <li>Use <code>[System.Collections.ArrayList]</code> para grandes coleções</li>
+                <li>Considere jobs paralelos para tarefas independentes</li>
+            </ul>
+
+            <h2>Recursos para Continuar Aprendendo</h2>
+            <ul>
+                <li><strong>Microsoft Learn:</strong> Cursos gratuitos de PowerShell</li>
+                <li><strong>PowerShell Gallery:</strong> Módulos e scripts da comunidade</li>
+                <li><strong>GitHub:</strong> Repositórios com scripts de exemplo</li>
+                <li><strong>Get-Help:</strong> Documentação integrada (use <code>Update-Help</code>)</li>
+            </ul>
+
+            <h2>Conclusão</h2>
+            <p>
+                PowerShell é uma habilidade essencial para qualquer administrador Microsoft. 
+                Este tutorial cobriu os fundamentos, mas PowerShell é vasto - continue praticando, 
+                automatizando tarefas do dia a dia, e explorando novos módulos.
+            </p>
+            <p>
+                <strong>Dica final:</strong> Comece automatizando uma tarefa que você faz 
+                manualmente toda semana. O tempo investido em aprender retornará multiplicado 
+                em produtividade.
+            </p>
+        </article>
+
+        <!-- Share Buttons -->
+        <section>
+            <div class="container-narrow">
+                <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--text-primary);">
+                    Compartilhe este artigo
+                </h3>
+                <div class="share-buttons">
+                    <button class="share-btn" data-platform="twitter">🐦 Twitter</button>
+                    <button class="share-btn" data-platform="linkedin">💼 LinkedIn</button>
+                    <button class="share-btn" data-platform="facebook">👍 Facebook</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Back to Blog -->
+        <section>
+            <div class="container text-center">
+                <a href="../blog.html" class="btn btn-outline" data-i18n="back_blog">← Voltar ao Blog</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Luís Otoni. <span data-i18n="footer_rights">Todos os direitos reservados</span>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

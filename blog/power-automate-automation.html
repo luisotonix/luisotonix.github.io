@@ -6,7 +6,14 @@
     <title>Automatizando Processos com Power Automate - Luís Otoni</title>
     <meta name="description" content="Aprenda a criar fluxos de automação eficientes com Power Automate para economizar tempo e reduzir erros manuais.">
     <link rel="canonical" href="https://luisotonix.github.io/blog/power-automate-automation.html">
-    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- Hreflang Tags -->
+    <link rel="alternate" hreflang="pt-BR" href="https://luisotonix.github.io/blog/power-automate-automation.html" />
+    <link rel="alternate" hreflang="en" href="https://luisotonix.github.io/en/blog/power-automate-automation.html" />
+    <link rel="alternate" hreflang="es" href="https://luisotonix.github.io/es/blog/power-automate-automation.html" />
+    <link rel="alternate" hreflang="x-default" href="https://luisotonix.github.io/blog/power-automate-automation.html" />
+    
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <header>
@@ -14,19 +21,19 @@
             <div class="logo">Luís Otoni</div>
             <div class="nav-menu" id="nav-menu">
                 <ul class="nav-links">
-                    <li><a href="/">Início</a></li>
-                    <li><a href="/about.html">Sobre</a></li>
-                    <li><a href="/portfolio.html">Portfólio</a></li>
-                    <li><a href="/services.html">Serviços</a></li>
-                    <li><a href="/blog.html" class="active">Blog</a></li>
-                    <li><a href="/contact.html">Contato</a></li>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="../about.html">Sobre</a></li>
+                    <li><a href="../portfolio.html">Portfólio</a></li>
+                    <li><a href="../services.html">Serviços</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../contact.html">Contato</a></li>
                 </ul>
                 <div class="nav-controls">
                     <button id="theme-toggle" aria-label="Toggle theme"><span id="theme-icon">🌙</span></button>
-                    <select id="language-selector" aria-label="Select language">
-                        <option value="pt">🇧🇷 PT</option>
-                        <option value="en">🇺🇸 EN</option>
-                        <option value="es">🇪🇸 ES</option>
+                    <select id="language-selector" aria-label="Selecionar idioma" onchange="window.location.href=this.value">
+                        <option value="power-automate-automation.html" selected>🇧🇷 PT</option>
+                        <option value="../en/blog/power-automate-automation.html">🇺🇸 EN</option>
+                        <option value="../es/blog/power-automate-automation.html">🇪🇸 ES</option>
                     </select>
                 </div>
             </div>
@@ -353,7 +360,7 @@ Clique no link para visualizar o arquivo.</code></pre>
 
         <section>
             <div class="container text-center">
-                <a href="/blog.html" class="btn btn-outline">← Voltar ao Blog</a>
+                <a href="../blog.html" class="btn btn-outline">← Voltar ao Blog</a>
             </div>
         </section>
     </main>
@@ -366,6 +373,6 @@ Clique no link para visualizar o arquivo.</code></pre>
         </div>
     </footer>
 
-    <script src="/js/main.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

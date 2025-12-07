@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementando Zero Trust com Microsoft 365 - Luís Otoni</title>
+    <meta name="description" content="Guia completo para implementar o modelo Zero Trust usando ferramentas Microsoft 365. Conditional Access, MFA, Identity Protection e mais.">
+    <meta name="keywords" content="Zero Trust, Microsoft 365, Conditional Access, MFA, Identity Protection, Security">
+    <meta name="author" content="Luís Otoni">
+    <link rel="canonical" href="https://luisotonix.github.io/blog/zero-trust-m365.html">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Luís Otoni</div>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="../index.html" data-i18n="nav_home">Início</a></li>
+                    <li><a href="../about.html" data-i18n="nav_about">Sobre</a></li>
+                    <li><a href="../portfolio.html" data-i18n="nav_portfolio">Portfólio</a></li>
+                    <li><a href="../services.html" data-i18n="nav_services">Serviços</a></li>
+                    <li><a href="../blog.html" class="active" data-i18n="nav_blog">Blog</a></li>
+                    <li><a href="../contact.html" data-i18n="nav_contact">Contato</a></li>
+                </ul>
+                <div class="nav-controls">
+                    <button id="theme-toggle" aria-label="Toggle theme"><span id="theme-icon">🌙</span></button>
+                    <select id="language-selector" aria-label="Select language">
+                        <option value="pt">🇧🇷 PT</option>
+                        <option value="en">🇺🇸 EN</option>
+                        <option value="es">🇪🇸 ES</option>
+                    </select>
+                </div>
+            </div>
+            <button id="mobile-menu-btn" aria-label="Toggle mobile menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Article Header -->
+        <section class="article-header">
+            <div class="container-narrow">
+                <div class="portfolio-tags mb-3" style="justify-content: center;">
+                    <span class="tag primary">Microsoft 365</span>
+                    <span class="tag">Zero Trust</span>
+                    <span class="tag">Security</span>
+                </div>
+                <h1 class="article-title">Implementando Zero Trust com Microsoft 365</h1>
+                <div class="article-meta">
+                    <span>👤 Luís Otoni</span>
+                    <span>📅 05 de Novembro de 2025</span>
+                    <span>⏱️ 15 min de leitura</span>
+                    <span>📁 Segurança</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Article Content -->
+        <article class="article-content">
+            <p>
+                O modelo Zero Trust revolucionou a forma como pensamos segurança. Em vez de confiar em 
+                perímetros de rede, Zero Trust assume que ameaças podem vir de qualquer lugar - dentro 
+                ou fora da organização. Neste guia, vou mostrar como implementar Zero Trust usando as 
+                ferramentas do Microsoft 365.
+            </p>
+
+            <h2>O Que é Zero Trust?</h2>
+            <p>
+                Zero Trust é um framework de segurança baseado no princípio "nunca confie, sempre verifique". 
+                Os três pilares fundamentais são:
+            </p>
+            <ul>
+                <li><strong>Verificar explicitamente:</strong> Sempre autenticar e autorizar baseado em todos os pontos de dados disponíveis</li>
+                <li><strong>Usar menor privilégio:</strong> Limitar acesso do usuário com Just-In-Time e Just-Enough-Access (JIT/JEA)</li>
+                <li><strong>Assumir violação:</strong> Minimizar blast radius e segmentar acesso; verificar criptografia end-to-end</li>
+            </ul>
+
+            <h2>Arquitetura Zero Trust Microsoft</h2>
+            <p>
+                A Microsoft organiza Zero Trust em seis áreas fundamentais:
+            </p>
+            <ul>
+                <li><strong>Identidades:</strong> Verificar e proteger cada identidade</li>
+                <li><strong>Dispositivos:</strong> Garantir que dispositivos estejam saudáveis e compliant</li>
+                <li><strong>Aplicações:</strong> Descobrir shadow IT e controlar acesso</li>
+                <li><strong>Dados:</strong> Classificar, rotular e proteger dados sensíveis</li>
+                <li><strong>Infraestrutura:</strong> Detectar ataques e anomalias</li>
+                <li><strong>Rede:</strong> Segmentar e usar criptografia</li>
+            </ul>
+
+            <h2>1. Protegendo Identidades</h2>
+            <p>
+                A identidade é o novo perímetro de segurança. Comece aqui.
+            </p>
+
+            <h3>Multi-Factor Authentication (MFA)</h3>
+            <p>
+                MFA é o primeiro e mais importante passo. Implementação recomendada:
+            </p>
+            <ul>
+                <li>Habilite MFA para 100% dos usuários, sem exceções</li>
+                <li>Prefira Microsoft Authenticator com number matching</li>
+                <li>Bloqueie métodos fracos como SMS quando possível</li>
+                <li>Use Security Defaults se não tiver Azure AD Premium</li>
+                <li>Com Azure AD Premium, use Conditional Access para controle granular</li>
+            </ul>
+
+            <h3>Conditional Access</h3>
+            <p>
+                Conditional Access é o motor de decisão do Zero Trust. Políticas essenciais:
+            </p>
+
+            <h4>Política 1: Require MFA for All Users</h4>
+            <ul>
+                <li><strong>Users:</strong> All users (exceto break-glass accounts)</li>
+                <li><strong>Cloud apps:</strong> All cloud apps</li>
+                <li><strong>Conditions:</strong> Any</li>
+                <li><strong>Grant:</strong> Require MFA</li>
+            </ul>
+
+            <h4>Política 2: Block Legacy Authentication</h4>
+            <ul>
+                <li><strong>Users:</strong> All users</li>
+                <li><strong>Cloud apps:</strong> All cloud apps</li>
+                <li><strong>Conditions:</strong> Client apps → Other clients</li>
+                <li><strong>Grant:</strong> Block access</li>
+            </ul>
+
+            <h4>Política 3: Require Compliant Devices</h4>
+            <ul>
+                <li><strong>Users:</strong> All users</li>
+                <li><strong>Cloud apps:</strong> Office 365</li>
+                <li><strong>Conditions:</strong> Any device platform</li>
+                <li><strong>Grant:</strong> Require device to be marked as compliant</li>
+            </ul>
+
+            <h4>Política 4: Block High-Risk Sign-ins</h4>
+            <ul>
+                <li><strong>Users:</strong> All users</li>
+                <li><strong>Cloud apps:</strong> All cloud apps</li>
+                <li><strong>Conditions:</strong> Sign-in risk = High</li>
+                <li><strong>Grant:</strong> Block access</li>
+            </ul>
+
+            <h3>Identity Protection</h3>
+            <p>
+                Azure AD Identity Protection detecta riscos automaticamente:
+            </p>
+            <ul>
+                <li><strong>User risk:</strong> Credenciais vazadas, padrões de uso anormais</li>
+                <li><strong>Sign-in risk:</strong> Impossible travel, IPs maliciosos, device malware</li>
+            </ul>
+            <p>Configurações recomendadas:</p>
+            <ul>
+                <li>User risk policy: High risk → Require password change + MFA</li>
+                <li>Sign-in risk policy: Medium+ risk → Require MFA</li>
+                <li>Configure alertas para investigação</li>
+            </ul>
+
+            <h3>Privileged Identity Management (PIM)</h3>
+            <p>
+                Just-In-Time access para administradores:
+            </p>
+            <ul>
+                <li>Remova atribuições permanentes de admin roles</li>
+                <li>Configure eligible assignments com aprovação</li>
+                <li>Defina duração máxima de ativação (ex: 8 horas)</li>
+                <li>Exija justificativa e MFA para ativação</li>
+                <li>Configure alertas para ativações</li>
+            </ul>
+
+            <h2>2. Protegendo Dispositivos</h2>
+            <p>
+                Dispositivos não confiáveis não devem acessar dados corporativos.
+            </p>
+
+            <h3>Microsoft Intune - Compliance Policies</h3>
+            <p>
+                Defina o que significa um dispositivo "saudável":
+            </p>
+            <ul>
+                <li>Sistema operacional mínimo (ex: Windows 11 22H2)</li>
+                <li>Antivírus ativo e atualizado</li>
+                <li>Firewall habilitado</li>
+                <li>BitLocker/criptografia ativo</li>
+                <li>Não rooted/jailbroken</li>
+                <li>PIN/senha configurado</li>
+            </ul>
+
+            <h3>Microsoft Defender for Endpoint</h3>
+            <p>
+                EDR (Endpoint Detection and Response) para proteção avançada:
+            </p>
+            <ul>
+                <li>Deploy em todos os endpoints corporativos</li>
+                <li>Configure automated investigation and response</li>
+                <li>Integre com Conditional Access (machine risk level)</li>
+                <li>Use attack surface reduction rules</li>
+                <li>Configure web content filtering</li>
+            </ul>
+
+            <h3>Enrollment e MAM/MDM</h3>
+            <ul>
+                <li><strong>Corporate devices:</strong> Full MDM enrollment via Intune</li>
+                <li><strong>BYOD:</strong> MAM (Mobile Application Management) para proteger apps sem gerenciar device</li>
+                <li>Use App Protection Policies para dados corporativos</li>
+                <li>Configure conditional launch para bloquear devices comprometidos</li>
+            </ul>
+
+            <h2>3. Protegendo Aplicações</h2>
+
+            <h3>Microsoft Defender for Cloud Apps (MCAS)</h3>
+            <p>
+                Visibilidade e controle sobre aplicações cloud:
+            </p>
+            <ul>
+                <li><strong>Shadow IT Discovery:</strong> Identifique apps não sancionados</li>
+                <li><strong>App Governance:</strong> Controle apps OAuth conectados</li>
+                <li><strong>Session Control:</strong> Monitore e controle sessões em tempo real</li>
+                <li><strong>Anomaly Detection:</strong> Detecte comportamentos suspeitos</li>
+            </ul>
+
+            <h3>Conditional Access App Control</h3>
+            <ul>
+                <li>Bloqueie download de dados sensíveis em dispositivos não gerenciados</li>
+                <li>Force watermark em documentos visualizados</li>
+                <li>Monitore atividades em tempo real</li>
+                <li>Bloqueie copy/paste de dados corporativos</li>
+            </ul>
+
+            <h2>4. Protegendo Dados</h2>
+
+            <h3>Microsoft Information Protection (MIP)</h3>
+            <p>
+                Classifique e proteja dados sensíveis:
+            </p>
+            <ul>
+                <li><strong>Sensitivity Labels:</strong> Public, Internal, Confidential, Highly Confidential</li>
+                <li><strong>Auto-labeling:</strong> Aplique labels automaticamente baseado em conteúdo</li>
+                <li><strong>Encryption:</strong> Proteja documentos mesmo fora da organização</li>
+                <li><strong>Rights Management:</strong> Controle quem pode ler, editar, imprimir</li>
+            </ul>
+
+            <h3>Data Loss Prevention (DLP)</h3>
+            <ul>
+                <li>Crie políticas para detectar dados sensíveis (CPF, cartão de crédito, etc.)</li>
+                <li>Bloqueie compartilhamento externo de dados confidenciais</li>
+                <li>Configure DLP em Exchange, SharePoint, OneDrive, Teams, Endpoints</li>
+                <li>Use policy tips para educar usuários</li>
+            </ul>
+
+            <h2>5. Protegendo Email</h2>
+
+            <h3>Microsoft Defender for Office 365</h3>
+            <ul>
+                <li><strong>Safe Attachments:</strong> Detonação de anexos em sandbox</li>
+                <li><strong>Safe Links:</strong> Verificação de URLs em tempo de clique</li>
+                <li><strong>Anti-phishing:</strong> Proteção contra impersonation</li>
+                <li><strong>Attack Simulation:</strong> Treine usuários com phishing simulado</li>
+            </ul>
+
+            <h3>Exchange Online Protection</h3>
+            <ul>
+                <li>Configure SPF, DKIM, DMARC</li>
+                <li>Use Enhanced Filtering for Connectors</li>
+                <li>Configure quarantine policies</li>
+                <li>Block auto-forwarding para domínios externos</li>
+            </ul>
+
+            <h2>6. Monitoramento e Resposta</h2>
+
+            <h3>Microsoft 365 Defender Portal</h3>
+            <p>
+                Console unificado para investigação e resposta:
+            </p>
+            <ul>
+                <li>Incidents: Visão correlacionada de alertas</li>
+                <li>Hunting: Query proativa de ameaças</li>
+                <li>Threat Analytics: Intelligence sobre ameaças atuais</li>
+                <li>Secure Score: Meça e melhore sua postura</li>
+            </ul>
+
+            <h3>Microsoft Sentinel</h3>
+            <p>
+                SIEM cloud-native para organizações maiores:
+            </p>
+            <ul>
+                <li>Colete logs de todas as fontes (M365, Azure, on-prem, terceiros)</li>
+                <li>Use analytics rules para detecção</li>
+                <li>Automatize resposta com playbooks (Logic Apps)</li>
+                <li>Investigue com notebooks e hunting queries</li>
+            </ul>
+
+            <h2>Roadmap de Implementação</h2>
+
+            <h3>Fase 1: Fundação (Semanas 1-4)</h3>
+            <ul>
+                <li>☑️ Habilitar MFA para todos os usuários</li>
+                <li>☑️ Bloquear legacy authentication</li>
+                <li>☑️ Configurar break-glass accounts</li>
+                <li>☑️ Implementar Security Defaults ou CA básico</li>
+            </ul>
+
+            <h3>Fase 2: Identidade Avançada (Semanas 5-8)</h3>
+            <ul>
+                <li>☑️ Configurar Identity Protection</li>
+                <li>☑️ Implementar PIM para admins</li>
+                <li>☑️ Criar políticas de Conditional Access avançadas</li>
+                <li>☑️ Configurar Access Reviews</li>
+            </ul>
+
+            <h3>Fase 3: Dispositivos (Semanas 9-12)</h3>
+            <ul>
+                <li>☑️ Enrollment de dispositivos no Intune</li>
+                <li>☑️ Criar compliance policies</li>
+                <li>☑️ Deploy Defender for Endpoint</li>
+                <li>☑️ Integrar device compliance com CA</li>
+            </ul>
+
+            <h3>Fase 4: Dados e Apps (Semanas 13-16)</h3>
+            <ul>
+                <li>☑️ Implementar sensitivity labels</li>
+                <li>☑️ Configurar DLP policies</li>
+                <li>☑️ Deploy Defender for Cloud Apps</li>
+                <li>☑️ Configurar session controls</li>
+            </ul>
+
+            <h2>Métricas de Sucesso</h2>
+            <ul>
+                <li><strong>MFA Coverage:</strong> 100% dos usuários usando MFA</li>
+                <li><strong>Legacy Auth:</strong> 0% de sign-ins usando legacy protocols</li>
+                <li><strong>Secure Score:</strong> Melhorar continuamente (meta: &gt;80%)</li>
+                <li><strong>Incident Response:</strong> Reduzir mean time to respond (MTTR)</li>
+                <li><strong>Device Compliance:</strong> &gt;95% de dispositivos compliant</li>
+            </ul>
+
+            <h2>Conclusão</h2>
+            <p>
+                Zero Trust não é um produto que você compra, mas uma jornada de transformação da 
+                segurança. Microsoft 365 fornece todas as ferramentas necessárias para implementar 
+                Zero Trust de forma abrangente.
+            </p>
+            <p>
+                Comece pelos fundamentos (MFA, block legacy auth), avance para controles mais 
+                sofisticados (CA, device compliance), e evolua continuamente baseado em ameaças 
+                e necessidades do negócio.
+            </p>
+            <p>
+                <strong>Lembre-se:</strong> Segurança é uma jornada, não um destino. Zero Trust 
+                é sobre melhoria contínua e adaptação a um cenário de ameaças em constante evolução.
+            </p>
+        </article>
+
+        <!-- Share Buttons -->
+        <section>
+            <div class="container-narrow">
+                <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--text-primary);">
+                    Compartilhe este artigo
+                </h3>
+                <div class="share-buttons">
+                    <button class="share-btn" data-platform="twitter">🐦 Twitter</button>
+                    <button class="share-btn" data-platform="linkedin">💼 LinkedIn</button>
+                    <button class="share-btn" data-platform="facebook">👍 Facebook</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Back to Blog -->
+        <section>
+            <div class="container text-center">
+                <a href="../blog.html" class="btn btn-outline" data-i18n="back_blog">← Voltar ao Blog</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Luís Otoni. <span data-i18n="footer_rights">Todos os direitos reservados</span>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

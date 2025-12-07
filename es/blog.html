@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Luís Otoni | Artículos sobre Azure, Microsoft 365 y Power Platform</title>
+    <meta name="description" content="Artículos técnicos y tutoriales sobre Microsoft Azure, Microsoft 365, Power Platform y automatización. Aprenda sobre cloud computing y productividad.">
+    <meta name="keywords" content="Blog Microsoft, Artículos Azure, Tutoriales M365, Power Platform Tips">
+
+    <link rel="canonical" href="https://luisotonix.github.io/es/blog.html">
+
+    <!-- Hreflang Tags -->
+    <link rel="alternate" hreflang="pt-BR" href="https://luisotonix.github.io/blog.html" />
+    <link rel="alternate" hreflang="en" href="https://luisotonix.github.io/en/blog.html" />
+    <link rel="alternate" hreflang="es" href="https://luisotonix.github.io/es/blog.html" />
+    <link rel="alternate" hreflang="x-default" href="https://luisotonix.github.io/blog.html" />
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Luís Otoni</div>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="about.html">Acerca</a></li>
+                    <li><a href="portfolio.html">Portafolio</a></li>
+                    <li><a href="services.html">Servicios</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+                <div class="nav-controls">
+                    <button id="theme-toggle" aria-label="Cambiar tema"><span id="theme-icon">🌙</span></button>
+                    <select id="language-selector" aria-label="Seleccionar idioma" onchange="window.location.href=this.value">
+                        <option value="../blog.html">🇧🇷 PT</option>
+                        <option value="../en/blog.html">🇺🇸 EN</option>
+                        <option value="blog.html" selected>🇪🇸 ES</option>
+                    </select>
+                </div>
+            </div>
+            <button id="mobile-menu-btn" aria-label="Abrir menú móvil">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" style="min-height: 40vh;">
+            <div class="container">
+                <div class="hero-content animate-on-scroll text-center">
+                    <h1>Blog</h1>
+                    <p class="hero-description">
+                        Artículos, tutoriales y mejores prácticas sobre el ecosistema Microsoft
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Filter -->
+        <section>
+            <div class="container">
+                <div class="blog-filter text-center">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="azure" id="azure">Azure</button>
+                    <button class="filter-btn" data-filter="m365" id="m365">Microsoft 365</button>
+                    <button class="filter-btn" data-filter="power-platform">Power Platform</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Posts -->
+        <section>
+            <div class="container">
+                <div class="grid grid-3">
+                    <!-- Post 1 -->
+                    <article class="blog-card animate-on-scroll" data-category="azure">
+                        <div class="blog-image">
+                            <span style="font-size: 3rem;">🔒</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Azure</span>
+                                <span class="blog-date">15 Ene 2025</span>
+                            </div>
+                            <h3 class="blog-title">
+                                <a href="blog/azure-security-best-practices.html">
+                                    Mejores Prácticas de Seguridad en Azure
+                                </a>
+                            </h3>
+                            <p class="blog-excerpt">
+                                Aprenda las principales estrategias y configuraciones para proteger
+                                sus recursos en Microsoft Azure contra amenazas modernas.
+                            </p>
+                            <a href="blog/azure-security-best-practices.html" class="blog-link">Leer más →</a>
+                        </div>
+                    </article>
+
+                    <!-- Post 2 -->
+                    <article class="blog-card animate-on-scroll" data-category="power-platform">
+                        <div class="blog-image">
+                            <span style="font-size: 3rem;">⚡</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Power Platform</span>
+                                <span class="blog-date">10 Ene 2025</span>
+                            </div>
+                            <h3 class="blog-title">
+                                <a href="blog/power-automate-automation.html">
+                                    Automatización con Power Automate: De Cero a Avanzado
+                                </a>
+                            </h3>
+                            <p class="blog-excerpt">
+                                Guía completa para crear flujos de automatización eficientes
+                                usando Power Automate en su organización.
+                            </p>
+                            <a href="blog/power-automate-automation.html" class="blog-link">Leer más →</a>
+                        </div>
+                    </article>
+
+                    <!-- Post 3 -->
+                    <article class="blog-card animate-on-scroll" data-category="m365">
+                        <div class="blog-image">
+                            <span style="font-size: 3rem;">💬</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Microsoft 365</span>
+                                <span class="blog-date">05 Ene 2025</span>
+                            </div>
+                            <h3 class="blog-title">
+                                <a href="blog/teams-productivity-tips.html">
+                                    Tips de Productividad en Microsoft Teams
+                                </a>
+                            </h3>
+                            <p class="blog-excerpt">
+                                Maximice su productividad en Microsoft Teams con estos consejos
+                                y atajos que transformarán su forma de colaborar.
+                            </p>
+                            <a href="blog/teams-productivity-tips.html" class="blog-link">Leer más →</a>
+                        </div>
+                    </article>
+
+                    <!-- Post 4 -->
+                    <article class="blog-card animate-on-scroll" data-category="azure">
+                        <div class="blog-image">
+                            <span style="font-size: 3rem;">🔄</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Azure</span>
+                                <span class="blog-date">28 Dic 2024</span>
+                            </div>
+                            <h3 class="blog-title">
+                                <a href="../blog/azure-security-best-practices.html">
+                                    Migración a Azure: Planificación y Ejecución
+                                </a>
+                            </h3>
+                            <p class="blog-excerpt">
+                                Paso a paso para planificar y ejecutar una migración exitosa
+                                de su infraestructura on-premises a Azure.
+                            </p>
+                            <a href="../blog/azure-security-best-practices.html" class="blog-link">Leer más →</a>
+                        </div>
+                    </article>
+
+                    <!-- Post 5 -->
+                    <article class="blog-card animate-on-scroll" data-category="m365">
+                        <div class="blog-image">
+                            <span style="font-size: 3rem;">🛡️</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Microsoft 365</span>
+                                <span class="blog-date">20 Dic 2024</span>
+                            </div>
+                            <h3 class="blog-title">
+                                <a href="../blog/teams-productivity-tips.html">
+                                    Configurando MFA en Microsoft 365
+                                </a>
+                            </h3>
+                            <p class="blog-excerpt">
+                                Guía completa para implementar autenticación multi-factor
+                                en su tenant Microsoft 365.
+                            </p>
+                            <a href="../blog/teams-productivity-tips.html" class="blog-link">Leer más →</a>
+                        </div>
+                    </article>
+
+                    <!-- Post 6 -->
+                    <article class="blog-card animate-on-scroll" data-category="power-platform">
+                        <div class="blog-image">
+                            <span style="font-size: 3rem;">📱</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Power Platform</span>
+                                <span class="blog-date">15 Dic 2024</span>
+                            </div>
+                            <h3 class="blog-title">
+                                <a href="../blog/power-automate-automation.html">
+                                    Creando Apps con Power Apps Canvas
+                                </a>
+                            </h3>
+                            <p class="blog-excerpt">
+                                Aprenda a crear aplicaciones móviles y web sin código
+                                usando Power Apps Canvas.
+                            </p>
+                            <a href="../blog/power-automate-automation.html" class="blog-link">Leer más →</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Load More -->
+                <div class="text-center mt-5">
+                    <button class="btn btn-secondary" id="load-more">
+                        Cargar Más Artículos
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section>
+            <div class="container-narrow">
+                <div class="card text-center">
+                    <h2>📬 Suscríbase a la Newsletter</h2>
+                    <p>Reciba actualizaciones sobre nuevos artículos y consejos sobre el ecosistema Microsoft.</p>
+                    <form class="newsletter-form">
+                        <div class="form-row">
+                            <input type="email" placeholder="Su email" class="form-input" required>
+                            <button type="submit" class="btn btn-primary">Suscribirse</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Categorías</h2>
+                </div>
+
+                <div class="grid grid-3">
+                    <a href="#azure" class="card card-hover text-center">
+                        <div class="card-icon">☁️</div>
+                        <h3 class="card-title">Microsoft Azure</h3>
+                        <p class="card-text">Cloud, DevOps, Seguridad</p>
+                    </a>
+
+                    <a href="#m365" class="card card-hover text-center">
+                        <div class="card-icon">📊</div>
+                        <h3 class="card-title">Microsoft 365</h3>
+                        <p class="card-text">Teams, SharePoint, Exchange</p>
+                    </a>
+
+                    <a href="#power-platform" class="card card-hover text-center">
+                        <div class="card-icon">⚡</div>
+                        <h3 class="card-title">Power Platform</h3>
+                        <p class="card-text">Power Apps, Automate, BI</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Luís Otoni</h3>
+                    <p>Administrador de Sistemas y Especialista Microsoft</p>
+                    <div class="footer-social mt-3">
+                        <a href="https://linkedin.com/in/luisotoni" class="social-icon" target="_blank" rel="noopener">💼</a>
+                        <a href="https://github.com/luisotonix" class="social-icon" target="_blank" rel="noopener">🐙</a>
+                        <a href="mailto:contato@luisotoni.com" class="social-icon">✉️</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Portafolio</h3>
+                    <ul class="footer-links">
+                        <li><a href="portfolio.html">Proyectos</a></li>
+                        <li><a href="services.html">Servicios</a></li>
+                        <li><a href="about.html">Acerca</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Blog</h3>
+                    <ul class="footer-links">
+                        <li><a href="blog.html">Todos los Artículos</a></li>
+                        <li><a href="#azure">Azure</a></li>
+                        <li><a href="#m365">Microsoft 365</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Formulario</a></li>
+                        <li><a href="mailto:contato@luisotoni.com">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Luís Otoni. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

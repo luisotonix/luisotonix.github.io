@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como Reduzir Custos no Azure: Guia Completo - Luís Otoni</title>
+    <meta name="description" content="Estratégias práticas para otimizar custos no Azure sem comprometer performance. Reserved Instances, sizing, FinOps e mais.">
+    <meta name="keywords" content="Azure Cost Optimization, FinOps, Reserved Instances, Azure Cost Management, Cloud Economics">
+    <meta name="author" content="Luís Otoni">
+    <link rel="canonical" href="https://luisotonix.github.io/blog/azure-cost-optimization.html">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Luís Otoni</div>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="../index.html" data-i18n="nav_home">Início</a></li>
+                    <li><a href="../about.html" data-i18n="nav_about">Sobre</a></li>
+                    <li><a href="../portfolio.html" data-i18n="nav_portfolio">Portfólio</a></li>
+                    <li><a href="../services.html" data-i18n="nav_services">Serviços</a></li>
+                    <li><a href="../blog.html" class="active" data-i18n="nav_blog">Blog</a></li>
+                    <li><a href="../contact.html" data-i18n="nav_contact">Contato</a></li>
+                </ul>
+                <div class="nav-controls">
+                    <button id="theme-toggle" aria-label="Toggle theme"><span id="theme-icon">🌙</span></button>
+                    <select id="language-selector" aria-label="Select language">
+                        <option value="pt">🇧🇷 PT</option>
+                        <option value="en">🇺🇸 EN</option>
+                        <option value="es">🇪🇸 ES</option>
+                    </select>
+                </div>
+            </div>
+            <button id="mobile-menu-btn" aria-label="Toggle mobile menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Article Header -->
+        <section class="article-header">
+            <div class="container-narrow">
+                <div class="portfolio-tags mb-3" style="justify-content: center;">
+                    <span class="tag primary">Azure</span>
+                    <span class="tag">Cost Optimization</span>
+                    <span class="tag">FinOps</span>
+                </div>
+                <h1 class="article-title">Como Reduzir Custos no Azure: Guia Completo</h1>
+                <div class="article-meta">
+                    <span>👤 Luís Otoni</span>
+                    <span>📅 10 de Novembro de 2025</span>
+                    <span>⏱️ 12 min de leitura</span>
+                    <span>📁 Azure</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Article Content -->
+        <article class="article-content">
+            <p>
+                Gerenciar custos na nuvem é um dos maiores desafios enfrentados pelas organizações. 
+                Sem uma estratégia adequada, os gastos podem fugir do controle rapidamente. Neste guia 
+                completo, vou compartilhar estratégias práticas que uso para ajudar empresas a reduzir 
+                seus custos no Azure sem comprometer performance ou segurança.
+            </p>
+
+            <h2>1. Entenda Seu Gasto Atual</h2>
+            <p>
+                Antes de otimizar, você precisa entender onde está gastando. O Azure oferece ferramentas 
+                poderosas para isso.
+            </p>
+
+            <h3>Azure Cost Management + Billing</h3>
+            <ul>
+                <li>Analise custos por subscription, resource group, ou recurso individual</li>
+                <li>Crie views personalizadas para diferentes stakeholders</li>
+                <li>Configure budgets com alertas automáticos</li>
+                <li>Use cost analysis para identificar tendências</li>
+                <li>Exporte dados para análises mais profundas</li>
+            </ul>
+
+            <h3>Tags para Alocação de Custos</h3>
+            <p>
+                Implemente uma estratégia de tagging consistente:
+            </p>
+            <ul>
+                <li><strong>Environment:</strong> Production, Development, Test, Staging</li>
+                <li><strong>Department:</strong> TI, Marketing, Financeiro, RH</li>
+                <li><strong>Project:</strong> Nome do projeto ou aplicação</li>
+                <li><strong>Owner:</strong> Responsável pelo recurso</li>
+                <li><strong>CostCenter:</strong> Centro de custo para chargeback</li>
+            </ul>
+
+            <h2>2. Right-Sizing de Recursos</h2>
+            <p>
+                Um dos maiores desperdícios na nuvem é o over-provisioning. Muitas VMs estão superdimensionadas.
+            </p>
+
+            <h3>Azure Advisor Recommendations</h3>
+            <p>
+                O Azure Advisor analisa seu ambiente e fornece recomendações de sizing:
+            </p>
+            <ul>
+                <li>Acesse Azure Advisor → Cost → Review recommendations</li>
+                <li>Identifique VMs subutilizadas (CPU &lt; 5% por exemplo)</li>
+                <li>Resize ou desligue recursos ociosos</li>
+                <li>Avalie métricas de pelo menos 7-14 dias antes de decidir</li>
+            </ul>
+
+            <h3>Estratégias de Sizing</h3>
+            <ul>
+                <li><strong>Start Small:</strong> Comece com tamanhos menores e escale conforme necessidade</li>
+                <li><strong>Monitor Continuously:</strong> Use Azure Monitor para acompanhar utilização</li>
+                <li><strong>Review Quarterly:</strong> Revise sizing trimestralmente</li>
+                <li><strong>Use Burstable VMs:</strong> B-series para workloads variáveis</li>
+            </ul>
+
+            <h2>3. Reserved Instances (RIs)</h2>
+            <p>
+                Reserved Instances oferecem até 72% de desconto comparado ao Pay-as-you-go.
+            </p>
+
+            <h3>Quando Usar RIs</h3>
+            <ul>
+                <li>Workloads previsíveis que rodam 24/7</li>
+                <li>Ambientes de produção estáveis</li>
+                <li>Databases com uso consistente</li>
+                <li>Quando você pode comprometer por 1 ou 3 anos</li>
+            </ul>
+
+            <h3>Tipos de Reservas</h3>
+            <ul>
+                <li><strong>Virtual Machines:</strong> Até 72% de economia</li>
+                <li><strong>SQL Database:</strong> Até 80% de economia</li>
+                <li><strong>Cosmos DB:</strong> Até 65% de economia</li>
+                <li><strong>Azure Synapse:</strong> Até 65% de economia</li>
+                <li><strong>Storage:</strong> Até 38% de economia</li>
+            </ul>
+
+            <h3>Dicas para RIs</h3>
+            <ul>
+                <li>Use Instance Size Flexibility para mais flexibilidade</li>
+                <li>Escolha scope adequado (Shared para máxima flexibilidade)</li>
+                <li>Analise utilização atual antes de comprar</li>
+                <li>Considere Exchange/Refund policy para ajustes futuros</li>
+            </ul>
+
+            <h2>4. Azure Savings Plans</h2>
+            <p>
+                Savings Plans são mais flexíveis que RIs, aplicando-se automaticamente a qualquer 
+                compute usage elegível.
+            </p>
+            <ul>
+                <li>Comprometa com um valor de gasto por hora (não um recurso específico)</li>
+                <li>Desconto aplica automaticamente ao compute mais caro primeiro</li>
+                <li>Cobre VMs, Azure Functions, App Service, Container Instances</li>
+                <li>Ideal para workloads que mudam frequentemente</li>
+            </ul>
+
+            <h2>5. Spot Virtual Machines</h2>
+            <p>
+                Spot VMs oferecem até 90% de desconto, usando capacidade não utilizada do Azure.
+            </p>
+
+            <h3>Casos de Uso Ideais</h3>
+            <ul>
+                <li>Batch processing e jobs de CI/CD</li>
+                <li>Dev/Test environments</li>
+                <li>Workloads tolerantes a interrupções</li>
+                <li>High-Performance Computing</li>
+                <li>Big Data e Analytics</li>
+            </ul>
+
+            <h3>Cuidados com Spot VMs</h3>
+            <ul>
+                <li>VMs podem ser evicted com 30 segundos de aviso</li>
+                <li>Implemente checkpointing e save state</li>
+                <li>Use com Kubernetes para auto-recovery</li>
+                <li>Defina max price adequado</li>
+            </ul>
+
+            <h2>6. Auto-Scaling</h2>
+            <p>
+                Pague apenas pelo que precisa, quando precisa.
+            </p>
+
+            <h3>Horizontal Scaling</h3>
+            <ul>
+                <li>Configure Virtual Machine Scale Sets</li>
+                <li>Use métricas como CPU, memória, ou custom metrics</li>
+                <li>Defina schedule-based scaling para padrões previsíveis</li>
+                <li>Combine com Load Balancer para distribuição de carga</li>
+            </ul>
+
+            <h3>Vertical Scaling</h3>
+            <ul>
+                <li>Automatize resize de databases baseado em uso</li>
+                <li>Use Azure Automation para scaling programado</li>
+                <li>Considere downtime requirements</li>
+            </ul>
+
+            <h2>7. Dev/Test Pricing</h2>
+            <p>
+                Ambientes de desenvolvimento e teste não precisam custar o mesmo que produção.
+            </p>
+
+            <h3>Azure Dev/Test Subscription</h3>
+            <ul>
+                <li>Descontos significativos em Windows VMs</li>
+                <li>Sem custos de licença SQL Server Dev/Enterprise</li>
+                <li>Preços reduzidos em vários serviços</li>
+                <li>Requer Visual Studio subscription</li>
+            </ul>
+
+            <h3>Estratégias para Dev/Test</h3>
+            <ul>
+                <li>Desligue VMs fora do horário comercial</li>
+                <li>Use Azure DevTest Labs para gerenciamento</li>
+                <li>Implemente auto-shutdown policies</li>
+                <li>Use tamanhos menores que produção</li>
+            </ul>
+
+            <h2>8. Storage Optimization</h2>
+            <p>
+                Storage pode ser um dos maiores custos. Otimize agressivamente.
+            </p>
+
+            <h3>Tiers de Storage</h3>
+            <ul>
+                <li><strong>Hot:</strong> Dados acessados frequentemente</li>
+                <li><strong>Cool:</strong> Dados acessados raramente (30+ dias)</li>
+                <li><strong>Cold:</strong> Dados raramente acessados (90+ dias)</li>
+                <li><strong>Archive:</strong> Dados de retenção de longo prazo</li>
+            </ul>
+
+            <h3>Lifecycle Management</h3>
+            <ul>
+                <li>Configure regras automáticas de tiering</li>
+                <li>Mova dados antigos para tiers mais baratos</li>
+                <li>Delete blobs expirados automaticamente</li>
+                <li>Use políticas baseadas em last accessed time</li>
+            </ul>
+
+            <h3>Outras Otimizações</h3>
+            <ul>
+                <li>Delete snapshots desnecessários</li>
+                <li>Identifique discos não anexados</li>
+                <li>Use Standard vs Premium adequadamente</li>
+                <li>Considere Azure Files vs Blob Storage</li>
+            </ul>
+
+            <h2>9. Network Cost Optimization</h2>
+            <p>
+                Custos de rede podem surpreender. Entenda e otimize.
+            </p>
+
+            <h3>Egress Costs</h3>
+            <ul>
+                <li>Dados saindo do Azure são cobrados</li>
+                <li>Use CDN para conteúdo estático</li>
+                <li>Mantenha recursos na mesma região quando possível</li>
+                <li>Use Private Endpoints para tráfego interno</li>
+            </ul>
+
+            <h3>VPN e ExpressRoute</h3>
+            <ul>
+                <li>Avalie se ExpressRoute faz sentido vs VPN</li>
+                <li>Use metered vs unlimited adequadamente</li>
+                <li>Consolide gateways quando possível</li>
+            </ul>
+
+            <h2>10. Governance e FinOps</h2>
+            <p>
+                Estabeleça práticas de governança financeira na nuvem.
+            </p>
+
+            <h3>Azure Policy para Custos</h3>
+            <ul>
+                <li>Restrinja SKUs permitidos (bloqueie VMs muito caras)</li>
+                <li>Force tags de cost center</li>
+                <li>Limite regiões permitidas</li>
+                <li>Previna criação de recursos caros sem aprovação</li>
+            </ul>
+
+            <h3>Cultura FinOps</h3>
+            <ul>
+                <li>Crie visibilidade de custos para todas as equipes</li>
+                <li>Implemente chargeback ou showback</li>
+                <li>Defina KPIs de eficiência de custos</li>
+                <li>Revise custos em reuniões regulares</li>
+                <li>Celebre vitórias de otimização</li>
+            </ul>
+
+            <h2>11. Ferramentas Úteis</h2>
+
+            <h3>Azure Pricing Calculator</h3>
+            <p>
+                Estime custos antes de provisionar recursos em 
+                <a href="https://azure.microsoft.com/pricing/calculator/" target="_blank">azure.microsoft.com/pricing/calculator</a>
+            </p>
+
+            <h3>Azure TCO Calculator</h3>
+            <p>
+                Compare custos on-premises vs Azure para justificar migração.
+            </p>
+
+            <h3>Azure Advisor</h3>
+            <p>
+                Recomendações automáticas de otimização, incluindo custos.
+            </p>
+
+            <h2>Checklist de Otimização</h2>
+            <ul>
+                <li>☑️ Implemente tagging consistente</li>
+                <li>☑️ Configure budgets e alertas</li>
+                <li>☑️ Revise Azure Advisor semanalmente</li>
+                <li>☑️ Avalie Reserved Instances para workloads estáveis</li>
+                <li>☑️ Desligue recursos de dev/test fora do horário</li>
+                <li>☑️ Implemente storage lifecycle policies</li>
+                <li>☑️ Right-size VMs subutilizadas</li>
+                <li>☑️ Delete recursos órfãos (discos, IPs, NSGs)</li>
+                <li>☑️ Use Spot VMs onde apropriado</li>
+                <li>☑️ Configure auto-scaling</li>
+            </ul>
+
+            <h2>Conclusão</h2>
+            <p>
+                Otimização de custos no Azure não é um projeto único, mas um processo contínuo. 
+                Implementando as estratégias deste guia, você pode reduzir significativamente seus 
+                gastos sem comprometer a qualidade do serviço.
+            </p>
+            <p>
+                Comece pelos quick wins (delete recursos não usados, right-sizing), depois avance 
+                para estratégias de médio prazo (RIs, Savings Plans) e finalmente estabeleça uma 
+                cultura FinOps na organização.
+            </p>
+            <p>
+                <strong>Lembre-se:</strong> O objetivo não é gastar menos, mas gastar melhor. 
+                Cada real economizado pode ser reinvestido em inovação e crescimento.
+            </p>
+        </article>
+
+        <!-- Share Buttons -->
+        <section>
+            <div class="container-narrow">
+                <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--text-primary);">
+                    Compartilhe este artigo
+                </h3>
+                <div class="share-buttons">
+                    <button class="share-btn" data-platform="twitter">🐦 Twitter</button>
+                    <button class="share-btn" data-platform="linkedin">💼 LinkedIn</button>
+                    <button class="share-btn" data-platform="facebook">👍 Facebook</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Back to Blog -->
+        <section>
+            <div class="container text-center">
+                <a href="../blog.html" class="btn btn-outline" data-i18n="back_blog">← Voltar ao Blog</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Luís Otoni. <span data-i18n="footer_rights">Todos os direitos reservados</span>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
