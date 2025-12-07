@@ -552,9 +552,8 @@ function initShareButtons() {
 // INITIALIZATION
 // ======================
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize theme and language managers
+    // Initialize theme manager
     window.themeManager = new ThemeManager();
-    window.languageManager = new LanguageManager();
 
     // Initialize mobile menu
     new MobileMenu();
@@ -575,12 +574,62 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Language selector
+    // Language selector - set correct selected option based on current page
     const languageSelector = document.getElementById('language-selector');
     if (languageSelector) {
-        languageSelector.addEventListener('change', (e) => {
-            window.languageManager.setLanguage(e.target.value);
-        });
+        const currentPath = window.location.pathname;
+        const options = languageSelector.options;
+        
+        for (let i = 0; i < options.length; i++) {
+            const optionValue = options[i].value;
+            // Check if current path ends with the option value or matches the pattern
+            if (currentPath.endsWith(optionValue) || 
+                currentPath.endsWith(optionValue.replace('index.html', '')) ||
+                (optionValue.includes('/en/') && currentPath.includes('/en/')) ||
+                (optionValue.includes('/es/') && currentPath.includes('/es/')) ||
+                (!optionValue.includes('/en/') && !optionValue.includes('/es/') && !currentPath.includes('/en/') && !currentPath.includes('/es/'))) {
+                
+                // More precise check
+                const isEnglish = currentPath.includes('/en/');
+                const isSpanish = currentPath.includes('/es/');
+                const isPortuguese = !isEnglish && !isSpanish;
+                
+                const optionIsEnglish = optionValue.includes('/en/') || (optionValue === 'index.html' && document.documentElement.lang === 'en');
+                const optionIsSpanish = optionValue.includes('/es/') || optionValue.includes('../es/');
+                const optionIsPortuguese = !optionIsEnglish && !optionIsSpanish && (optionValue.includes('../index.html') || (optionValue === 'index.html' && document.documentElement.lang === 'pt-BR'));
+                
+                if ((isEnglish && (optionValue === 'index.html' || optionValue.endsWith('/index.html')) && !optionValue.includes('../')) ||
+                    (isSpanish && optionIsSpanish) ||
+                    (isPortuguese && optionIsPortuguese)) {
+                    // Skip, will be handled below
+                }
+            }
+        }
+        
+        // Simpler approach: detect language from URL path
+        const path = window.location.pathname;
+        let currentLang = 'pt'; // default
+        
+        if (path.includes('/en/')) {
+            currentLang = 'en';
+        } else if (path.includes('/es/')) {
+            currentLang = 'es';
+        }
+        
+        // Find and select the correct option
+        for (let i = 0; i < options.length; i++) {
+            const optVal = options[i].value;
+            const isEnOption = optVal.includes('/en/') || (optVal === 'index.html' && currentLang === 'en') || (!optVal.includes('../') && !optVal.includes('/es/') && currentLang === 'en');
+            const isEsOption = optVal.includes('/es/') || optVal.includes('../es/');
+            const isPtOption = optVal.includes('../index.html') || (optVal === 'index.html' && currentLang === 'pt') || (!optVal.includes('/en/') && !optVal.includes('/es/') && optVal.includes('index.html') && currentLang === 'pt');
+            
+            if ((currentLang === 'en' && options[i].text === 'English') ||
+                (currentLang === 'es' && options[i].text === 'Español') ||
+                (currentLang === 'pt' && options[i].text === 'Português')) {
+                languageSelector.selectedIndex = i;
+                break;
+            }
+        }
     }
 });
 
