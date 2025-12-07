@@ -693,46 +693,6 @@ nav {
     transform: translateY(-3px);
 }
 
-/* CTA Card Style - For inline sections */
-.cta-card {
-    background: linear-gradient(135deg, var(--primary) 0%, #1a5fb4 100%);
-    border-radius: 20px;
-    padding: 3rem;
-    text-align: center;
-    color: var(--text-inverse);
-    position: relative;
-    overflow: hidden;
-    box-shadow: var(--shadow-xl);
-}
-
-.cta-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -25%;
-    width: 50%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
-}
-
-.cta-card-content {
-    position: relative;
-    z-index: 1;
-}
-
-.cta-card h3 {
-    font-size: 1.75rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--text-inverse);
-}
-
-.cta-card p {
-    font-size: 1.1rem;
-    opacity: 0.9;
-    margin-bottom: 1.5rem;
-}
-
 /* Skills Section CTA */
 .skills-cta {
     margin-top: 3rem;
@@ -745,32 +705,6 @@ nav {
     font-size: 1.1rem;
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
-}
-
-/* Service Card CTA */
-.service-card-cta {
-    margin-top: auto;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border-color);
-}
-
-.btn-service {
-    width: 100%;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
-    color: white;
-    padding: 0.875rem 1.5rem;
-    border-radius: 8px;
-    font-weight: 600;
-    text-align: center;
-    transition: all 0.3s ease;
-    display: inline-block;
-    text-decoration: none;
-}
-
-.btn-service:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 120, 212, 0.4);
-    color: white;
 }
 
 /* Blog Article CTA */
@@ -1155,51 +1089,6 @@ section:nth-child(even) {
     left: 0;
     color: var(--primary);
     font-weight: bold;
-}
-
-/* ======================
-   CONTACT FORM
-   ====================== */
-
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
-    font-weight: 500;
-}
-
-.form-input,
-.form-textarea {
-    width: 100%;
-    padding: 0.875rem;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-    font-size: 1rem;
-    font-family: inherit;
-    transition: all 0.3s ease;
-}
-
-.form-input:focus,
-.form-textarea:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(0, 120, 212, 0.1);
-}
-
-.form-textarea {
-    min-height: 150px;
-    resize: vertical;
 }
 
 /* ======================
