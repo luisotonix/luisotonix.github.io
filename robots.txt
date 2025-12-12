@@ -1,5 +1,5 @@
 # robots.txt for luisotonix.github.io
-# Luís Otoni - System Administrator & Microsoft Specialist
+# Luís Otoni - Cloud Specialist | Microsoft 365 | Azure | Power Platform
 
 User-agent: *
 Allow: /
