@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hybrid Identity Solution - Luís Otoni</title>
-    <meta name="description" content="Hybrid identity implementation with Azure AD Connect, SSO, MFA and Conditional Access for complex enterprise environment.">
-    <meta name="keywords" content="Azure AD, Hybrid Identity, SSO, MFA, Conditional Access, Azure AD Connect, Entra ID">
-    <link rel="canonical" href="https://luisotonix.github.io/en/portfolio/hybrid-identity-solution.html">
+    <title>Cloud Identity Enterprise Management - Luís Otoni</title>
+    <meta name="description" content="Cloud identity management implementation with Microsoft Entra ID, SSO, MFA and Conditional Access for complex enterprise environment.">
+    <meta name="keywords" content="Entra ID, Cloud Identity, SSO, MFA, Conditional Access, Microsoft 365, Identity Management">
+    <link rel="canonical" href="https://luisotonix.github.io/en/portfolio/cloud-identity-solution.html">
     
     <!-- Hreflang Tags -->
-    <link rel="alternate" hreflang="pt-BR" href="https://luisotonix.github.io/portfolio/hybrid-identity-solution.html" />
-    <link rel="alternate" hreflang="en" href="https://luisotonix.github.io/en/portfolio/hybrid-identity-solution.html" />
-    <link rel="alternate" hreflang="es" href="https://luisotonix.github.io/es/portfolio/hybrid-identity-solution.html" />
-    <link rel="alternate" hreflang="x-default" href="https://luisotonix.github.io/portfolio/hybrid-identity-solution.html" />
+    <link rel="alternate" hreflang="pt-BR" href="https://luisotonix.github.io/portfolio/cloud-identity-solution.html" />
+    <link rel="alternate" hreflang="en" href="https://luisotonix.github.io/en/portfolio/cloud-identity-solution.html" />
+    <link rel="alternate" hreflang="es" href="https://luisotonix.github.io/es/portfolio/cloud-identity-solution.html" />
+    <link rel="alternate" hreflang="x-default" href="https://luisotonix.github.io/portfolio/cloud-identity-solution.html" />
     
     <!-- Favicon Emoji -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
@@ -35,9 +35,9 @@
                 <div class="nav-controls">
                     <button id="theme-toggle" aria-label="Toggle theme"><span id="theme-icon">🌙</span></button>
                     <select id="language-selector" aria-label="Select language" onchange="window.location.href=this.value">
-                        <option value="../../portfolio/hybrid-identity-solution.html">Português</option>
-                        <option value="hybrid-identity-solution.html" selected>English</option>
-                        <option value="../../es/portfolio/hybrid-identity-solution.html">Español</option>
+                        <option value="../../portfolio/cloud-identity-solution.html">Português</option>
+                        <option value="cloud-identity-solution.html" selected>English</option>
+                        <option value="../../es/portfolio/cloud-identity-solution.html">Español</option>
                     </select>
                 </div>
             </div>
@@ -52,12 +52,12 @@
         <section class="project-hero">
             <div class="container">
                 <div class="portfolio-tags mb-3" style="justify-content: center;">
-                    <span class="tag" style="background: rgba(255,255,255,0.2); color: white;">Azure AD</span>
+                    <span class="tag" style="background: rgba(255,255,255,0.2); color: white;">Entra ID</span>
                     <span class="tag" style="background: rgba(255,255,255,0.2); color: white;">Identity</span>
-                    <span class="tag" style="background: rgba(255,255,255,0.2); color: white;">Hybrid</span>
+                    <span class="tag" style="background: rgba(255,255,255,0.2); color: white;">Security</span>
                 </div>
-                <h1>Hybrid Identity Solution</h1>
-                <p>Hybrid identity implementation with Azure AD Connect, SSO, MFA and Conditional Access for multinational corporate environment.</p>
+                <h1>Cloud Identity Enterprise Management</h1>
+                <p>Cloud identity management implementation with Microsoft Entra ID, SSO, MFA and Conditional Access for multinational corporate environment.</p>
             </div>
         </section>
 
@@ -79,8 +79,8 @@
                     <div class="detail-box">
                         <h3>🛠️ Technologies</h3>
                         <ul>
-                            <li>Azure AD / Entra ID</li>
-                            <li>Azure AD Connect</li>
+                            <li>Microsoft Entra ID</li>
+                            <li>Entra ID Governance</li>
                             <li>Conditional Access</li>
                             <li>MFA / Passwordless</li>
                         </ul>
@@ -103,7 +103,7 @@
                 <div class="project-section">
                     <h2>The Challenge</h2>
                     <p>
-                        The company operated with multiple Active Directory forests in different countries, 
+                        The company operated with multiple Microsoft 365 tenants in different countries, 
                         resulting in identity silos, fragmented user experience and security risks.
                         Employees needed to remember multiple passwords and there was no centralized visibility 
                         over access and suspicious activities.
@@ -118,24 +118,24 @@
                 <div class="project-section">
                     <h2>The Solution</h2>
                     <p>
-                        I designed and implemented a unified hybrid identity solution using Microsoft Entra ID 
-                        (Azure AD) as the central identity hub, maintaining integration with on-premises Active Directory.
+                        I designed and implemented a unified cloud identity solution using Microsoft Entra ID 
+                        as the central identity hub with cross-tenant synchronization for consolidated management.
                     </p>
                     
                     <h3>Phase 1: Assessment and Design</h3>
                     <ul>
-                        <li>Mapping of all AD forests and domains</li>
+                        <li>Mapping of all M365 tenants and domains</li>
                         <li>Application inventory and authentication methods</li>
-                        <li>Synchronization architecture design</li>
+                        <li>Identity architecture design</li>
                         <li>UPN suffix strategy definition</li>
                     </ul>
 
-                    <h3>Phase 2: Azure AD Connect</h3>
+                    <h3>Phase 2: Entra ID Configuration</h3>
                     <ul>
-                        <li>High availability Azure AD Connect implementation</li>
-                        <li>Password Hash Sync + Seamless SSO configuration</li>
-                        <li>Synchronization filters by OU and group</li>
-                        <li>Azure AD Connect Health for monitoring</li>
+                        <li>Primary tenant configuration with custom domains</li>
+                        <li>Cross-Tenant Synchronization setup</li>
+                        <li>B2B Direct Connect for federation</li>
+                        <li>Entra Connect Health for monitoring</li>
                     </ul>
 
                     <h3>Phase 3: Identity Security</h3>
@@ -193,7 +193,7 @@
                     <h2>Technologies Used</h2>
                     <div class="portfolio-tags">
                         <span class="tag primary">Microsoft Entra ID</span>
-                        <span class="tag primary">Azure AD Connect</span>
+                        <span class="tag primary">Entra ID Governance</span>
                         <span class="tag">Conditional Access</span>
                         <span class="tag">MFA</span>
                         <span class="tag">SAML/OIDC</span>
@@ -210,9 +210,9 @@
         <section id="cta">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-title">Need to Unify Your Identity?</h2>
+                    <h2 class="section-title">Need to Modernize Your Identity?</h2>
                     <p class="section-subtitle">
-                        Let's discuss how to implement a modern hybrid identity solution for your organization.
+                        Let's discuss how to implement a modern cloud identity solution for your organization.
                     </p>
                     <a href="../contact.html" class="btn btn-primary">Get in Touch</a>
                 </div>

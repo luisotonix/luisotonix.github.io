@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solução de Identidade Híbrida - Luís Otoni</title>
-    <meta name="description" content="Projeto de implementação de identidade híbrida com Azure AD Connect, SSO, MFA e Conditional Access para ambiente corporativo complexo.">
-    <link rel="canonical" href="https://luisotonix.github.io/portfolio/hybrid-identity-solution.html">
+    <title>Gestão de Identidade Cloud Enterprise - Luís Otoni</title>
+    <meta name="description" content="Projeto de implementação de gestão de identidade cloud com Microsoft Entra ID, SSO, MFA e Conditional Access para ambiente corporativo complexo.">
+    <link rel="canonical" href="https://luisotonix.github.io/portfolio/cloud-identity-solution.html">
 
     <!-- Favicon Emoji -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
@@ -44,8 +44,8 @@
         <!-- Project Hero -->
         <section class="project-hero">
             <div class="container">
-                <h1>🔑 Solução de Identidade Híbrida</h1>
-                <p>Unificação de identidades on-premises e cloud com segurança enterprise</p>
+                <h1>🔑 Gestão de Identidade Cloud Enterprise</h1>
+                <p>Unificação de identidades com Microsoft Entra ID e segurança enterprise</p>
             </div>
         </section>
 
@@ -55,15 +55,15 @@
                 <div class="project-details">
                     <div class="detail-box">
                         <h3>🏢 Cliente</h3>
-                        <p>Grupo empresarial com 3 empresas e múltiplas florestas AD</p>
+                        <p>Grupo empresarial com 3 empresas e múltiplos domínios</p>
                     </div>
                     <div class="detail-box">
                         <h3>📅 Duração</h3>
-                        <p>5 meses (Planejamento + Implementação + Migração)</p>
+                        <p>5 meses (Planejamento + Implementação)</p>
                     </div>
                     <div class="detail-box">
                         <h3>👥 Usuários</h3>
-                        <p>2.500 usuários em 3 florestas Active Directory</p>
+                        <p>2.500 usuários em 3 tenants Microsoft 365</p>
                     </div>
                     <div class="detail-box">
                         <h3>🔐 SSO Apps</h3>
@@ -80,14 +80,14 @@
                     Tecnologias Utilizadas
                 </h2>
                 <div class="portfolio-tags">
-                    <span class="tag primary">Azure AD / Entra ID</span>
-                    <span class="tag primary">Azure AD Connect</span>
+                    <span class="tag primary">Microsoft Entra ID</span>
+                    <span class="tag primary">Entra ID Governance</span>
                     <span class="tag primary">Conditional Access</span>
                     <span class="tag primary">Multi-Factor Authentication</span>
                     <span class="tag primary">Privileged Identity Management</span>
                     <span class="tag primary">Azure AD B2B</span>
                     <span class="tag">SAML / OAuth / OIDC</span>
-                    <span class="tag">Pass-through Authentication</span>
+                    <span class="tag">Passwordless Authentication</span>
                     <span class="tag">Seamless SSO</span>
                     <span class="tag">Identity Protection</span>
                     <span class="tag">Access Reviews</span>
@@ -101,16 +101,16 @@
             <div class="container-narrow">
                 <h2>🎯 O Desafio</h2>
                 <p>
-                    O grupo empresarial enfrentava complexidade significativa na gestão de identidades:
+                    O grupo empresarial enfrentava complexidade significativa na gestão de identidades cloud:
                 </p>
                 <ul class="service-features">
-                    <li>3 florestas Active Directory independentes (resultado de aquisições)</li>
+                    <li>3 tenants Microsoft 365 independentes (resultado de aquisições)</li>
                     <li>Usuários com múltiplas contas em diferentes sistemas</li>
                     <li>Sem Single Sign-On - usuários decoravam 8+ senhas diferentes</li>
                     <li>Processo manual de onboarding/offboarding demorado</li>
                     <li>Acesso de parceiros externos sem controle adequado</li>
                     <li>Administradores com privilégios permanentes sem auditoria</li>
-                    <li>Aplicações legadas com autenticação própria</li>
+                    <li>Aplicações SaaS com autenticação própria</li>
                     <li>Sem MFA para acessos críticos</li>
                 </ul>
             </div>
@@ -124,21 +124,21 @@
                 <div class="card mt-3">
                     <h3 style="color: var(--primary); margin-bottom: 1rem;">Fase 1: Discovery e Planejamento</h3>
                     <ul class="service-features">
-                        <li>Inventário completo das 3 florestas AD</li>
+                        <li>Inventário completo dos 3 tenants Microsoft 365</li>
                         <li>Identificação de conflitos de UPN e email</li>
                         <li>Mapeamento de todas as aplicações e métodos de autenticação</li>
                         <li>Definição de arquitetura de identidade target</li>
-                        <li>Plano de migração com rollback strategy</li>
+                        <li>Plano de consolidação de tenants</li>
                         <li>Comunicação e change management para usuários</li>
                     </ul>
                 </div>
 
                 <div class="card mt-3">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Fase 2: Preparação do Azure AD</h3>
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Fase 2: Configuração do Microsoft Entra ID</h3>
                     <ul class="service-features">
-                        <li>Configuração do tenant Azure AD com custom domain</li>
+                        <li>Configuração do tenant principal com custom domains</li>
                         <li>Definição de naming convention e UPN strategy</li>
-                        <li>Configuração de licenciamento (Azure AD Premium P2)</li>
+                        <li>Configuração de licenciamento (Entra ID P2)</li>
                         <li>Setup de grupos administrativos e RBAC</li>
                         <li>Configuração de branding customizado</li>
                         <li>Preparação de break-glass accounts</li>
@@ -146,14 +146,14 @@
                 </div>
 
                 <div class="card mt-3">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Fase 3: Azure AD Connect Multi-Forest</h3>
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Fase 3: Consolidação de Identidades Cloud</h3>
                     <ul class="service-features">
-                        <li>Instalação de Azure AD Connect com múltiplas florestas</li>
-                        <li>Configuração de Pass-through Authentication (PTA)</li>
-                        <li>Setup de Seamless Single Sign-On</li>
-                        <li>Filtros de sincronização por OU e atributo</li>
-                        <li>Resolução de conflitos de soft-match</li>
-                        <li>Password Hash Sync como backup para failover</li>
+                        <li>Configuração de Cross-Tenant Synchronization</li>
+                        <li>Federação entre tenants com B2B Direct Connect</li>
+                        <li>Setup de Seamless Single Sign-On entre ambientes</li>
+                        <li>Configuração de External Identities</li>
+                        <li>Unificação de grupos e permissões</li>
+                        <li>Passwordless authentication (FIDO2, Windows Hello)</li>
                     </ul>
                 </div>
 
@@ -172,12 +172,12 @@
                 <div class="card mt-3">
                     <h3 style="color: var(--primary); margin-bottom: 1rem;">Fase 5: Integração de Aplicações</h3>
                     <ul class="service-features">
-                        <li>Integração de 45 aplicações com Azure AD SSO</li>
+                        <li>Integração de 45 aplicações com Entra ID SSO</li>
                         <li>Configuração de SAML para aplicações enterprise</li>
                         <li>Setup de OAuth/OIDC para aplicações modernas</li>
-                        <li>Azure AD Application Proxy para apps on-premises</li>
+                        <li>Enterprise App Gallery para apps padrão</li>
                         <li>Federação com SaaS críticos (Salesforce, SAP, etc.)</li>
-                        <li>Migração de autenticação legada</li>
+                        <li>App Governance para monitoramento</li>
                     </ul>
                 </div>
 
@@ -258,7 +258,7 @@
                     <h3 style="color: var(--text-inverse); margin-bottom: 1rem;">💬 Depoimento do Cliente</h3>
                     <p style="font-size: 1.1rem; font-style: italic; margin-bottom: 1rem;">
                         "Unificar três empresas com sistemas de identidade diferentes parecia impossível. 
-                        O projeto de identidade híbrida transformou completamente nossa gestão de acessos. 
+                        O projeto de identidade cloud transformou completamente nossa gestão de acessos. 
                         Nossos usuários adoraram o SSO - de 8 senhas diferentes para uma única experiência 
                         de login. E a segurança nunca foi tão robusta com MFA e acesso condicional."
                     </p>
