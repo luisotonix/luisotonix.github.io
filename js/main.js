@@ -25,6 +25,7 @@ class ThemeManager {
         localStorage.setItem('theme', theme);
         this.theme = theme;
         this.updateThemeIcon();
+        this.updateThemeImages();
     }
 
     toggleTheme() {
@@ -37,6 +38,17 @@ class ThemeManager {
         if (icon) {
             icon.textContent = this.theme === 'light' ? '🌙' : '☀️';
         }
+    }
+
+    updateThemeImages() {
+        const themeImages = document.querySelectorAll('.theme-image');
+        themeImages.forEach(img => {
+            const lightSrc = img.getAttribute('data-light');
+            const darkSrc = img.getAttribute('data-dark');
+            if (lightSrc && darkSrc) {
+                img.src = this.theme === 'light' ? lightSrc : darkSrc;
+            }
+        });
     }
 }
 
