@@ -339,6 +339,14 @@ nav {
     margin-bottom: 1.5rem;
 }
 
+.hero-stack {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
 .hero-description {
     font-size: 1.1rem;
     color: var(--text-secondary);
