@@ -40,6 +40,10 @@
     <!-- Favicon Emoji -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
 
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/main.js" as="script">
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -70,7 +74,7 @@
 <body>
     <!-- Header -->
     <header>
-        <nav class="container">
+        <nav class="container" role="navigation" aria-label="Menu principal">
             <a href="index.html" class="logo">⚡ Luís Otoni</a>
 
             <div class="nav-menu" id="nav-menu">
@@ -189,8 +193,28 @@
             </div>
         </section>
 
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid stats-grid-3">
+                    <div class="stat-item animate-on-scroll">
+                        <div class="stat-number">11+</div>
+                        <div class="stat-label">Anos de Experiência</div>
+                    </div>
+                    <div class="stat-item animate-on-scroll">
+                        <div class="stat-number">40+</div>
+                        <div class="stat-label">Projetos Entregues</div>
+                    </div>
+                    <div class="stat-item animate-on-scroll">
+                        <div class="stat-number">🌍</div>
+                        <div class="stat-label">Atendimento Worldwide</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Featured Projects Section -->
-        <section id="featured-projects">
+        <section id="featured-projects" class="section-alt-bg">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title" data-i18n="portfolio_title">Portfólio</h2>
@@ -258,29 +282,29 @@
                     <p class="section-subtitle" data-i18n="services_subtitle">Como posso ajudar</p>
                 </div>
 
-                <div class="grid grid-3">
-                    <div class="service-card animate-on-scroll">
-                        <div class="service-icon">☁️</div>
-                        <h3 class="service-title">Consultoria Azure</h3>
-                        <p class="service-description">
-                            Consultoria especializada em arquitetura e implementação de soluções Azure.
-                        </p>
+                <div class="services-horizontal">
+                    <div class="service-horizontal-item animate-on-scroll">
+                        <div class="service-horizontal-icon">☁️</div>
+                        <div class="service-horizontal-content">
+                            <h3>Consultoria Azure</h3>
+                            <p>Consultoria especializada em arquitetura e implementação de soluções Azure, incluindo migração, otimização de custos e segurança.</p>
+                        </div>
                     </div>
 
-                    <div class="service-card animate-on-scroll">
-                        <div class="service-icon">📊</div>
-                        <h3 class="service-title">Administração M365</h3>
-                        <p class="service-description">
-                            Gerenciamento completo de ambientes Microsoft 365 e serviços relacionados.
-                        </p>
+                    <div class="service-horizontal-item animate-on-scroll">
+                        <div class="service-horizontal-icon">📊</div>
+                        <div class="service-horizontal-content">
+                            <h3>Administração M365</h3>
+                            <p>Gerenciamento completo de ambientes Microsoft 365, Exchange Online, SharePoint, Teams e políticas de segurança.</p>
+                        </div>
                     </div>
 
-                    <div class="service-card animate-on-scroll">
-                        <div class="service-icon">⚡</div>
-                        <h3 class="service-title">Automação de Processos</h3>
-                        <p class="service-description">
-                            Desenvolvimento de soluções de automação com Power Platform.
-                        </p>
+                    <div class="service-horizontal-item animate-on-scroll">
+                        <div class="service-horizontal-icon">⚡</div>
+                        <div class="service-horizontal-content">
+                            <h3>Automação de Processos</h3>
+                            <p>Desenvolvimento de soluções de automação com Power Apps, Power Automate e Power BI para otimizar operações.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -291,64 +315,46 @@
         </section>
 
         <!-- Latest Blog Posts Section -->
-        <section id="latest-blog">
+        <section id="latest-blog" class="section-alt-bg">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title" data-i18n="blog_title">Blog</h2>
                     <p class="section-subtitle" data-i18n="blog_subtitle">Artigos e insights</p>
                 </div>
 
-                <div class="grid grid-3">
-                    <article class="blog-card animate-on-scroll" data-category="azure">
-                        <div class="blog-image">☁️</div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span>📅 25 Nov 2025</span>
-                                <span>📁 Azure</span>
-                            </div>
-                            <h3 class="blog-title">Melhores Práticas para Segurança no Azure</h3>
-                            <p class="blog-excerpt">
-                                Descubra as principais práticas recomendadas para manter seu ambiente Azure seguro e em conformidade.
-                            </p>
-                            <div class="blog-footer">
-                                <a href="blog/azure-security-best-practices.html" class="btn btn-outline" data-i18n="blog_read_more">Ler Mais</a>
+                <div class="blog-compact-list">
+                    <a href="blog/azure-security-best-practices.html" class="blog-compact-item animate-on-scroll">
+                        <div class="blog-compact-left">
+                            <div class="blog-compact-icon">☁️</div>
+                            <div class="blog-compact-info">
+                                <h3 class="blog-compact-title">Melhores Práticas para Segurança no Azure</h3>
+                                <span class="blog-compact-meta">25 Nov 2025 • Azure</span>
                             </div>
                         </div>
-                    </article>
+                        <span class="blog-compact-link">Ler →</span>
+                    </a>
 
-                    <article class="blog-card animate-on-scroll" data-category="m365">
-                        <div class="blog-image">📊</div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span>📅 20 Nov 2025</span>
-                                <span>📁 Microsoft 365</span>
-                            </div>
-                            <h3 class="blog-title">Otimizando o Microsoft Teams para Produtividade</h3>
-                            <p class="blog-excerpt">
-                                Dicas e configurações essenciais para maximizar a produtividade com Microsoft Teams.
-                            </p>
-                            <div class="blog-footer">
-                                <a href="blog/teams-productivity-tips.html" class="btn btn-outline" data-i18n="blog_read_more">Ler Mais</a>
+                    <a href="blog/teams-productivity-tips.html" class="blog-compact-item animate-on-scroll">
+                        <div class="blog-compact-left">
+                            <div class="blog-compact-icon">📊</div>
+                            <div class="blog-compact-info">
+                                <h3 class="blog-compact-title">Otimizando o Microsoft Teams para Produtividade</h3>
+                                <span class="blog-compact-meta">20 Nov 2025 • Microsoft 365</span>
                             </div>
                         </div>
-                    </article>
+                        <span class="blog-compact-link">Ler →</span>
+                    </a>
 
-                    <article class="blog-card animate-on-scroll" data-category="power-platform">
-                        <div class="blog-image">⚡</div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span>📅 15 Nov 2025</span>
-                                <span>📁 Power Platform</span>
-                            </div>
-                            <h3 class="blog-title">Automatizando Processos com Power Automate</h3>
-                            <p class="blog-excerpt">
-                                Aprenda a criar fluxos de automação eficientes com Power Automate para economizar tempo.
-                            </p>
-                            <div class="blog-footer">
-                                <a href="blog/power-automate-automation.html" class="btn btn-outline" data-i18n="blog_read_more">Ler Mais</a>
+                    <a href="blog/power-automate-automation.html" class="blog-compact-item animate-on-scroll">
+                        <div class="blog-compact-left">
+                            <div class="blog-compact-icon">⚡</div>
+                            <div class="blog-compact-info">
+                                <h3 class="blog-compact-title">Automatizando Processos com Power Automate</h3>
+                                <span class="blog-compact-meta">15 Nov 2025 • Power Platform</span>
                             </div>
                         </div>
-                    </article>
+                        <span class="blog-compact-link">Ler →</span>
+                    </a>
                 </div>
 
                 <div class="text-center mt-4">
