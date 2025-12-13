@@ -931,7 +931,7 @@ section:nth-child(even) {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
+    font-size: 7rem;
     color: var(--text-inverse);
 }
 
@@ -988,7 +988,7 @@ section:nth-child(even) {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
+    font-size: 7rem;
     color: var(--text-inverse);
 }
 
@@ -1084,6 +1084,10 @@ section:nth-child(even) {
     font-size: 3rem;
     margin-bottom: 1rem;
     color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 64px;
 }
 
 .service-title {
