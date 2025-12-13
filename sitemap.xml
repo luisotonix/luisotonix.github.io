@@ -66,33 +66,33 @@
         <priority>0.8</priority>
     </url>
 
-    <!-- Portfolio -->
+    <!-- cases -->
     <url>
-        <loc>https://luisotonix.github.io/portfolio.html</loc>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://luisotonix.github.io/portfolio.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://luisotonix.github.io/en/portfolio.html"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://luisotonix.github.io/es/portfolio.html"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://luisotonix.github.io/portfolio.html"/>
+        <loc>https://luisotonix.github.io/cases.html</loc>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://luisotonix.github.io/cases.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://luisotonix.github.io/en/cases.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://luisotonix.github.io/es/cases.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://luisotonix.github.io/cases.html"/>
         <lastmod>2025-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://luisotonix.github.io/en/portfolio.html</loc>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://luisotonix.github.io/portfolio.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://luisotonix.github.io/en/portfolio.html"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://luisotonix.github.io/es/portfolio.html"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://luisotonix.github.io/portfolio.html"/>
+        <loc>https://luisotonix.github.io/en/cases.html</loc>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://luisotonix.github.io/cases.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://luisotonix.github.io/en/cases.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://luisotonix.github.io/es/cases.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://luisotonix.github.io/cases.html"/>
         <lastmod>2025-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://luisotonix.github.io/es/portfolio.html</loc>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://luisotonix.github.io/portfolio.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://luisotonix.github.io/en/portfolio.html"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://luisotonix.github.io/es/portfolio.html"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://luisotonix.github.io/portfolio.html"/>
+        <loc>https://luisotonix.github.io/es/cases.html</loc>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://luisotonix.github.io/cases.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://luisotonix.github.io/en/cases.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://luisotonix.github.io/es/cases.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://luisotonix.github.io/cases.html"/>
         <lastmod>2025-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
@@ -290,56 +290,57 @@
         <priority>0.6</priority>
     </url>
 
-    <!-- Portfolio Case Studies (PT only - can be expanded later) -->
+    <!-- cases Case Studies (PT only - can be expanded later) -->
     <url>
-        <loc>https://luisotonix.github.io/portfolio/azure-migration.html</loc>
+        <loc>https://luisotonix.github.io/cases/azure-migration.html</loc>
         <lastmod>2025-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://luisotonix.github.io/portfolio/m365-implementation.html</loc>
+        <loc>https://luisotonix.github.io/cases/m365-implementation.html</loc>
         <lastmod>2025-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://luisotonix.github.io/portfolio/power-platform-automation.html</loc>
+        <loc>https://luisotonix.github.io/cases/power-platform-automation.html</loc>
         <lastmod>2025-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
 
-    <!-- Portfolio Case Study: Copilot Studio Support -->
+    <!-- cases Case Study: Copilot Studio Support -->
     <url>
-        <loc>https://luisotonix.github.io/portfolio/copilot-studio-support.html</loc>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://luisotonix.github.io/portfolio/copilot-studio-support.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://luisotonix.github.io/en/portfolio/copilot-studio-support.html"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://luisotonix.github.io/es/portfolio/copilot-studio-support.html"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://luisotonix.github.io/portfolio/copilot-studio-support.html"/>
+        <loc>https://luisotonix.github.io/cases/copilot-studio-support.html</loc>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://luisotonix.github.io/cases/copilot-studio-support.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://luisotonix.github.io/en/cases/copilot-studio-support.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://luisotonix.github.io/es/cases/copilot-studio-support.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://luisotonix.github.io/cases/copilot-studio-support.html"/>
         <lastmod>2025-01-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://luisotonix.github.io/en/portfolio/copilot-studio-support.html</loc>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://luisotonix.github.io/portfolio/copilot-studio-support.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://luisotonix.github.io/en/portfolio/copilot-studio-support.html"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://luisotonix.github.io/es/portfolio/copilot-studio-support.html"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://luisotonix.github.io/portfolio/copilot-studio-support.html"/>
+        <loc>https://luisotonix.github.io/en/cases/copilot-studio-support.html</loc>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://luisotonix.github.io/cases/copilot-studio-support.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://luisotonix.github.io/en/cases/copilot-studio-support.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://luisotonix.github.io/es/cases/copilot-studio-support.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://luisotonix.github.io/cases/copilot-studio-support.html"/>
         <lastmod>2025-01-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://luisotonix.github.io/es/portfolio/copilot-studio-support.html</loc>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://luisotonix.github.io/portfolio/copilot-studio-support.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://luisotonix.github.io/en/portfolio/copilot-studio-support.html"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://luisotonix.github.io/es/portfolio/copilot-studio-support.html"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://luisotonix.github.io/portfolio/copilot-studio-support.html"/>
+        <loc>https://luisotonix.github.io/es/cases/copilot-studio-support.html</loc>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://luisotonix.github.io/cases/copilot-studio-support.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://luisotonix.github.io/en/cases/copilot-studio-support.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://luisotonix.github.io/es/cases/copilot-studio-support.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://luisotonix.github.io/cases/copilot-studio-support.html"/>
         <lastmod>2025-01-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
 </urlset>
+

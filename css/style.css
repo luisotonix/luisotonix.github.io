@@ -984,10 +984,10 @@ section:nth-child(even) {
 }
 
 /* ======================
-   PORTFOLIO CARDS
+   CASES CARDS
    ====================== */
 
-.portfolio-card {
+.cases-card {
     background-color: var(--bg-card);
     border-radius: 8px;
     overflow: hidden;
@@ -996,12 +996,12 @@ section:nth-child(even) {
     border: 1px solid var(--border-color);
 }
 
-.portfolio-card:hover {
+.cases-card:hover {
     box-shadow: var(--shadow-xl);
     transform: translateY(-5px);
 }
 
-.portfolio-image {
+.cases-image {
     width: 100%;
     height: 200px;
     background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
@@ -1032,11 +1032,11 @@ section:nth-child(even) {
     background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
 }
 
-.portfolio-content {
+.cases-content {
     padding: 1.5rem;
 }
 
-.portfolio-tags {
+.cases-tags {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
@@ -2022,3 +2022,4 @@ footer {
 .section-alt-bg {
     background-color: var(--bg-secondary);
 }
+
