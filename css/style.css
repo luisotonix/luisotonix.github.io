@@ -185,6 +185,26 @@ nav {
     width: 100%;
 }
 
+/* Nav CTA Button */
+.nav-cta a {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+    color: var(--text-inverse) !important;
+    padding: 0.6rem 1.25rem;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 120, 212, 0.3);
+}
+
+.nav-cta a::after {
+    display: none;
+}
+
+.nav-cta a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 120, 212, 0.4);
+}
+
 .nav-controls {
     display: flex;
     align-items: center;
