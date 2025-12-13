@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agente Copilot Studio para Soporte Corporativo - Luís Otoni</title>
+    <meta name="description" content="Implementación de agente virtual con Microsoft Copilot Studio para soporte interno, integrado con Teams y Dynamics 365 Customer Service para 15.000 usuarios.">
+    <link rel="canonical" href="https://luisotonix.github.io/es/portfolio/copilot-studio-support.html">
+
+    <!-- Favicon Emoji -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container" role="navigation" aria-label="Menú principal">
+            <a href="../index.html" class="logo">⚡ Luís Otoni</a>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../about.html">Acerca</a></li>
+                    <li><a href="../portfolio.html">Portafolio</a></li>
+                    <li><a href="../services.html">Servicios</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li class="nav-cta"><a href="../contact.html">Contacto</a></li>
+                </ul>
+                <div class="nav-controls">
+                    <button id="theme-toggle" aria-label="Toggle theme"><span id="theme-icon">🌙</span></button>
+                    <select id="language-selector" aria-label="Select language">
+                        <option value="pt">Português</option>
+                        <option value="en">English</option>
+                        <option value="es" selected>Español</option>
+                    </select>
+                </div>
+            </div>
+            <button id="mobile-menu-btn" aria-label="Toggle mobile menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Project Hero -->
+        <section class="project-hero">
+            <div class="container">
+                <h1>🤖 Agente Copilot Studio para Soporte Corporativo</h1>
+                <p>Transformación del soporte interno con IA conversacional para 15.000 colaboradores</p>
+            </div>
+        </section>
+
+        <!-- Project Overview -->
+        <section>
+            <div class="container">
+                <div class="project-details">
+                    <div class="detail-box">
+                        <h3>🏢 Alcance</h3>
+                        <p>Soporte Corporativo / Service Desk</p>
+                    </div>
+                    <div class="detail-box">
+                        <h3>👥 Usuarios</h3>
+                        <p>15.000 colaboradores (org-wide)</p>
+                    </div>
+                    <div class="detail-box">
+                        <h3>🎯 Canal</h3>
+                        <p>Microsoft Teams (integración nativa)</p>
+                    </div>
+                    <div class="detail-box">
+                        <h3>📈 Resultado</h3>
+                        <p>70% de solicitudes resueltas por el agente</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technologies -->
+        <section>
+            <div class="container-narrow">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <img src="../../images/CopilotStudio_scalable.svg" alt="Microsoft Copilot Studio" style="width: 120px; height: 120px;">
+                </div>
+                <h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--text-primary);">
+                    Tecnologías Utilizadas
+                </h2>
+                <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                    <div style="text-align: center;">
+                        <img src="../../images/CopilotStudio_scalable.svg" alt="Copilot Studio" style="width: 48px; height: 48px;">
+                        <p style="font-size: 0.75rem; margin-top: 0.5rem; color: var(--text-secondary);">Copilot Studio</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="../../images/PowerAutomate_scalable.svg" alt="Power Automate" style="width: 48px; height: 48px;">
+                        <p style="font-size: 0.75rem; margin-top: 0.5rem; color: var(--text-secondary);">Power Automate</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="../../images/Dataverse_scalable.svg" alt="Dataverse" style="width: 48px; height: 48px;">
+                        <p style="font-size: 0.75rem; margin-top: 0.5rem; color: var(--text-secondary);">Dataverse</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="../../images/PowerBI_scalable.svg" alt="Power BI" style="width: 48px; height: 48px;">
+                        <p style="font-size: 0.75rem; margin-top: 0.5rem; color: var(--text-secondary);">Power BI</p>
+                    </div>
+                </div>
+                <div class="portfolio-tags">
+                    <span class="tag primary">Microsoft Copilot Studio</span>
+                    <span class="tag primary">Microsoft Teams</span>
+                    <span class="tag primary">Dynamics 365 Customer Service</span>
+                    <span class="tag primary">Power Automate</span>
+                    <span class="tag primary">Dataverse</span>
+                    <span class="tag">Azure AI Services</span>
+                    <span class="tag">Power Platform</span>
+                    <span class="tag">Microsoft Graph API</span>
+                    <span class="tag">Omnichannel for Customer Service</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem -->
+        <section class="project-section">
+            <div class="container-narrow">
+                <h2>🎯 El Desafío</h2>
+                <p>
+                    El cliente, una gran organización con más de 15.000 colaboradores, enfrentaba desafíos críticos 
+                    en el soporte interno. El equipo de Service Desk estaba sobrecargado y los empleados 
+                    necesitaban esperar mucho tiempo para respuestas simples.
+                </p>
+                <ul class="service-features">
+                    <li>Alto volumen de tickets repetitivos (reset de contraseña, accesos a sistemas, VPN, etc.)</li>
+                    <li>Tiempo promedio de respuesta superior a 4 horas para preguntas simples</li>
+                    <li>Equipo de Service Desk sobrecargado con tareas de bajo valor</li>
+                    <li>Empleados insatisfechos con la demora en la atención de TI</li>
+                    <li>Conocimiento técnico disperso en documentos, wikis y diferentes sistemas</li>
+                    <li>Dificultad para escalar el soporte sin aumentar personal</li>
+                    <li>Sueño antiguo de la empresa de tener un "asistente virtual" para TI - proyectos anteriores fallaron</li>
+                </ul>
+                <p style="margin-top: 1.5rem;">
+                    <strong>El diferencial:</strong> Este era un proyecto soñado durante años por la empresa. Intentos anteriores 
+                    con chatbots tradicionales fallaron por la rigidez y dificultad de mantenimiento. Solo con la evolución 
+                    del Microsoft Copilot Studio fue posible entregar una solución verdaderamente inteligente y escalable.
+                </p>
+            </div>
+        </section>
+
+        <!-- Solution -->
+        <section class="project-section">
+            <div class="container-narrow">
+                <h2>💡 La Solución</h2>
+                <p>
+                    Implementamos un agente virtual inteligente utilizando Microsoft Copilot Studio, 
+                    integrado nativamente a Microsoft Teams y con escalación para atendientes humanos 
+                    vía Dynamics 365 Customer Service.
+                </p>
+
+                <div class="card mt-3">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Arquitectura de la Solución</h3>
+                    <ul class="service-features">
+                        <li><strong>Frontend:</strong> Bot publicado en Microsoft Teams como app org-wide</li>
+                        <li><strong>Motor de IA:</strong> Microsoft Copilot Studio con tópicos personalizados</li>
+                        <li><strong>Base de Conocimiento:</strong> Tópicos estructurados + integración con SharePoint</li>
+                        <li><strong>Automatización:</strong> Power Automate para acciones automatizadas (ej: reset de contraseña)</li>
+                        <li><strong>Escalación:</strong> Handoff hacia Dynamics 365 Customer Service cuando es necesario</li>
+                        <li><strong>Analytics:</strong> Dashboards de performance e insights con Power BI</li>
+                    </ul>
+                </div>
+
+                <div class="card mt-3">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Tópicos Implementados</h3>
+                    <ul class="service-features">
+                        <li>🔐 <strong>Accesos:</strong> Reset de contraseña, desbloqueo de cuenta, solicitud de accesos</li>
+                        <li>💻 <strong>Equipos:</strong> Problemas con notebook, configuración de impresora, periféricos</li>
+                        <li>🌐 <strong>Conectividad:</strong> VPN, Wi-Fi corporativo, acceso remoto</li>
+                        <li>📦 <strong>Software:</strong> Instalación de programas, licencias, actualizaciones</li>
+                        <li>📧 <strong>Email y Teams:</strong> Configuración, problemas de sincronización, permisos</li>
+                        <li>🛡️ <strong>Seguridad:</strong> Alertas de phishing, dispositivos sospechosos, MFA</li>
+                    </ul>
+                </div>
+
+                <div class="card mt-3">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Flujo de Atención Inteligente</h3>
+                    <ol class="service-features">
+                        <li>Colaborador inicia conversación con el agente en Teams</li>
+                        <li>Copilot Studio identifica la intención y busca la mejor respuesta</li>
+                        <li>Si encuentra: responde inmediatamente con información o ejecuta acción</li>
+                        <li>Si no encuentra o es complejo: transfiere a analista humano</li>
+                        <li>Analista recibe todo el contexto de la conversación en Dynamics 365</li>
+                        <li>Después de la resolución, el feedback se usa para entrenar nuevos tópicos</li>
+                    </ol>
+                </div>
+
+                <div class="card mt-3">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Integración con Dynamics 365 Customer Service</h3>
+                    <ul class="service-features">
+                        <li>Omnichannel configurado para recibir escalaciones del Copilot Studio</li>
+                        <li>Historial completo de la conversación transferido al analista</li>
+                        <li>Enrutamiento inteligente por tipo de ticket y complejidad</li>
+                        <li>SLAs configurados por prioridad y tipo de solicitud</li>
+                        <li>Knowledge Base unificada entre bot y atendientes humanos</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results -->
+        <section class="project-section">
+            <div class="container-narrow">
+                <h2>📊 Resultados Alcanzados</h2>
+                <div class="grid grid-2 mt-3">
+                    <div class="card text-center">
+                        <div class="card-icon">🤖</div>
+                        <h3 class="card-title">70%</h3>
+                        <p class="card-text">Solicitudes resueltas automáticamente por el agente</p>
+                    </div>
+                    <div class="card text-center">
+                        <div class="card-icon">⚡</div>
+                        <h3 class="card-title">&lt;30s</h3>
+                        <p class="card-text">Tiempo promedio de respuesta (antes: 4+ horas)</p>
+                    </div>
+                    <div class="card text-center">
+                        <div class="card-icon">👥</div>
+                        <h3 class="card-title">15.000</h3>
+                        <p class="card-text">Colaboradores atendidos (org-wide)</p>
+                    </div>
+                    <div class="card text-center">
+                        <div class="card-icon">📈</div>
+                        <h3 class="card-title">92%</h3>
+                        <p class="card-text">Satisfacción de usuarios (CSAT)</p>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Impacto en el Negocio</h3>
+                    <ul class="service-features">
+                        <li>Equipo de soporte redirigido a actividades de mayor valor</li>
+                        <li>Atención 24/7 para preguntas resueltas por el agente</li>
+                        <li>Reducción significativa en el backlog de tickets</li>
+                        <li>Conocimiento centralizado y siempre actualizado</li>
+                        <li>Experiencia moderna para los colaboradores vía Teams</li>
+                        <li>Métricas e insights en tiempo real para mejora continua</li>
+                        <li>Escalabilidad sin necesidad de aumentar personal</li>
+                    </ul>
+                </div>
+
+                <div class="card mt-4" style="background: var(--bg-secondary); border-left: 4px solid var(--primary);">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">🏆 El Sueño Realizado</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.8;">
+                        Este proyecto representó la realización de un sueño postergado por muchos años por el cliente. 
+                        Intentos anteriores con chatbots tradicionales basados en reglas fallaron por la 
+                        complejidad de mantenimiento y rigidez en las respuestas. 
+                        <br><br>
+                        <strong>¿La diferencia?</strong> Las evoluciones del Microsoft Copilot Studio trajeron capacidades 
+                        de IA generativa, comprensión de lenguaje natural avanzada e integración nativa con el 
+                        ecosistema Microsoft - permitiendo finalmente entregar una experiencia conversacional 
+                        verdaderamente inteligente y escalable.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Client Testimonial -->
+        <section>
+            <div class="container-narrow">
+                <div class="card" style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: var(--text-inverse); border: none;">
+                    <h3 style="color: var(--text-inverse); margin-bottom: 1rem;">💬 Testimonio del Cliente</h3>
+                    <p style="font-size: 1.1rem; font-style: italic; margin-bottom: 1rem;">
+                        "Durante años intentamos implementar un asistente virtual para nuestro soporte interno, pero siempre 
+                        nos topábamos con limitaciones tecnológicas. Con Copilot Studio, finalmente lo logramos. 
+                        El agente resuelve la mayoría de las dudas instantáneamente y cuando necesita escalar, 
+                        el analista ya recibe todo el contexto. Fue una transformación completa en nuestra atención."
+                    </p>
+                    <p style="font-weight: bold;">
+                        — Gerente de Service Desk
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Back to Portfolio -->
+        <section>
+            <div class="container text-center">
+                <a href="../portfolio.html" class="btn btn-outline">← Volver al Portafolio</a>
+                <a href="../contact.html" class="btn btn-primary">Contacto</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Luís Otoni. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>

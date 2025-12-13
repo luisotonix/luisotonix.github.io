@@ -310,4 +310,36 @@
         <priority>0.6</priority>
     </url>
 
+    <!-- Portfolio Case Study: Copilot Studio Support -->
+    <url>
+        <loc>https://luisotonix.github.io/portfolio/copilot-studio-support.html</loc>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://luisotonix.github.io/portfolio/copilot-studio-support.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://luisotonix.github.io/en/portfolio/copilot-studio-support.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://luisotonix.github.io/es/portfolio/copilot-studio-support.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://luisotonix.github.io/portfolio/copilot-studio-support.html"/>
+        <lastmod>2025-01-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://luisotonix.github.io/en/portfolio/copilot-studio-support.html</loc>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://luisotonix.github.io/portfolio/copilot-studio-support.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://luisotonix.github.io/en/portfolio/copilot-studio-support.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://luisotonix.github.io/es/portfolio/copilot-studio-support.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://luisotonix.github.io/portfolio/copilot-studio-support.html"/>
+        <lastmod>2025-01-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://luisotonix.github.io/es/portfolio/copilot-studio-support.html</loc>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://luisotonix.github.io/portfolio/copilot-studio-support.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://luisotonix.github.io/en/portfolio/copilot-studio-support.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://luisotonix.github.io/es/portfolio/copilot-studio-support.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://luisotonix.github.io/portfolio/copilot-studio-support.html"/>
+        <lastmod>2025-01-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
 </urlset>
